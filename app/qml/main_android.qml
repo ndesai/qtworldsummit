@@ -1,10 +1,8 @@
-import QtQuick 2.3
-import QtQuick.Controls 1.2 as QC
-import com.iktwo.components 1.0 as IC
-import "android" as Android
+import QtQuick 2.4
+import QtQuick.Controls 1.3 as QC
 import "utils" as Utils
-import DevDays14 1.0 as DD14
 import QtQuick.Window 2.0 as Window
+import QtWorldSummit 1.5
 
 Utils.BaseWindow {
     id: superRoot
@@ -54,7 +52,5 @@ Utils.BaseWindow {
     Component.onCompleted: {
         console.log("xxx..", ScreenValues.dp)
         console.log("yyy..", Window.Screen.pixelDensity)
-//        IC.Theme.titleBarColor = "#f3f3f3"
-
     }
 }
