@@ -13,7 +13,7 @@ Utils.BaseWindow {
 
     Image {
         anchors.fill: parent
-        source: "img/triangular.png"
+        source: "qrc:/images/triangular.png"
         fillMode: Image.Tile
     }
 

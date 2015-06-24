@@ -2,12 +2,15 @@ TEMPLATE = app
 
 QT += qml quick widgets
 
-SOURCES += main.cpp
+android {
+    QT += androidextras
+}
 
-RESOURCES += qml.qrc
+SOURCES += src/main.cpp
 
-# Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
+RESOURCES += resources.qrc
 
-# Default rules for deployment.
 include(deployment.pri)
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+

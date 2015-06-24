@@ -8,7 +8,7 @@
 #include <QAndroidJniObject>
 #endif
 
-#define QML_DEVELOPMENT "qrc:/qml/dev.qml"
+#define QML_DEVELOPMENT "qrc:/qml/qml/dev.qml"
 #define SIM false
 
 int main(int argc, char *argv[])
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     float dpi = QGuiApplication::primaryScreen()->physicalDotsPerInch();
 
 #ifdef Q_OS_IOS
-    mainQml = "qrc:/qml/main_ios.qml";
+    mainQml = "qrc:/qml/qml/main_ios.qml";
 #elif defined(Q_OS_ANDROID)
 
     // Retrieve the screen density
@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
     QAndroidJniObject displayMetrics = resources.callObjectMethod("getDisplayMetrics", "()Landroid/util/DisplayMetrics;");
     dpi = displayMetrics.getField<float>("density");
 
-    mainQml = "qrc:/qml/main_android.qml";
+    mainQml = "qrc:/qml/qml/main_android.qml";
 #elif SIM
-    QCursor cursor(QPixmap(":/qml/img/sim/cursor-default.png"));
+    QCursor cursor(QPixmap(":/qml/qml/img/sim/cursor-default.png"));
     app.setOverrideCursor(cursor);
-    mainQml = "qrc:/qml/simfinger.qml";
+    mainQml = "qrc:/qml/qml/simfinger.qml";
 #endif
 
     engine.rootContext()->setContextProperty("$", QVariant::fromValue(dpi));

@@ -3,8 +3,8 @@
 # Generate qrc
 
 QMLBASEDIR=qml
-TMPQRC=.qml.qrc
-QRC=qml.qrc
+TMPQRC=.resources.qrc
+QRC=resources.qrc
 
 #<RCC>
 #    <qresource prefix="/">

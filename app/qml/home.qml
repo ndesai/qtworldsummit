@@ -21,7 +21,7 @@ Viewport {
             anchors.fill: parent
             fillMode: Image.PreserveAspectCrop
 
-            source: "img/bg.jpg"
+            source: "qrc:/images/bg.jpg"
         }
     ]
 
@@ -46,7 +46,7 @@ Viewport {
 
         height: __theme.dp(1050)
 
-        source: "img/card.png"
+        source: "qrc:/images/card.png"
 
         border {
             left: __theme.dp(20)
