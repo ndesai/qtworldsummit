@@ -3,6 +3,8 @@
 #include <QtQml>
 #include <QScreen>
 
+#include "screenvalues.h"
+
 #ifdef Q_OS_ANDROID
 #include <QAndroidJniEnvironment>
 #include <QAndroidJniObject>
@@ -11,11 +13,21 @@
 #define QML_DEVELOPMENT "qrc:/qml/qml/dev.qml"
 #define SIM false
 
+static QObject *screen_values_provider(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED(engine)
+    Q_UNUSED(scriptEngine)
+
+    return new ScreenValues();
+}
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    qmlRegisterSingletonType<ScreenValues>("QtWorldSummit", 1, 5, "ScreenValues", screen_values_provider);
 
     QString mainQml = QStringLiteral(QML_DEVELOPMENT);
 
