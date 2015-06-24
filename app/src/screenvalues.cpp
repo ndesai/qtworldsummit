@@ -92,6 +92,7 @@ int ScreenValues::retrieveDpi()
 
 bool ScreenValues::retrieveIsTablet()
 {
+#ifdef Q_OS_ANDROID
     QAndroidJniEnvironment env;
     env->PushLocalFrame(9);
 
@@ -103,9 +104,12 @@ bool ScreenValues::retrieveIsTablet()
                                                             "()Landroid/content/res/Resources;");
 
     QAndroidJniObject configuration = resources.callObjectMethod("getConfiguration",
-                               "()Landroid/content/res/Configuration;");
+                                                                 "()Landroid/content/res/Configuration;");
 
     jint smallestScreenWidthDp = configuration.getField<jint>("smallestScreenWidthDp");
 
     return smallestScreenWidthDp >= 600;
+#else
+    return false;
+#endif
 }
