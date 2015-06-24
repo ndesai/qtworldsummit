@@ -1,7 +1,7 @@
-import QtQuick 2.3
-import QtQuick.Window 2.1
+import QtQuick 2.4
+import QtQuick.Controls 1.3
 
-Window {
+ApplicationWindow {
     property bool showFills : false
     property variant activeObject
 
