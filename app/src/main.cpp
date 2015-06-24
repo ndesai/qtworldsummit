@@ -36,13 +36,6 @@ int main(int argc, char *argv[])
 #ifdef Q_OS_IOS
     mainQml = "qrc:/qml/qml/main_ios.qml";
 #elif defined(Q_OS_ANDROID)
-
-    // Retrieve the screen density
-    QAndroidJniObject qtActivity = QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative", "activity", "()Landroid/app/Activity;");
-    QAndroidJniObject resources = qtActivity.callObjectMethod("getResources", "()Landroid/content/res/Resources;");
-    QAndroidJniObject displayMetrics = resources.callObjectMethod("getDisplayMetrics", "()Landroid/util/DisplayMetrics;");
-    dpi = displayMetrics.getField<float>("density");
-
     mainQml = "qrc:/qml/qml/main_android.qml";
 #elif SIM
     QCursor cursor(QPixmap(":/qml/qml/img/sim/cursor-default.png"));
