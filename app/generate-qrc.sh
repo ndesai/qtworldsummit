@@ -3,6 +3,7 @@
 # Generate qrc
 
 QMLBASEDIR=qml
+RESOURCEBASEDIR=resources
 TMPQRC=.resources.qrc
 QRC=resources.qrc
 
@@ -18,11 +19,20 @@ QRC=resources.qrc
 {
 	echo "<RCC>"
 	echo -ne '\t'
-	echo "<qresource prefix=\"/\">"
+	echo "<qresource prefix=\"/qml\">"
 	for i in `find ${QMLBASEDIR} -type f | grep -v .DS_Store`; 
 		do
 			echo -ne '\t\t'
 			echo "<file>${i}</file>"
+	done;
+	echo -ne '\t'
+	echo "</qresource>"
+	echo -ne '\t'
+	echo "<qresource prefix=\"/images\">"
+	for i in `find ${RESOURCEBASEDIR} -type f | grep -v .DS_Store`; 
+		do
+			echo -ne '\t\t'
+			echo "<file alias="\"${i##*/}\"">${i}</file>"
 	done;
 	echo -ne '\t'
 	echo "</qresource>"
