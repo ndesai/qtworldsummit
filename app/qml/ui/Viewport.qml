@@ -12,5 +12,7 @@ Rectangle {
         id: _itemContainer
         anchors.fill: parent
         anchors.topMargin: root.topMargin
+
+        z: 1
     }
 }
