@@ -11,18 +11,18 @@ Utils.BaseWindow {
     width: screenWidth / 2
     height: screenHeight / 2
 
-    Utils.Platform {
-        id: __Platform
-        Connections {
-            target: __Platform.item ?
-                        __Platform.item
-                      : null
-            ignoreUnknownSignals: true
-        }
-        Component.onCompleted: {
-            call('setStatusBarStyleDefault')
-        }
-    }
+//    Utils.Platform {
+//        id: __Platform
+//        Connections {
+//            target: __Platform.item ?
+//                        __Platform.item
+//                      : null
+//            ignoreUnknownSignals: true
+//        }
+//        Component.onCompleted: {
+//            call('setStatusBarStyleDefault')
+//        }
+//    }
 
     Loader {
         id: _Loader

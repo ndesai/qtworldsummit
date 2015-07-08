@@ -2,63 +2,68 @@ import QtQuick 2.4
 import QtQuick.Window 2.2
 
 import "ui"
+import "utils" as Utils
 
 Viewport {
     id: root
 
     property Theme __theme: Theme { }
+    property Api __api: Api { }
 
     width: 1080
     height: 1920
     color: "#000000"
 
     // TODO: Platform dependent status bar height
-    topMargin: __theme.dp(40)
+    topMargin: __theme.marginTop
 
-    children: [
+    Header {
+        id: _header
+        z: 2
+
         Image {
-            id: _imageBackground
-            anchors.fill: parent
-            fillMode: Image.PreserveAspectCrop
+            id: _imageLogo
 
-            source: "qrc:/images/bg.jpg"
+            anchors.left: parent.left
+            anchors.leftMargin: __theme.dp(20)
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: __theme.dp(-4)
+            width: __theme.dp(156)
+
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+            source: "img/logo-qws.png"
         }
-    ]
 
-    Label {
-        anchors.left: parent.left
-        anchors.right: parent.right
-        horizontalAlignment: Text.AlignHCenter
+        RightNowIcon {
+            id: _RightNowIcon
 
-        color: "#ffffff"
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right
+            anchors.rightMargin: __theme.dp(24)
 
-        text: qsTr("QtWorldSummit")
+            Utils.ClickGuard {
+                anchors.fill: parent
+                anchors.margins: __theme.dp(-10)
+                Utils.Fill { color: "blue" }
+                onClicked: {
+                    // TODO: ND - Show today's schedule
+                }
+            }
+        }
     }
 
-    BorderImage {
-        id: _imageCard
-
+    Item {
+        id: _itemPageContainer
+        anchors.top: _header.bottom
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.margins: __theme.dp(12)
+        anchors.bottom: parent.bottom
+        clip: true
 
-        y: parent.height - height
-
-        height: __theme.dp(1050)
-
-        source: "qrc:/images/card.png"
-
-        border {
-            left: __theme.dp(20)
-            right: __theme.dp(20)
-            top: __theme.dp(20)
-            bottom: __theme.dp(20)
-        }
-
-        MouseArea {
+        Rectangle {
             anchors.fill: parent
-            drag.target: parent
-            drag.axis: Drag.YAxis
+            color: __theme.colorPageBackground
         }
     }
 }
