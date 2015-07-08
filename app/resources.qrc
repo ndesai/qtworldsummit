@@ -16,6 +16,16 @@
         <file>qml/ui/Theme.qml</file>
         <file>qml/IntroView.qml</file>
         <file>qml/+devel/main.qml</file>
+        <file>qml/Api.qml</file>
+        <file>qml/home.qml</file>
+        <file>qml/img/icon-clock-filled.png</file>
+        <file>qml/img/logo-qws.png</file>
+        <file>qml/main_ios.qml</file>
+        <file>qml/ui/Header.qml</file>
+        <file>qml/ui/RightNowIcon.qml</file>
+        <file>qml/ui/Theme.qml</file>
+        <file>qml/ui/Viewport.qml</file>
+        <file>qml/utils/Fill.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="bg.jpg">resources/images/bg.jpg</file>
@@ -39,5 +49,9 @@
         <file alias="laptop">resources/images/tutorial/laptop.svg</file>
         <file alias="next_white">resources/images/tutorial/next_white.svg</file>
         <file alias="qt_logo">resources/images/qt_logo.svg</file>
+        <file alias="bg.jpg">resources/images/bg.jpg</file>
+        <file alias="card.png">resources/images/card.png</file>
+        <file alias="qt_preloader.gif">resources/images/qt_preloader.gif</file>
+        <file alias="triangular.png">resources/images/triangular.png</file>
     </qresource>
 </RCC>

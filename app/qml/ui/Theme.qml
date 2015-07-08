@@ -6,8 +6,16 @@ QtObject {
     property color unactiveTabColor: "#f3f3f3"
     property color toolBarColor: "#ffffff"
     property color toolBarTextColor: "#bdbebf"
+    property color colorQtGreen: "#81C343"
+    property color colorLightGrey: "#f3f3f3"
+    property color colorLightGreyAccent: "#d1d1d0"
+    property color colorQtMediumGreen: "#5c9c1c"
+    property color colorPageBackground: "#ffffff"
 
-    property string fontFamily: "Sans Serif"
+    property string fontFamily: "Avenir Next"
+
+    property int heightHeader: 128
+    property int marginTop: 40
 
     property int paginationDotBaseSize: 30
     property int paginationDotContainerHeight: 56
