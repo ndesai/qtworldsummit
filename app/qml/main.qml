@@ -1,12 +1,9 @@
 import QtQuick 2.4
 import QtQuick.Controls 1.3 as QC
-import "utils" as Utils
-import QtQuick.Window 2.0 as Window
 import QtWorldSummit 1.5
+import "ui" as UI
 
-Utils.BaseWindow {
-    id: superRoot
-
+QC.ApplicationWindow {
     property var resolutions: [
         {"height": 480, "width": 320, "name": "HVGA", "ratio": "3:2"},
         {"height": 640, "width": 360, "name": "nHD", "ratio": "16:9"},
@@ -27,30 +24,14 @@ Utils.BaseWindow {
     width: resolutions[currentResolution]["width"]
     height: resolutions[currentResolution]["height"]
 
-//    Android.ActionBar {
-//        id: actionBar
-//        title: "<html><font color=\"#322e2d\">Qt DEVELOPER DAYS </font> <font color=\"#5c9c1c\">2014</font></html>"
-//        isScreenPortrait: superRoot.isScreenPortrait
-//    }
+    UI.Theme {
+        id: theme
+    }
 
-    Loader {
+    ToolBar {
         anchors {
-            top: parent.top
-            bottom: parent.bottom
             left: parent.left
             right: parent.right
         }
-
-        source: "home.qml"
-        focus: true
-
-        onLoaded: {
-            item.header.height = Math.ceil(ScreenValues.dp * (ScreenValues.isTablet ? 56 : (isScreenPortrait ? 48 : 40)))
-        }
-    }
-
-    Component.onCompleted: {
-        console.log("xxx..", ScreenValues.dp)
-        console.log("yyy..", Window.Screen.pixelDensity)
     }
 }

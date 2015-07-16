@@ -1,24 +1,9 @@
 <RCC>
     <qresource prefix="/qml">
-        <file>qml/dev.qml</file>
-        <file>qml/home.qml</file>
-        <file>qml/main_android.qml</file>
-        <file>qml/main_ios.qml</file>
-        <file>qml/ui/Label.qml</file>
         <file>qml/ui/Theme.qml</file>
-        <file>qml/ui/Viewport.qml</file>
-        <file>qml/utils/AccentBottom.qml</file>
-        <file>qml/utils/AccentLeft.qml</file>
-        <file>qml/utils/AccentRight.qml</file>
-        <file>qml/utils/AccentTop.qml</file>
-        <file>qml/utils/BaseIcon.qml</file>
-        <file>qml/utils/BaseWindow.qml</file>
-        <file>qml/utils/ClickGuard.qml</file>
-        <file>qml/utils/Fill.qml</file>
-        <file>qml/utils/GestureArea.qml</file>
-        <file>qml/utils/HorizontalSpacer.qml</file>
-        <file>qml/utils/SafeLoader.qml</file>
-        <file>qml/utils/VerticalSpacer.qml</file>
+        <file>qml/ui/+android/Theme.qml</file>
+        <file>qml/main.qml</file>
+        <file>qml/ToolBar.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="triangular.png">resources/images/triangular.png</file>
