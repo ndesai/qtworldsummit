@@ -1,7 +1,6 @@
 import QtQuick 2.4
 import QtQuick.Controls 1.3 as QC
 import QtWorldSummit 1.5
-import "ui" as UI
 
 QC.ApplicationWindow {
     property var resolutions: [
@@ -23,10 +22,6 @@ QC.ApplicationWindow {
     visible: true
     width: resolutions[currentResolution]["width"]
     height: resolutions[currentResolution]["height"]
-
-    UI.Theme {
-        id: theme
-    }
 
     ToolBar {
         anchors {

@@ -1,9 +1,13 @@
 <RCC>
     <qresource prefix="/qml">
-        <file>qml/ui/Theme.qml</file>
-        <file>qml/ui/+android/Theme.qml</file>
         <file>qml/main.qml</file>
         <file>qml/ToolBar.qml</file>
+        <file>qml/ui/qmldir</file>
+        <file>qml/ui/Theme.qml</file>
+        <file>qml/ui/+android/qmldir</file>
+        <file>qml/ui/+android/Theme.qml</file>
+        <file>qml/ui/+ios/qmldir</file>
+        <file>qml/ui/+ios/Theme.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="triangular.png">resources/images/triangular.png</file>

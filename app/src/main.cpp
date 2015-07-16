@@ -22,6 +22,9 @@ int main(int argc, char *argv[])
     QQmlFileSelector* selector = new QQmlFileSelector(&engine);
 
     Q_UNUSED(selector)
+
+    engine.addImportPath("qrc:/");
+
     qmlRegisterSingletonType<ScreenValues>("QtWorldSummit", 1, 5, "ScreenValues", screen_values_provider);
 
     engine.load(QUrl("qrc:/qml/qml/main.qml"));
