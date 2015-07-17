@@ -1,6 +1,9 @@
 import QtQuick 2.4
 import QtQuick.Controls 1.3 as QC
+import QtQuick.Controls.Styles 1.3 as CS
+import QtQuick.Layouts 1.1 as LA
 import QtWorldSummit 1.5
+import "qrc:/qml/qml/ui" 1.5 as UI
 
 QC.ApplicationWindow {
     property var resolutions: [
@@ -28,5 +31,54 @@ QC.ApplicationWindow {
             left: parent.left
             right: parent.right
         }
+    }
+
+    LA.RowLayout {
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
+        height: UI.Theme.tabHeight
+        spacing: 0
+
+        QC.Button{
+            LA.Layout.fillWidth: true
+            LA.Layout.fillHeight: true
+
+            text: "1"
+            checkable: true
+            checked: true
+            exclusiveGroup: group
+
+            style: TabButtonStyle { }
+        }
+
+        QC.Button{
+            LA.Layout.fillWidth: true
+            LA.Layout.fillHeight: true
+
+            text: "2"
+            checkable: true
+            exclusiveGroup: group
+
+            style: TabButtonStyle { }
+        }
+
+        QC.Button{
+            LA.Layout.fillWidth: true
+            LA.Layout.fillHeight: true
+
+            checkable: true
+            exclusiveGroup: group
+            text: "3"
+
+            style: TabButtonStyle { }
+        }
+    }
+
+    QC.ExclusiveGroup {
+        id: group
     }
 }
