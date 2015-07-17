@@ -15,5 +15,9 @@
         <file alias="qt_preloader.gif">resources/images/qt_preloader.gif</file>
         <file alias="card.png">resources/images/card.png</file>
         <file alias="bg.jpg">resources/images/bg.jpg</file>
+        <file alias="home_active.svg">resources/images/home_active.svg</file>
+        <file alias="home.svg">resources/images/home.svg</file>
+        <file alias="info_active.svg">resources/images/info_active.svg</file>
+        <file alias="info.svg">resources/images/info.svg</file>
     </qresource>
 </RCC>

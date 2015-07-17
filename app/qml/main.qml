@@ -43,38 +43,41 @@ QC.ApplicationWindow {
         height: UI.Theme.tabHeight
         spacing: 0
 
-        QC.Button{
+        QC.Button {
             LA.Layout.fillWidth: true
             LA.Layout.fillHeight: true
 
-            text: "1"
             checkable: true
             checked: true
             exclusiveGroup: group
 
-            style: TabButtonStyle { }
+            style: TabButtonStyle {
+                imageSource: "qrc:/images/home" + (control.checked ? "_active" : "") + ".svg"
+            }
         }
 
-        QC.Button{
-            LA.Layout.fillWidth: true
-            LA.Layout.fillHeight: true
-
-            text: "2"
-            checkable: true
-            exclusiveGroup: group
-
-            style: TabButtonStyle { }
-        }
-
-        QC.Button{
+        QC.Button {
             LA.Layout.fillWidth: true
             LA.Layout.fillHeight: true
 
             checkable: true
             exclusiveGroup: group
-            text: "3"
 
-            style: TabButtonStyle { }
+            style: TabButtonStyle {
+                imageSource: "qrc:/images/home" + (control.checked ? "_active" : "") + ".svg"
+            }
+        }
+
+        QC.Button {
+            LA.Layout.fillWidth: true
+            LA.Layout.fillHeight: true
+
+            checkable: true
+            exclusiveGroup: group
+
+            style: TabButtonStyle {
+                imageSource: "qrc:/images/info" + (control.checked ? "_active" : "") + ".svg"
+            }
         }
     }
 
