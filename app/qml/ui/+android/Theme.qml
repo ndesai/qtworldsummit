@@ -1,5 +1,5 @@
 pragma Singleton
-import QtQuick 2.4
+import QtQuick 2.5
 import QtWorldSummit 1.5
 
 QtObject {

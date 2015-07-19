@@ -1,6 +1,6 @@
-import QtQuick 2.4
-import QtQuick.Controls 1.3 as QC
-import QtQuick.Controls.Styles 1.3 as CS
+import QtQuick 2.5
+import QtQuick.Controls 1.4 as QC
+import QtQuick.Controls.Styles 1.4 as CS
 import QtQuick.Layouts 1.1 as LA
 import QtWorldSummit 1.5
 import "qrc:/qml/qml/ui" 1.5 as UI
