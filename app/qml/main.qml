@@ -64,7 +64,7 @@ QC.ApplicationWindow {
             exclusiveGroup: group
 
             style: TabButtonStyle {
-                imageSource: "qrc:/images/home" + (control.checked ? "_active" : "") + ".svg"
+                imageSource: "qrc:/images/location" + (control.checked ? "_active" : "") + ".svg"
             }
         }
 

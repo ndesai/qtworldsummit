@@ -19,5 +19,7 @@
         <file alias="home.svg">resources/images/home.svg</file>
         <file alias="info_active.svg">resources/images/info_active.svg</file>
         <file alias="info.svg">resources/images/info.svg</file>
+        <file alias="location_active.svg">resources/images/location_active.svg</file>
+        <file alias="location.svg">resources/images/location.svg</file>
     </qresource>
 </RCC>
