@@ -1,5 +1,5 @@
-import QtQuick 2.4
-import QtQuick.Controls.Styles 1.3 as CS
+import QtQuick 2.5
+import QtQuick.Controls.Styles 1.4 as CS
 import "qrc:/qml/qml/ui" 1.5 as UI
 
 CS.ButtonStyle {
