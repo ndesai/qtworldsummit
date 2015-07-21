@@ -84,4 +84,15 @@ QC.ApplicationWindow {
     QC.ExclusiveGroup {
         id: group
     }
+
+    QC.StackView {
+        anchors.fill: parent
+
+        initialItem: tutorial
+    }
+
+    Component {
+        id: tutorial
+        TutorialPage { }
+    }
 }
