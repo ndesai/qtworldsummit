@@ -12,4 +12,5 @@ QtObject {
     property int tabHeight: 98
     property int toolBarHeight: 56
     property int tutorialTitleFontSize: 34
+    property int tutorialTitleMargins: 32
 }
