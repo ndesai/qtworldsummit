@@ -33,7 +33,9 @@ Rectangle {
             right: parent.right
         }
 
-        orientation: Qt.Horizontal
+        orientation: ListView.Horizontal
+
+        snapMode: ListView.SnapToItem
 
         highlightRangeMode: ListView.StrictlyEnforceRange
 
