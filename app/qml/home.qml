@@ -64,6 +64,22 @@ Viewport {
         Rectangle {
             anchors.fill: parent
             color: __theme.colorPageBackground
+
+            Loader {
+                id: _loaderMainContent
+                anchors.fill: parent
+                active: __api.status === Loader.Ready
+                sourceComponent: Component {
+                    Content { }
+                }
+            }
+
+            AnimatedImage {
+                anchors.centerIn: parent
+                playing: visible
+                visible: !_loaderMainContent.active
+                source: "img/icon-qtloading.gif"
+            }
         }
     }
 }
