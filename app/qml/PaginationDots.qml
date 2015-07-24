@@ -1,4 +1,5 @@
 import QtQuick 2.5
+import "qrc:/qml/qml/ui" 1.5 as UI
 
 Row {
     id: root
@@ -10,15 +11,15 @@ Row {
         model: root.view.count
 
         delegate: Item {
-            height: 30
-            width: 30
+            height: UI.Theme.paginationDotBaseSize
+            width: UI.Theme.paginationDotBaseSize
 
             Rectangle {
                 id: rectangleIndicator
 
                 anchors.centerIn: parent
 
-                height: 8
+                height: Math.round(UI.Theme.paginationDotBaseSize * 0.30)
                 width: height
                 radius: height
 
@@ -31,7 +32,7 @@ Row {
                         name: "active"
                         PropertyChanges {
                             target: rectangleIndicator
-                            height: 20
+                            height: Math.round(UI.Theme.paginationDotBaseSize * 0.66)
                         }
                     }
                 ]
