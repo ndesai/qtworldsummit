@@ -15,4 +15,7 @@ QtObject {
     property int toolBarHeight: 56 * ScreenValues.dp
     property int tutorialTitleFontSize: 28 * ScreenValues.dp
     property int tutorialTitleMargins: 32 * ScreenValues.dp
+    property int fontSizeSmall: 14 * ScreenValues.dp
+    property int fontSizeRegular: 18 * ScreenValues.dp
+    property int fontSizeLarge: 22 * ScreenValues.dp
 }
