@@ -1,7 +1,12 @@
 import QtQuick 2.5
+import QtQuick.Controls 1.3
 import "qrc:/qml/qml/ui" 1.5 as UI
 
 Rectangle {
+    id: root
+
+    signal skipTutorial
+
     Label {
         id: labelTitle
 
@@ -75,5 +80,13 @@ Rectangle {
         }
 
         view: listViewTutorial
+    }
+
+    Button {
+        anchors.right: parent.right
+
+        text: "Skip"
+
+        onClicked: root.skipTutorial()
     }
 }
