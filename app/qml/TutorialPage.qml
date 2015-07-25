@@ -32,7 +32,7 @@ Rectangle {
 
         anchors {
             top: labelTitle.bottom
-            bottom: paginationDots.top
+            bottom: parent.bottom
             left: parent.left
             right: parent.right
         }
@@ -71,22 +71,34 @@ Rectangle {
         }
     }
 
-    PaginationDots {
-        id: paginationDots
-
+    Rectangle {
         anchors {
+            left: parent.left
+            right: parent.right
             bottom: parent.bottom
-            horizontalCenter: parent.horizontalCenter
         }
 
-        view: listViewTutorial
-    }
+        color: "#eef3f3f3"
 
-    Button {
-        anchors.right: parent.right
+        height: 50
 
-        text: "Skip"
+        PaginationDots {
+            id: paginationDots
 
-        onClicked: root.skipTutorial()
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            view: listViewTutorial
+        }
+
+        Button {
+            anchors {
+                right: parent.right
+                verticalCenter: parent.verticalCenter
+            }
+
+            text: "Skip"
+
+            onClicked: root.skipTutorial()
+        }
     }
 }
