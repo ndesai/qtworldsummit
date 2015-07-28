@@ -12,6 +12,7 @@
         <file>qml/TutorialPage.qml</file>
         <file>qml/Label.qml</file>
         <file>qml/PaginationDots.qml</file>
+        <file>qml/MainPage.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="triangular.png">resources/images/triangular.png</file>

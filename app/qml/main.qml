@@ -26,66 +26,9 @@ QC.ApplicationWindow {
     width: resolutions[currentResolution]["width"]
     height: resolutions[currentResolution]["height"]
 
-    ToolBar {
-        anchors {
-            left: parent.left
-            right: parent.right
-        }
-    }
-
-    LA.RowLayout {
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-        }
-
-        height: UI.Theme.tabHeight
-        spacing: 0
-
-        QC.Button {
-            LA.Layout.fillWidth: true
-            LA.Layout.fillHeight: true
-
-            checkable: true
-            checked: true
-            exclusiveGroup: group
-
-            style: TabButtonStyle {
-                imageSource: "qrc:/images/home" + (control.checked ? "_active" : "") + ".svg"
-            }
-        }
-
-        QC.Button {
-            LA.Layout.fillWidth: true
-            LA.Layout.fillHeight: true
-
-            checkable: true
-            exclusiveGroup: group
-
-            style: TabButtonStyle {
-                imageSource: "qrc:/images/location" + (control.checked ? "_active" : "") + ".svg"
-            }
-        }
-
-        QC.Button {
-            LA.Layout.fillWidth: true
-            LA.Layout.fillHeight: true
-
-            checkable: true
-            exclusiveGroup: group
-
-            style: TabButtonStyle {
-                imageSource: "qrc:/images/info" + (control.checked ? "_active" : "") + ".svg"
-            }
-        }
-    }
-
-    QC.ExclusiveGroup {
-        id: group
-    }
-
     QC.StackView {
+        id: stackView
+
         anchors.fill: parent
 
         initialItem: tutorial
@@ -93,6 +36,14 @@ QC.ApplicationWindow {
 
     Component {
         id: tutorial
-        TutorialPage { }
+
+        TutorialPage {
+            onSkipTutorial: stackView.replace(mainPage)
+        }
+    }
+
+    Component {
+        id: mainPage
+        MainPage { }
     }
 }

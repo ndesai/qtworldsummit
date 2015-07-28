@@ -37,6 +37,7 @@ Rectangle {
             right: parent.right
         }
 
+        clip: true
         orientation: ListView.Horizontal
 
         snapMode: ListView.SnapToItem
