@@ -46,9 +46,9 @@ Rectangle {
 
         model: ListModel {
             ListElement { description: "This schedule view allows you to quickly glance at all available sessions.\nSwipe left and right to navigate between days." }
-            ListElement { description: "This schedule view allows you to quickly glance at all available sessions.\nSwipe left and right to navigate between days." }
-            ListElement { description: "This schedule view allows you to quickly glance at all available sessions.\nSwipe left and right to navigate between days." }
-            ListElement { description: "This schedule view allows you to quickly glance at all available sessions.\nSwipe left and right to navigate between days." }
+            ListElement { description: "The session detail page can be accessed by clicking the session in the schedule view. This page describes the session in more detail. \n You can also bookmark this session using the ribbon on the top right of the page." }
+            ListElement { description: "The session detail page can also present a short biography of each presenter - including their accomplishments and contributions to the Qt community." }
+            ListElement { description: "We are open source! go to http://github.com/ndesai/qtworldsummit to get the source code, submit your pull request to contribute!" }
         }
 
         delegate: Item {
