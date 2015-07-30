@@ -21,7 +21,19 @@ int main(int argc, char *argv[])
 
     QQmlFileSelector* selector = new QQmlFileSelector(&engine);
 
-    Q_UNUSED(selector)
+    QStringList extraSelectors;
+
+#ifdef Q_OS_ANDROID
+    ScreenValues *sv = new ScreenValues();
+
+    if (sv->isTablet())
+        extraSelectors << "android_tablet";
+
+    delete sv;
+#endif
+
+    if (!extraSelectors.isEmpty())
+        selector->setExtraSelectors(extraSelectors);
 
     engine.addImportPath("qrc:/");
 
