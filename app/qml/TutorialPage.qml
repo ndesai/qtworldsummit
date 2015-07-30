@@ -1,5 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.3
+import QtQuick.Controls.Styles 1.3
 import "qrc:/qml/qml/ui" 1.5 as UI
 
 Rectangle {
@@ -81,7 +82,7 @@ Rectangle {
 
         color: "#eef3f3f3"
 
-        height: 50
+        height: UI.Theme.paginationDotContainerHeight
 
         PaginationDots {
             id: paginationDots
@@ -98,6 +99,12 @@ Rectangle {
             }
 
             text: "Skip"
+
+            style: ButtonStyle {
+                background: Rectangle {
+                    color: "#34db98"
+                }
+            }
 
             onClicked: root.skipTutorial()
         }
