@@ -25,6 +25,7 @@ Rectangle {
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignHCenter
         lineHeight: 0.85
+        color: "#2d2d2d"
         text: qsTr("Welcome to Qt DevDays '15")
     }
 
@@ -67,6 +68,7 @@ Rectangle {
 
                 font.pixelSize: UI.Theme.fontSizeSmall
                 text: model.description
+                color: "#4c4c4c"
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
             }
