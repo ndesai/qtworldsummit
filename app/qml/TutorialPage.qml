@@ -89,7 +89,7 @@ Rectangle {
         PaginationDots {
             id: paginationDots
 
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.centerIn: parent
 
             view: listViewTutorial
         }
