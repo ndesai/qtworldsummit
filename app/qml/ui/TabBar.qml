@@ -10,7 +10,7 @@ TabBarController {
     tabBarModel: [
         {
             icon : "../img/icon-home.png",
-            sourceComponent: _home
+            sourceComponent: _schedule
         },
         {
             icon : "../img/icon-location.png",

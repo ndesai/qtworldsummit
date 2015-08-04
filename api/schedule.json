@@ -1,0 +1,951 @@
+{
+  "sourceUrl": "http://localhost/2015.json",
+  "lastUpdated": "2015-08-04T06:45:54.119Z",
+  "schedule": [
+    {
+      "day": {
+        "date": {
+          "formatted": "<b>Monday</b>, October 5th"
+        }
+      },
+      "sessions": [
+        {
+          "date": {
+            "plain": {
+              "starting": "9:00",
+              "ending": "18:00"
+            },
+            "formatted": {
+              "12h": "9:00 am to 6:00 pm",
+              "24h": "9:00 to 18:00"
+            }
+          },
+          "tracks": [
+            {
+              "id": 763,
+              "title": "Pre-conference Training: Introduction to QML – also known as Qt Quick",
+              "presenter": {
+                "name": "Trainer",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 765,
+              "title": "Pre-conference Training: Model/View programming in Qt",
+              "presenter": {
+                "name": "Trainer",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 767,
+              "title": "Pre-conference Training: Debugging and Profiling Qt applications",
+              "presenter": {
+                "name": "Trainer",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 770,
+              "title": "Pre-conference Training: Introduction to Multithreaded Programming with Qt",
+              "presenter": {
+                "name": "Trainer",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 771,
+              "title": "Pre-conference Training: Introduction to Modern OpenGL with Qt",
+              "presenter": {
+                "name": "Trainer",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 772,
+              "title": "Pre-conference Training: What&#8217;s new in C++11/C++14? (with a Qt5 focus)",
+              "presenter": {
+                "name": "Trainer",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 773,
+              "title": "Pre-conference Training: Qt for Mobile Platforms &#8211; Android/iOS",
+              "presenter": {
+                "name": "Trainer",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 774,
+              "title": "Pre-conference Training: Introduction to Testing Qt applications with Squish",
+              "presenter": {
+                "name": "Trainer",
+                "company": "KDAB"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": {
+        "date": {
+          "formatted": "<b>Tuesday</b>, October 6th"
+        }
+      },
+      "sessions": [
+        {
+          "date": {
+            "plain": {
+              "starting": "9:00",
+              "ending": "12:00"
+            },
+            "formatted": {
+              "12h": "9:00 am to 12:00 pm",
+              "24h": "9:00 to 12:00"
+            }
+          },
+          "tracks": [
+            {
+              "id": 761,
+              "title": "Keynote presentations",
+              "presenter": {
+                "name": "Speaker to be announced",
+                "company": ""
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "13:00",
+              "ending": "13:30"
+            },
+            "formatted": {
+              "12h": "1:00 pm to 1:30 pm",
+              "24h": "13:00 to 13:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 698,
+              "title": "Qt and Windows 10",
+              "presenter": {
+                "name": "Maurice Kalinowski",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 719,
+              "title": "How Qt Meets the Automotive Technology Requirements of Today, Tomorrow &#038; Beyond",
+              "presenter": {
+                "name": "Petteri Holländer",
+                "company": "The Qt Company"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "13:00",
+              "ending": "14:00"
+            },
+            "formatted": {
+              "12h": "1:00 pm to 2:00 pm",
+              "24h": "13:00 to 14:00"
+            }
+          },
+          "tracks": [
+            {
+              "id": 705,
+              "title": "Choosing the right Embedded Linux platform for your next project",
+              "presenter": {
+                "name": "Laszlo Agocs",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 709,
+              "title": "Introduction to Qt Creator",
+              "presenter": {
+                "name": "Tobias Hunger",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 713,
+              "title": "Wearable sensor platforms using Qt in the medical and sports/fitness industry",
+              "presenter": {
+                "name": "Attila Csipa",
+                "company": "PulseOn oy"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "13:30",
+              "ending": "14:00"
+            },
+            "formatted": {
+              "12h": "1:30 pm to 2:00 pm",
+              "24h": "13:30 to 14:00"
+            }
+          },
+          "tracks": [
+            {
+              "id": 699,
+              "title": "Qt&#8217;s Web Offering &#8211; An Overview",
+              "presenter": {
+                "name": "Allan Jensen",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 714,
+              "title": "How we stopped using the mouse and started drawing molecules with our fingertips: not the usual porting story",
+              "presenter": {
+                "name": "Massimiliano Pippi",
+                "company": "Self employed"
+              }
+            },
+            {
+              "id": 720,
+              "title": "Automotive Session 6 (to be announced)",
+              "presenter": {
+                "name": "Speaker to be announced",
+                "company": ""
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "14:15",
+              "ending": "15:15"
+            },
+            "formatted": {
+              "12h": "2:15 pm to 3:15 pm",
+              "24h": "14:15 to 15:15"
+            }
+          },
+          "tracks": [
+            {
+              "id": 702,
+              "title": "Creating IoT applications with Bluetooth Low Energy and Qt",
+              "presenter": {
+                "name": "Martin Woolley",
+                "company": "Bluetooth SIG"
+              }
+            },
+            {
+              "id": 706,
+              "title": "Qt for Device Creation",
+              "presenter": {
+                "name": "Andy Nichols",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 710,
+              "title": "Getting started with Qt on Android",
+              "presenter": {
+                "name": "BogDan Vatra",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 715,
+              "title": "Behavior Driven GUI Testing of Embedded, Mobile and Desktop Qt HMIs",
+              "presenter": {
+                "name": "Reginald Stadlbauer",
+                "company": "froglogic"
+              }
+            },
+            {
+              "id": 723,
+              "title": "Revolutionizing Automotive with Qt",
+              "presenter": {
+                "name": "Johan Thelin",
+                "company": "Pelagicore"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "14:45",
+              "ending": "15:15"
+            },
+            "formatted": {
+              "12h": "2:45 pm to 3:15 pm",
+              "24h": "14:45 to 15:15"
+            }
+          },
+          "tracks": [
+            {
+              "id": 722,
+              "title": "Automotive Session 7 (to be announced)",
+              "presenter": {
+                "name": "Speaker to be announced",
+                "company": ""
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "16:00",
+              "ending": "16:30"
+            },
+            "formatted": {
+              "12h": "4:00 pm to 4:30 pm",
+              "24h": "16:00 to 16:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 703,
+              "title": "Rising Trends in 3D in user interfaces",
+              "presenter": {
+                "name": "Sami Makkonen",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 707,
+              "title": "The Internet of Things: What Is It And Why Should I Care?",
+              "presenter": {
+                "name": "Jeff Tranter",
+                "company": "Integrated Computer Solutions, Inc."
+              }
+            },
+            {
+              "id": 711,
+              "title": "Basic Networking with Qt",
+              "presenter": {
+                "name": "Markus Goetz",
+                "company": "Woboq GmbH"
+              }
+            },
+            {
+              "id": 716,
+              "title": "How to Develop with Qt for Multiple Screen Resolutions and Increase &#038; Measure your Cross-Platform App Success (Business Strategy Session)",
+              "presenter": {
+                "name": "Christian Feldbacher",
+                "company": "V-Play"
+              }
+            },
+            {
+              "id": 725,
+              "title": "&#8211; In the Driver&#8217;s Seat &#8211; Tech Tales from the Automotive Sector",
+              "presenter": {
+                "name": "Louai Al-Khanji",
+                "company": "The Qt Company"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "16:30",
+              "ending": "17:30"
+            },
+            "formatted": {
+              "12h": "4:30 pm to 5:30 pm",
+              "24h": "16:30 to 17:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 704,
+              "title": "Building Desktop and Embedded Uis with Qt 3D",
+              "presenter": {
+                "name": "Sean Harmer, Dr.",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 708,
+              "title": "Qt for the Internet of Things, where user experience design meets real-time embedded design",
+              "presenter": {
+                "name": "Stephen Olsen",
+                "company": "Wind River"
+              }
+            },
+            {
+              "id": 712,
+              "title": "The 8 mistakes of QtQuick newcomers",
+              "presenter": {
+                "name": "Luca Ottaviano",
+                "company": "Develer Srl"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "16:30",
+              "ending": "17:00"
+            },
+            "formatted": {
+              "12h": "4:30 pm to 5:00 pm",
+              "24h": "16:30 to 17:00"
+            }
+          },
+          "tracks": [
+            {
+              "id": 717,
+              "title": "Effective multi-platform development with Qt Creator, QBS, and QEMU",
+              "presenter": {
+                "name": "Andrew Knight",
+                "company": "Intopalo"
+              }
+            },
+            {
+              "id": 726,
+              "title": "How to Implement an Automotive Infotainment System using Qt Quick",
+              "presenter": {
+                "name": "Dustin Kassman",
+                "company": "Integrated Computer Solutions, Inc."
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "17:00",
+              "ending": "17:30"
+            },
+            "formatted": {
+              "12h": "5:00 pm to 5:30 pm",
+              "24h": "17:00 to 17:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 718,
+              "title": "Qt in IoT context : connected alarm-clock",
+              "presenter": {
+                "name": "Adrien Leravat",
+                "company": "Adeneo Embedded"
+              }
+            },
+            {
+              "id": 727,
+              "title": "Resolving Automotive UI Challenges With an Optimized Qt Implementation",
+              "presenter": {
+                "name": "Grant Courville",
+                "company": "QNX Software Systems"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": {
+        "date": {
+          "formatted": "<b>Wednesday</b>, October 7th"
+        }
+      },
+      "sessions": [
+        {
+          "date": {
+            "plain": {
+              "starting": "9:00",
+              "ending": "10:00"
+            },
+            "formatted": {
+              "12h": "9:00 am to 10:00 am",
+              "24h": "9:00 to 10:00"
+            }
+          },
+          "tracks": [
+            {
+              "id": 728,
+              "title": "Qt Canvas3D &#8211; Presenting the Pipeline",
+              "presenter": {
+                "name": "Pasi Keränen",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 734,
+              "title": "Writing better code with help from Qt and the compiler",
+              "presenter": {
+                "name": "Thiago Macieira",
+                "company": "Intel"
+              }
+            },
+            {
+              "id": 740,
+              "title": "Developing for Windows 10 With Qt",
+              "presenter": {
+                "name": "Maurice Kalinowski",
+                "company": "The Qt Company"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "9:00",
+              "ending": "9:30"
+            },
+            "formatted": {
+              "12h": "9:00 am to 9:30 am",
+              "24h": "9:00 to 9:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 746,
+              "title": "Building Location Analytics and Mapping into Your Apps",
+              "presenter": {
+                "name": "Michael Tims",
+                "company": "ESRI"
+              }
+            },
+            {
+              "id": 752,
+              "title": "Get to know the Qt Installer Framework",
+              "presenter": {
+                "name": "Kai Köhne",
+                "company": "The Qt Company"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "9:00",
+              "ending": "16:30"
+            },
+            "formatted": {
+              "12h": "9:00 am to 4:30 pm",
+              "24h": "9:00 to 16:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 759,
+              "title": "Developer Unconference Track &#038; Lightning Talks",
+              "presenter": {
+                "name": "Speaker to be announced",
+                "company": ""
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "9:30",
+              "ending": "10:00"
+            },
+            "formatted": {
+              "12h": "9:30 am to 10:00 am",
+              "24h": "9:30 to 10:00"
+            }
+          },
+          "tracks": [
+            {
+              "id": 753,
+              "title": "Custom Qt Creator Wizards",
+              "presenter": {
+                "name": "Tobias Hunger",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 780,
+              "title": "QtMozEmbed: Embedding Gecko with Qt 5",
+              "presenter": {
+                "name": "Speaker to be announced",
+                "company": ""
+              }
+            },
+            {
+              "id": 809,
+              "title": "QtMozEmbed: Embedding Gecko with Qt5",
+              "presenter": {
+                "name": "Siteshwar Vashisht & Raine Mäkeläinen",
+                "company": ""
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "10:10",
+              "ending": "11:10"
+            },
+            "formatted": {
+              "12h": "10:10 am to 11:10 am",
+              "24h": "10:10 to 11:10"
+            }
+          },
+          "tracks": [
+            {
+              "id": 729,
+              "title": "Effective Qt",
+              "presenter": {
+                "name": "Marc Mutz",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 735,
+              "title": "Qt for Native Client",
+              "presenter": {
+                "name": "Morten Johan Sørvig",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 741,
+              "title": "Qt on iOS A to Z",
+              "presenter": {
+                "name": "Mike Krus",
+                "company": "KDAB"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "10:10",
+              "ending": "10:40"
+            },
+            "formatted": {
+              "12h": "10:10 am to 10:40 am",
+              "24h": "10:10 to 10:40"
+            }
+          },
+          "tracks": [
+            {
+              "id": 754,
+              "title": "Developing with Qt Location",
+              "presenter": {
+                "name": "Alex Blasche",
+                "company": "The Qt Company"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "10:40",
+              "ending": "11:11"
+            },
+            "formatted": {
+              "12h": "10:40 am to 11:11 am",
+              "24h": "10:40 to 11:11"
+            }
+          },
+          "tracks": [
+            {
+              "id": 747,
+              "title": "The CPU Usage Analyzer for Device Creation",
+              "presenter": {
+                "name": "Ulf Herman",
+                "company": "The Qt Company"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "10:40",
+              "ending": "11:10"
+            },
+            "formatted": {
+              "12h": "10:40 am to 11:10 am",
+              "24h": "10:40 to 11:10"
+            }
+          },
+          "tracks": [
+            {
+              "id": 755,
+              "title": "Among ELFs and DWARFs",
+              "presenter": {
+                "name": "Volker Krause",
+                "company": "KDAB"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "11:30",
+              "ending": "12:30"
+            },
+            "formatted": {
+              "12h": "11:30 am to 12:30 pm",
+              "24h": "11:30 to 12:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 730,
+              "title": "Using the Qt Quick Scene Graph API",
+              "presenter": {
+                "name": "Jocelyn Turcotte",
+                "company": "Woboq GmbH"
+              }
+            },
+            {
+              "id": 736,
+              "title": "Extending Qt on Android apps using JNI",
+              "presenter": {
+                "name": "BogDan Vatra",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 742,
+              "title": "Qt Quick Controls 2",
+              "presenter": {
+                "name": "Gabriel de Dietrich",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 748,
+              "title": "A deep dive into QML memory management internals",
+              "presenter": {
+                "name": "Frank Meerkötter",
+                "company": "basysKom GmbH"
+              }
+            },
+            {
+              "id": 756,
+              "title": "Creating multithreaded applications with Qt",
+              "presenter": {
+                "name": "Bo Thorsen",
+                "company": "Viking Software"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "13:30",
+              "ending": "14:30"
+            },
+            "formatted": {
+              "12h": "1:30 pm to 2:30 pm",
+              "24h": "13:30 to 14:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 731,
+              "title": "How to Develop with Qt for Multiple Screen Resolutions and Increase &#038; Measure your Cross-Platform App Success (In-Depth Tech Session)",
+              "presenter": {
+                "name": "Christian Feldbacher",
+                "company": "V-Play"
+              }
+            },
+            {
+              "id": 737,
+              "title": "Virtual Keyboards for Qt applications",
+              "presenter": {
+                "name": "Tobias König ",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 743,
+              "title": "Integrating OpenGL with Qt Quick 2 applications",
+              "presenter": {
+                "name": "Giuseppe D'Angelo",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 749,
+              "title": "Effective QML",
+              "presenter": {
+                "name": "Thomas McGuire",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 757,
+              "title": "Reactive programming and Qt",
+              "presenter": {
+                "name": "Ivan Čukić",
+                "company": "KDE"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "14:30",
+              "ending": "15:00"
+            },
+            "formatted": {
+              "12h": "2:30 pm to 3:00 pm",
+              "24h": "14:30 to 15:00"
+            }
+          },
+          "tracks": [
+            {
+              "id": 732,
+              "title": "Optimizing Qt Applications",
+              "presenter": {
+                "name": "Milian Wolff",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 738,
+              "title": "Contributing your first patch to the Qt Project",
+              "presenter": {
+                "name": "Thiago Macieira",
+                "company": "Intel"
+              }
+            },
+            {
+              "id": 744,
+              "title": "High-dpi Qt",
+              "presenter": {
+                "name": "Morten Johan Sørvig",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 750,
+              "title": "Are you testing enough? Qt application Quality Insurance.",
+              "presenter": {
+                "name": "Harri Porten",
+                "company": "froglogic"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "14:30",
+              "ending": "15:30"
+            },
+            "formatted": {
+              "12h": "2:30 pm to 3:30 pm",
+              "24h": "14:30 to 15:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 758,
+              "title": "Qt Value Class Design",
+              "presenter": {
+                "name": "Marc Mutz",
+                "company": "KDAB"
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "15:30",
+              "ending": "16:30"
+            },
+            "formatted": {
+              "12h": "3:30 pm to 4:30 pm",
+              "24h": "15:30 to 16:30"
+            }
+          },
+          "tracks": [
+            {
+              "id": 733,
+              "title": "When all goes according to script",
+              "presenter": {
+                "name": "Kevin Krammer",
+                "company": "KDAB"
+              }
+            },
+            {
+              "id": 739,
+              "title": "Using namespace std;",
+              "presenter": {
+                "name": "Olivier Goffart",
+                "company": "Woboq GmbH"
+              }
+            },
+            {
+              "id": 745,
+              "title": "Qt, multimedia, and computer vision &#8211; a great match for Embedded Linux",
+              "presenter": {
+                "name": "Laszlo Agocs",
+                "company": "The Qt Company"
+              }
+            },
+            {
+              "id": 751,
+              "title": "Practical aspects of crash reporting, analytics and connectivity challenges of connected device development",
+              "presenter": {
+                "name": "Attila Csipa",
+                "company": "PulseOn oy"
+              }
+            },
+            {
+              "id": 781,
+              "title": "Building a Web Application Framework with Qt",
+              "presenter": {
+                "name": "Speaker to be announced",
+                "company": ""
+              }
+            }
+          ]
+        },
+        {
+          "date": {
+            "plain": {
+              "starting": "16:30",
+              "ending": "17:00"
+            },
+            "formatted": {
+              "12h": "4:30 pm to 5:00 pm",
+              "24h": "16:30 to 17:00"
+            }
+          },
+          "tracks": [
+            {
+              "id": 760,
+              "title": "Closing Wrap-Up",
+              "presenter": {
+                "name": "Speaker to be announced",
+                "company": ""
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -4,15 +4,20 @@ import QtQuick 2.4
 Item {
     id: root
 
-    property url url: "http://www.qtworldsummit.com/sessionsjson/"
-
     property int status: Loader.Null
+
+    property url url: "http://www.qtworldsummit.com/sessionsjson/"
+    property url urlSchedule: "http://localhost:6066/schedule"
+
+    property var schedule: null
+    property var tracks: null
 
     Component.onCompleted: {
         status = Loader.Loading;
-        webRequest(url, function(response) {
+        webRequest(urlSchedule, function(response) {
             if (response) {
                 console.log(response.length)
+                schedule = response;
                 status = Loader.Ready;
             } else {
                 status = Loader.Error;

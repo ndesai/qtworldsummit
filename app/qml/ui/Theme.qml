@@ -17,6 +17,27 @@ Item {
     property int heightHeader: dp(128)
     property int marginTop: dp(40)
 
+    property int dateViewHeight: dp(100)
+    property int dateViewPixelSize: dp(34)
+
+    property int scheduleViewPixelSize: 36
+    property int scheduleViewTitlePixelSize: 34
+    property int scheduleViewTrackNamePixelSize : 22
+    property int scheduleViewPresenterPixelSize : 30
+
+    property int colorIndicatorWidth: 10
+    property int colorIndicatorBorderWidth: 2
+
+    property int detailPixelSize: 34
+    property int detailTitlePixelSize: 40
+    property int detailAbstractPixelSize: 30
+    property int detailPresenterPixelSize: 36
+
+    property int informationAddressPixelSize: 32
+    property int informationTitlePixelSize: 36
+    property int informationDatePixelSize: 34
+    property int informationVenueDescriptionPixelSize: 28
+
     function dp(value) {
         var factor = $*0.45;
         if (Qt.platform.os === "osx"
