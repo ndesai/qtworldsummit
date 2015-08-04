@@ -14,8 +14,29 @@ QtObject {
 
     property string fontFamily: "Avenir Next"
 
-    property int heightHeader: 128
-    property int marginTop: 40
+    property int heightHeader: dp(128)
+    property int marginTop: dp(40)
+
+    property int dateViewHeight: dp(100)
+    property int dateViewPixelSize: dp(34)
+
+    property int scheduleViewPixelSize: 36
+    property int scheduleViewTitlePixelSize: 34
+    property int scheduleViewTrackNamePixelSize : 22
+    property int scheduleViewPresenterPixelSize : 30
+
+    property int colorIndicatorWidth: 10
+    property int colorIndicatorBorderWidth: 2
+
+    property int detailPixelSize: 34
+    property int detailTitlePixelSize: 40
+    property int detailAbstractPixelSize: 30
+    property int detailPresenterPixelSize: 36
+
+    property int informationAddressPixelSize: 32
+    property int informationTitlePixelSize: 36
+    property int informationDatePixelSize: 34
+    property int informationVenueDescriptionPixelSize: 28
 
     property int paginationDotBaseSize: 30
     property int paginationDotContainerHeight: 56
@@ -30,4 +51,25 @@ QtObject {
     property int fontSizeSmall: 14
     property int fontSizeRegular: 18
     property int fontSizeLarge: 22
+
+    function dp(value) {
+        var factor = $*0.45;
+        if (Qt.platform.os === "osx"
+                || Qt.platform.os === "ios") {
+            return value;
+        }
+        return factor*value;
+    }
+
+    FontLoader {
+        id: _fontLoaderOpenSansRegular
+    }
+
+    FontLoader {
+        id: _fontLoaderOpenSansSemiBold
+    }
+
+    FontLoader {
+        id: _fontLoaderOpenSansBold
+    }
 }

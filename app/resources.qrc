@@ -1,5 +1,30 @@
 <RCC>
     <qresource prefix="/qml">
+        <file>qml/Api.qml</file>
+        <file>qml/Content.qml</file>
+        <file>qml/controls/BaseTabBarPage.qml</file>
+        <file>qml/controls/TabBarButton.qml</file>
+        <file>qml/controls/TabBarController.qml</file>
+        <file>qml/home.qml</file>
+        <file>qml/img/icon-clock-filled.png</file>
+        <file>qml/img/icon-home.png</file>
+        <file>qml/img/icon-information.png</file>
+        <file>qml/img/icon-location.png</file>
+        <file>qml/img/icon-qtloading.gif</file>
+        <file>qml/img/logo-qws.png</file>
+        <file>qml/main_development.qml</file>
+        <file>qml/main_ios.qml</file>
+        <file>qml/ui/Header.qml</file>
+        <file>qml/ui/RightNowIcon.qml</file>
+        <file>qml/ui/Schedule.qml</file>
+        <file>qml/ui/TabBar.qml</file>
+        <file>qml/ui/Theme.qml</file>
+        <file>qml/ui/Viewport.qml</file>
+        <file>qml/utils/BaseButtonTheme.qml</file>
+        <file>qml/utils/Fill.qml</file>
+        <file>qml/ui/SingleDayDelegate.qml</file>
+        <file>qml/ui/SingleSessionDelegate.qml</file>
+        <file>qml/ui/SingleTrackDelegate.qml</file>
         <file>qml/+devel/main.qml</file>
         <file>qml/Api.qml</file>
         <file>qml/Content.qml</file>
@@ -37,6 +62,9 @@
         <file>qml/HttpRequest.qml</file>
     </qresource>
     <qresource prefix="/images">
+        <file alias="bg.jpg">resources/images/bg.jpg</file>
+        <file alias="card.png">resources/images/card.png</file>
+        <file alias="triangular.png">resources/images/triangular.png</file>
         <file alias="berlin">resources/images/tutorial/berlin.svg</file>
         <file alias="card.png">resources/images/card.png</file>
         <file alias="favorite.svg">resources/images/favorite.svg</file>

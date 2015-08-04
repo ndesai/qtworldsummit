@@ -11,16 +11,12 @@ Rectangle {
         anchors.right: parent.right
         anchors.bottom: _tabBarController.top
 
-        BaseTabBarPage {
-            id: _home
+        Schedule {
+            id: _schedule
             controller: _tabBarController
-
-            Rectangle {
-                anchors.fill: parent
-                color: "red"
-            }
         }
 
+        // TODO: ND - Location.qml
         BaseTabBarPage {
             id: _location
             controller: _tabBarController
@@ -31,6 +27,7 @@ Rectangle {
             }
         }
 
+        // TODO: ND - Information.qml
         BaseTabBarPage {
             id: _information
             controller: _tabBarController
