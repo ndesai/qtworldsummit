@@ -1,0 +1,11 @@
+{
+  "name": "qtworldsummit-api",
+  "description": "",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "latest",
+    "redis" : "latest",
+    "request" : "latest"
+  }
+}
