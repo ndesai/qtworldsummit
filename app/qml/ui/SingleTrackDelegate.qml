@@ -4,8 +4,8 @@ import "../utils" as Utils
 Rectangle {
     id: _Rectangle_Track
     property variant dataModel : modelData
-    property variant trackDetail : _Model.legend[_Rectangle_Track.dataModel.track] || { }
-    property bool isFavorite : _Model.favoritesModelContainsTrack(_Rectangle_Track.dataModel.id)
+    property var trackDetail : { "color" : "#2299FF" }//_Model.legend[_Rectangle_Track.dataModel.track] || { }
+    property bool isFavorite : Math.floor(Math.random()*12)%2===0
     height: Math.max(80, _Column_TrackInformation.height + 30)
     width: _Column_Tracks.width
     color: _ClickGuard_Track.pressed ? "#dddddd" : "#ffffff"
@@ -19,7 +19,7 @@ Rectangle {
         anchors.bottomMargin: 20
         anchors.left: parent.left
         anchors.leftMargin: 20
-        color: _Rectangle_Track.trackDetail.color || __theme.qtColorLightGreen
+        color: _Rectangle_Track.trackDetail.color || __theme.colorQtMediumGreen
         radius: 5
         Rectangle {
             radius: parent.radius
@@ -125,7 +125,7 @@ Rectangle {
     }
 
     Utils.AccentBottom {
-        color: __theme.lightGreyAccent
+        color: __theme.colorLightGreyAccent
         visible: index<_Repeater_Tracks.count-1
     }
     Utils.Fill { color: index%2===0?"yellow":"red" }

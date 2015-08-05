@@ -2,7 +2,7 @@ var request = require("request");
 var fs = require('fs');
 
 var base = {
-	sourceUrl: "http://localhost/2015.json",
+	sourceUrl: "http://www.qtworldsummit.com/sessionsjson/", //http://localhost/2015.json",
 	lastUpdated: new Date(),
 	schedule: [],
 	__scheduleMap: {},
@@ -19,8 +19,8 @@ var daysToDateMap = {
 		"Wednesday" : new Date(2015, 9, 7)
 	}
 
-	request(base.sourceUrl, function(error, response, body) {
-		var doc = JSON.parse(body);
+	request({ url: base.sourceUrl, json: true }, function(error, response, body) {
+		var doc = body;
 		for (var i = 0; i < doc.length; i++) {
 			var session = doc[i];
 			if (!base.__scheduleMap[session.session_day]) {
@@ -112,11 +112,9 @@ function __formatMilitaryTime(time) {
 					detail[e.session_id] = e;
 					return {
 						"id" : e.session_id,
-						"title" : e.session_title,
-						"presenter" : {
-							"name" : e.session_speaker_name,
-							"company" : e.session_speaker_company
-						}
+						"title" : decodeURIComponent(e.session_title),
+						"location" : (e.session_room || "").toUpperCase(),
+						"presenter" : [e.session_speaker_name, e.session_speaker_company].filter(Boolean).join(", ")
 					}
 				})
 			}

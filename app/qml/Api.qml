@@ -36,7 +36,6 @@ Item {
                     response = JSON.parse(request.responseText);
                 } else {
                     console.log("Server: " + request.status + "- " + request.statusText);
-                    apiStatus = Loader.Error
                     response = ""
                 }
                 callback(response, request, requestUrl)
