@@ -20,7 +20,7 @@
         <file>qml/IntroView.qml</file>
         <file>qml/Label.qml</file>
         <file>qml/main.qml</file>
-        <file>qml/main_development.qml</file>
+        <file>qml/main_android.qml</file>
         <file>qml/main_ios.qml</file>
         <file>qml/MainPage.qml</file>
         <file>qml/PaginationDots.qml</file>
