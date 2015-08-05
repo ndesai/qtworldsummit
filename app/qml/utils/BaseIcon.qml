@@ -5,7 +5,7 @@ Item {
     property alias source: _Image.source
     property alias color : _ColorOverlay.color
 //    anchors.centerIn: parent
-    width: 44
+    width: __theme.dp(44)
     height: _Image.height
     layer.smooth: true
     layer.enabled: true
