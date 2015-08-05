@@ -7,7 +7,7 @@ import "utils" as Utils
 Viewport {
     id: root
 
-    property Theme __theme: Theme { }
+    property Theme __theme: Theme { id: theme }
     property Api __api: Api { }
 
     width: 1080

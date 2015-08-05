@@ -123,6 +123,20 @@ Utils.BaseWindow {
                     _itemLoaderContainer.largePhone ^= 1
                 }
             }
+
+            Controls.Slider {
+                value: $
+                stepSize: 1
+                minimumValue: $ / 2
+                maximumValue: 3 * $
+                onValueChanged: {
+                    console.log("value = " + value)
+                    if (_Loader_Android.item) {
+                        _Loader_Android.item.__theme.simulateDp = true;
+                        _Loader_Android.item.__theme.simulatedDp = value;
+                    }
+                }
+            }
         }
     }
 }

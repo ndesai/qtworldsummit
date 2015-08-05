@@ -20,23 +20,26 @@ QtObject {
     property int dateViewHeight: dp(100)
     property int dateViewPixelSize: dp(34)
 
-    property int scheduleViewPixelSize: 36
-    property int scheduleViewTitlePixelSize: 34
-    property int scheduleViewTrackNamePixelSize : 22
-    property int scheduleViewPresenterPixelSize : 30
+    property int scheduleViewPixelSize: dp(36)
+    property int scheduleViewTitlePixelSize: dp(34)
+    property int scheduleViewTrackNamePixelSize : dp(22)
+    property int scheduleViewPresenterPixelSize : dp(30)
 
-    property int colorIndicatorWidth: 10
-    property int colorIndicatorBorderWidth: 2
+    property int colorIndicatorWidth: dp(10)
+    property int colorIndicatorBorderWidth: dp(2)
 
-    property int detailPixelSize: 34
-    property int detailTitlePixelSize: 40
-    property int detailAbstractPixelSize: 30
-    property int detailPresenterPixelSize: 36
+    property int detailPixelSize: dp(34)
+    property int detailTitlePixelSize: dp(40)
+    property int detailAbstractPixelSize: dp(30)
+    property int detailPresenterPixelSize: dp(36)
 
-    property int informationAddressPixelSize: 32
-    property int informationTitlePixelSize: 36
-    property int informationDatePixelSize: 34
-    property int informationVenueDescriptionPixelSize: 28
+    property int informationAddressPixelSize: dp(32)
+    property int informationTitlePixelSize: dp(36)
+    property int informationDatePixelSize: dp(34)
+    property int informationVenueDescriptionPixelSize: dp(28)
+
+    property bool simulateDp: false
+    property double simulatedDp: $
 
     property int paginationDotBaseSize: 30
     property int paginationDotContainerHeight: 56
@@ -53,9 +56,10 @@ QtObject {
     property int fontSizeLarge: 22
 
     function dp(value) {
-        var factor = $*0.45;
-        if (Qt.platform.os === "osx"
-                || Qt.platform.os === "ios") {
+        var _dp = simulateDp ? simulatedDp : $
+        var factor = _dp*0.45;
+        if ((Qt.platform.os === "osx"
+                || Qt.platform.os === "ios") && !simulateDp) {
             return value;
         }
         return factor*value;

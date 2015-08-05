@@ -9,14 +9,14 @@ Item {
     height: _Rectangle_SessionTime.height + _Column_Tracks.height
     Rectangle {
         id: _Rectangle_SessionTime
-        width: parent.width - 2
-        height: 80
+        width: parent.width - __theme.dp(2)
+        height: __theme.dp(80)
         color: __theme.colorLightGrey
         Label {
             anchors.left: parent.left
-            anchors.leftMargin: 30
+            anchors.leftMargin: __theme.dp(30)
             anchors.right: _RightNowIcon.state !== "hidden" ? _RightNowIcon.left : parent.right
-            anchors.rightMargin: _RightNowIcon.state !== "hidden" ? 20 : 30
+            anchors.rightMargin: _RightNowIcon.state !== "hidden" ? __theme.dp(20) : __theme.dp(30)
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             verticalAlignment: Text.AlignVCenter
@@ -33,7 +33,7 @@ Item {
             property bool isRightNow : false/*_Model.date_isRightNow(_Item_ScheduleDelegate.dataModel.date.plain.starting,
                                                               _Item_ScheduleDelegate.dataModel.date.plain.ending)*/
             anchors.right: parent.right
-            anchors.rightMargin: 30
+            anchors.rightMargin: __theme.dp(30)
             skeleton: true
             state: "hidden"
             states: [

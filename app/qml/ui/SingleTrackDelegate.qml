@@ -6,7 +6,7 @@ Rectangle {
     property variant dataModel : modelData
     property var trackDetail : { "color" : "#2299FF" }//_Model.legend[_Rectangle_Track.dataModel.track] || { }
     property bool isFavorite : Math.floor(Math.random()*12)%2===0
-    height: Math.max(80, _Column_TrackInformation.height + 30)
+    height: Math.max(__theme.dp(80), _Column_TrackInformation.height + __theme.dp(30))
     width: _Column_Tracks.width
     color: _ClickGuard_Track.pressed ? "#dddddd" : "#ffffff"
 
@@ -14,13 +14,13 @@ Rectangle {
         id: _Rectangle_TrackColor
         width: __theme.colorIndicatorWidth
         anchors.top: parent.top
-        anchors.topMargin: 20
+        anchors.topMargin: __theme.dp(20)
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 20
+        anchors.bottomMargin: __theme.dp(20)
         anchors.left: parent.left
-        anchors.leftMargin: 20
+        anchors.leftMargin: __theme.dp(20)
         color: _Rectangle_Track.trackDetail.color || __theme.colorQtMediumGreen
-        radius: 5
+        radius: __theme.dp(5)
         Rectangle {
             radius: parent.radius
             anchors.fill: parent
@@ -33,8 +33,8 @@ Rectangle {
         id: _Column_TrackInformation
         anchors.left: _Rectangle_TrackColor.right
         anchors.right: _BaseIcon_Favorite.left
-        anchors.leftMargin: 20
-        anchors.rightMargin: 20
+        anchors.leftMargin: __theme.dp(20)
+        anchors.rightMargin: __theme.dp(20)
         anchors.verticalCenter: parent.verticalCenter
 
         Label {
@@ -50,7 +50,7 @@ Rectangle {
             font.letterSpacing: 2.0
             text: (_Rectangle_Track.trackDetail.name || "")
         }
-        Utils.VerticalSpacer { height: 6; visible: _Label_TrackLocation.visible }
+        Utils.VerticalSpacer { height: __theme.dp(6); visible: _Label_TrackLocation.visible }
         Label {
             id: _Label_TrackTitle
             anchors.left: parent.left
@@ -60,7 +60,7 @@ Rectangle {
             text: _Rectangle_Track.dataModel.title
             Utils.Fill { color: index%2===0?"blue":"green" }
         }
-        Utils.VerticalSpacer { height: 4; visible: _Label_TrackPresenter.visible }
+        Utils.VerticalSpacer { height: __theme.dp(4); visible: _Label_TrackPresenter.visible }
         Label {
             id: _Label_TrackPresenter
             anchors.left: parent.left
@@ -72,12 +72,12 @@ Rectangle {
             color: "#525252"
             font.italic: true
         }
-        Utils.VerticalSpacer { height: 4; visible: _Label_TrackLocation.visible }
+        Utils.VerticalSpacer { height: __theme.dp(4); visible: _Label_TrackLocation.visible }
         Label {
             id: _Label_TrackLocation
             anchors.left: parent.left
             anchors.right: parent.right
-            font.pixelSize: 28
+            font.pixelSize: __theme.dp(28)
             wrapMode: Text.WordWrap
             visible: text !== ""
             text: _Rectangle_Track.dataModel.location
@@ -89,7 +89,7 @@ Rectangle {
         id: _BaseIcon_Favorite
         anchors.centerIn: undefined
         anchors.right: parent.right
-        anchors.rightMargin: 30
+        anchors.rightMargin: __theme.dp(30)
         anchors.top: _Column_TrackInformation.top
         color: __theme.colorQtGreen
         source: "../img/icon-bookmark-hl.png"

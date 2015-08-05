@@ -68,7 +68,7 @@ BaseTabBarPage {
             highlightRangeMode: ListView.StrictlyEnforceRange
             preferredHighlightBegin: ((width - delegateWidth) / 2)
             preferredHighlightEnd: preferredHighlightBegin + delegateWidth
-            highlightMoveDuration: 400
+            highlightMoveDuration: __theme.dp(400)
 
             onCurrentIndexChanged: {
                 _ListView_ScheduleView.currentIndex = currentIndex
@@ -89,8 +89,8 @@ BaseTabBarPage {
                     height: _Rectangle_DateView.height
                     Label {
                         anchors.fill: parent
-                        anchors.margins: 15
-                        anchors.topMargin: 18
+                        anchors.margins: __theme.dp(15)
+                        anchors.topMargin: __theme.dp(18)
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         text: modelData.day.date.formatted
@@ -107,7 +107,7 @@ BaseTabBarPage {
         }
         Rectangle {
             width: parent.width
-            height: 2
+            height: __theme.dp(2)
             anchors.bottom: parent.bottom
             color: __theme.colorQtMediumGreen
             //opacity: _Item_Delegate.ListView.isCurrentItem ? 1 : 0
@@ -129,7 +129,7 @@ BaseTabBarPage {
         snapMode: ListView.SnapOneItem
         highlightRangeMode: ListView.StrictlyEnforceRange
         preferredHighlightBegin: 0
-        preferredHighlightEnd: 1*width
+        preferredHighlightEnd: width
         highlightMoveDuration: _ListView_DateView.highlightMoveDuration
         cacheBuffer: 2*width*count
 
