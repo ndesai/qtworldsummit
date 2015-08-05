@@ -1,6 +1,8 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2 as Controls
 import QtQuick.Window 2.0
+import QtWorldSummit 1.5
+
 import "utils" as Utils
 
 Utils.BaseWindow {
@@ -125,10 +127,10 @@ Utils.BaseWindow {
             }
 
             Controls.Slider {
-                value: $
+                value: ScreenValues.dpi
                 stepSize: 1
-                minimumValue: $ / 2
-                maximumValue: 3 * $
+                minimumValue: ScreenValues.dpi / 2
+                maximumValue: 3 * ScreenValues.dpi
                 onValueChanged: {
                     console.log("value = " + value)
                     if (_Loader_Android.item) {

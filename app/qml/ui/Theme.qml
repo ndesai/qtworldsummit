@@ -1,11 +1,15 @@
 pragma Singleton
 import QtQuick 2.5
+import QtWorldSummit 1.5
 
-QtObject {
+Item {
+    id: root
+
     property color activeTabColor: "#81c343"
     property color unactiveTabColor: "#f3f3f3"
     property color toolBarColor: "#ffffff"
     property color toolBarTextColor: "#bdbebf"
+
     property color colorQtGreen: "#81C343"
     property color colorLightGrey: "#f3f3f3"
     property color colorLightGreyAccent: "#d1d1d0"
@@ -39,7 +43,7 @@ QtObject {
     property int informationVenueDescriptionPixelSize: dp(28)
 
     property bool simulateDp: false
-    property double simulatedDp: $
+    property double simulatedDp: ScreenValues.dpi
 
     property int paginationDotBaseSize: 30
     property int paginationDotContainerHeight: 56
@@ -56,7 +60,7 @@ QtObject {
     property int fontSizeLarge: 22
 
     function dp(value) {
-        var _dp = simulateDp ? simulatedDp : $
+        var _dp = simulateDp ? simulatedDp : ScreenValues.dpi
         var factor = _dp*0.45;
         if ((Qt.platform.os === "osx"
                 || Qt.platform.os === "ios") && !simulateDp) {
