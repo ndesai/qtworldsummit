@@ -7,7 +7,7 @@ Utils.BaseWindow {
     id: superRoot
 
     visible: true
-    width: 600
+    width: 1366
     height: 900
     color: "#000000"
 
@@ -54,6 +54,46 @@ Utils.BaseWindow {
                         PropertyChanges {
                             target: _Loader_iOS
                             transform: _Scale_iOS
+                        }
+                    }
+                ]
+            }
+        }
+
+        Item {
+            id: _itemLoaderContainer1080p
+            anchors.left: _itemLoaderContainer.right
+            anchors.leftMargin: 100
+
+            property double scaleFactor: 1 / 2.5
+
+            width: 1080 * scaleFactor
+            height: 1920 * scaleFactor
+
+            Loader {
+                id: _Loader_Android
+
+                anchors.left: parent.left;
+                anchors.top: parent.top
+                width: 1080
+                height:1920
+
+                source: "home.qml"
+                clip: true
+
+                Scale {
+                    id: _Scale_Android
+                    xScale: yScale; yScale: _itemLoaderContainer1080p.scaleFactor
+                    origin.x: 0; origin.y: 0
+                }
+
+                state: "scaled"
+                states: [
+                    State {
+                        name: "scaled"
+                        PropertyChanges {
+                            target: _Loader_Android
+                            transform: _Scale_Android
                         }
                     }
                 ]
