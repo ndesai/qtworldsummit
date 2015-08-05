@@ -43,7 +43,6 @@ int main(int argc, char *argv[])
     mainQml = "qrc:/qml/qml/simfinger.qml";
 #endif
 
-    engine.rootContext()->setContextProperty("$", QVariant::fromValue(dpi));
     engine.load(QUrl(mainQml));
 
     return app.exec();

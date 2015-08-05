@@ -1,4 +1,5 @@
 import QtQuick 2.4
+import QtWorldSummit 1.5
 
 Item {
     id: root
@@ -39,10 +40,10 @@ Item {
     property int informationVenueDescriptionPixelSize: dp(28)
 
     property bool simulateDp: false
-    property double simulatedDp: $
+    property double simulatedDp: ScreenValues.dpi
 
     function dp(value) {
-        var _dp = simulateDp ? simulatedDp : $
+        var _dp = simulateDp ? simulatedDp : ScreenValues.dpi
         var factor = _dp*0.45;
         if ((Qt.platform.os === "osx"
                 || Qt.platform.os === "ios") && !simulateDp) {
