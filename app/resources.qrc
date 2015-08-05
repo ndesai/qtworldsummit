@@ -1,31 +1,5 @@
 <RCC>
-<<<<<<< HEAD
     <qresource prefix="/qml">
-        <file>qml/Api.qml</file>
-        <file>qml/Content.qml</file>
-        <file>qml/controls/BaseTabBarPage.qml</file>
-        <file>qml/controls/TabBarButton.qml</file>
-        <file>qml/controls/TabBarController.qml</file>
-        <file>qml/home.qml</file>
-        <file>qml/img/icon-clock-filled.png</file>
-        <file>qml/img/icon-home.png</file>
-        <file>qml/img/icon-information.png</file>
-        <file>qml/img/icon-location.png</file>
-        <file>qml/img/icon-qtloading.gif</file>
-        <file>qml/img/logo-qws.png</file>
-        <file>qml/main_development.qml</file>
-        <file>qml/main_ios.qml</file>
-        <file>qml/ui/Header.qml</file>
-        <file>qml/ui/RightNowIcon.qml</file>
-        <file>qml/ui/Schedule.qml</file>
-        <file>qml/ui/TabBar.qml</file>
-        <file>qml/ui/Theme.qml</file>
-        <file>qml/ui/Viewport.qml</file>
-        <file>qml/utils/BaseButtonTheme.qml</file>
-        <file>qml/utils/Fill.qml</file>
-        <file>qml/ui/SingleDayDelegate.qml</file>
-        <file>qml/ui/SingleSessionDelegate.qml</file>
-        <file>qml/ui/SingleTrackDelegate.qml</file>
         <file>qml/+devel/main.qml</file>
         <file>qml/Api.qml</file>
         <file>qml/Content.qml</file>
@@ -33,6 +7,10 @@
         <file>qml/controls/TabBarButton.qml</file>
         <file>qml/controls/TabBarController.qml</file>
         <file>qml/home.qml</file>
+        <file>qml/HttpRequest.qml</file>
+        <file>qml/img/floorplan-bcc.png</file>
+        <file>qml/img/icon-bookmark-hl.png</file>
+        <file>qml/img/icon-bookmark.png</file>
         <file>qml/img/icon-clock-filled.png</file>
         <file>qml/img/icon-home.png</file>
         <file>qml/img/icon-information.png</file>
@@ -42,6 +20,7 @@
         <file>qml/IntroView.qml</file>
         <file>qml/Label.qml</file>
         <file>qml/main.qml</file>
+        <file>qml/main_development.qml</file>
         <file>qml/main_ios.qml</file>
         <file>qml/MainPage.qml</file>
         <file>qml/PaginationDots.qml</file>
@@ -53,34 +32,8 @@
         <file>qml/ui/+ios/qmldir</file>
         <file>qml/ui/+ios/Theme.qml</file>
         <file>qml/ui/Header.qml</file>
+        <file>qml/ui/Location.qml</file>
         <file>qml/ui/qmldir</file>
-        <file>qml/ui/RightNowIcon.qml</file>
-        <file>qml/ui/TabBar.qml</file>
-        <file>qml/ui/Theme.qml</file>
-        <file>qml/ui/Viewport.qml</file>
-        <file>qml/utils/BaseButtonTheme.qml</file>
-        <file>qml/utils/Fill.qml</file>
-        <file>qml/HttpRequest.qml</file>
-        <file>qml/Api.qml</file>
-        <file>qml/Content.qml</file>
-        <file>qml/controls/BaseTabBarPage.qml</file>
-        <file>qml/controls/TabBarButton.qml</file>
-        <file>qml/controls/TabBarController.qml</file>
-        <file>qml/dev.qml</file>
-        <file>qml/home.qml</file>
-        <file>qml/img/icon-bookmark-hl.png</file>
-        <file>qml/img/icon-bookmark.png</file>
-        <file>qml/img/icon-clock-filled.png</file>
-        <file>qml/img/icon-home.png</file>
-        <file>qml/img/icon-information.png</file>
-        <file>qml/img/icon-location.png</file>
-        <file>qml/img/icon-qtloading.gif</file>
-        <file>qml/img/logo-qws.png</file>
-        <file>qml/main_android.qml</file>
-        <file>qml/main_development.qml</file>
-        <file>qml/main_ios.qml</file>
-        <file>qml/ui/Header.qml</file>
-        <file>qml/ui/Label.qml</file>
         <file>qml/ui/RightNowIcon.qml</file>
         <file>qml/ui/Schedule.qml</file>
         <file>qml/ui/SingleDayDelegate.qml</file>
@@ -89,19 +42,9 @@
         <file>qml/ui/TabBar.qml</file>
         <file>qml/ui/Theme.qml</file>
         <file>qml/ui/Viewport.qml</file>
-        <file>qml/utils/AccentBottom.qml</file>
-        <file>qml/utils/AccentLeft.qml</file>
-        <file>qml/utils/AccentRight.qml</file>
-        <file>qml/utils/AccentTop.qml</file>
         <file>qml/utils/BaseButtonTheme.qml</file>
-        <file>qml/utils/BaseIcon.qml</file>
-        <file>qml/utils/BaseWindow.qml</file>
-        <file>qml/utils/ClickGuard.qml</file>
         <file>qml/utils/Fill.qml</file>
-        <file>qml/utils/GestureArea.qml</file>
-        <file>qml/utils/HorizontalSpacer.qml</file>
-        <file>qml/utils/SafeLoader.qml</file>
-        <file>qml/utils/VerticalSpacer.qml</file>
+        <file>qml/Api.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="bg.jpg">resources/images/bg.jpg</file>
