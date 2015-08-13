@@ -11,6 +11,7 @@ QtObject {
 
     property int paginationDotBaseSize: 30
     property int paginationDotContainerHeight: 50
+    property int dividerHeight: 1
     property int tabHeight: 98*0.5
     property int toolBarHeight: 56
     property int tutorialTitleFontSize: 34

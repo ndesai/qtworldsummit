@@ -11,7 +11,8 @@ QtObject {
     property string fontFamily: "Roboto"
 
     property int paginationDotBaseSize: 14 * ScreenValues.dp
-    property int paginationDotContainerHeight: 50 * ScreenValues.dp
+    property int paginationDotContainerHeight: 57 * ScreenValues.dp
+    property int dividerHeight: 1 * ScreenValues.dp
     property int tabHeight: 38 * ScreenValues.dp
     property int toolBarHeight: 56 * ScreenValues.dp
     property int tutorialTitleFontSize: 28 * ScreenValues.dp

@@ -8,107 +8,45 @@ Rectangle {
 
     signal skipTutorial
 
-    Label {
-        id: labelTitle
+    IntroView {
+        id: introView
 
-        anchors {
-            top: parent.top; topMargin: UI.Theme.tutorialTitleMargins
-            left: parent.left; leftMargin: UI.Theme.tutorialTitleMargins
-            right: parent.right; rightMargin: UI.Theme.tutorialTitleMargins
-        }
+        anchors.fill: parent
 
-        font {
-            pixelSize: UI.Theme.tutorialTitleFontSize
-            weight: Font.Light
-        }
-
-        wrapMode: Text.WordWrap
-        horizontalAlignment: Text.AlignHCenter
-        lineHeight: 0.85
-        color: "#2d2d2d"
-        text: qsTr("Welcome to Qt DevDays '15")
-    }
-
-    ListView {
-        id: listViewTutorial
-
-        anchors {
-            top: labelTitle.bottom
-            bottom: parent.bottom
-            left: parent.left
-            right: parent.right
-        }
-
-        clip: true
-        orientation: ListView.Horizontal
-
-        snapMode: ListView.SnapToItem
-
-        highlightRangeMode: ListView.StrictlyEnforceRange
-
-        model: ListModel {
-            ListElement { description: "This schedule view allows you to quickly glance at all available sessions.\nSwipe left and right to navigate between days." }
-            ListElement { description: "The session detail page can be accessed by clicking the session in the schedule view. This page describes the session in more detail. \n You can also bookmark this session using the ribbon on the top right of the page." }
-            ListElement { description: "The session detail page can also present a short biography of each presenter - including their accomplishments and contributions to the Qt community." }
-            ListElement { description: "We are open source! go to http://github.com/ndesai/qtworldsummit to get the source code, submit your pull request to contribute!" }
-        }
+        buttonsContainerHeight: UI.Theme.paginationDotContainerHeight
+        rectangleDividerHeight: UI.Theme
 
         delegate: Item {
-            width: ListView.view.width
-            height: ListView.view.height
+            height: introView.view.height
+            width: introView.view.width
 
             Label {
+                id: labelTitle
+
                 anchors {
-                    left: parent.left
-                    right: parent.right
-                    top: parent.top
-
-                    margins: UI.Theme.tutorialContentMargin
+                    top: parent.top; topMargin: UI.Theme.tutorialTitleMargins
+                    left: parent.left; leftMargin: UI.Theme.tutorialTitleMargins
+                    right: parent.right; rightMargin: UI.Theme.tutorialTitleMargins
                 }
 
-                font.pixelSize: UI.Theme.fontSizeSmall
-                text: model.description
-                color: "#4c4c4c"
-                wrapMode: Text.Wrap
+                font {
+                    pixelSize: UI.Theme.tutorialTitleFontSize
+                    weight: Font.Light
+                }
+
+                wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
+                lineHeight: 0.85
+                color: model.titleColor
+                text: model.title
             }
         }
-    }
 
-    Rectangle {
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-        }
-
-        color: "#eef3f3f3"
-
-        height: UI.Theme.paginationDotContainerHeight
-
-        PaginationDots {
-            id: paginationDots
-
-            anchors.centerIn: parent
-
-            view: listViewTutorial
-        }
-
-        Button {
-            anchors {
-                right: parent.right
-                verticalCenter: parent.verticalCenter
-            }
-
-            text: "Skip"
-
-            style: ButtonStyle {
-                background: Rectangle {
-                    color: "#34db98"
-                }
-            }
-
-            onClicked: root.skipTutorial()
+        model: ListModel {
+            ListElement { backgroundColor: "#2c3e50"; titleColor: "#ecf0f1"; title: qsTr("Welcome to Qt DevDays '15"); description: "This schedule view allows you to quickly glance at all available sessions.\nSwipe left and right to navigate between days." }
+            ListElement { backgroundColor: "#e74c3c"; titleColor: "#ecf0f1"; title: qsTr("Welcome to Qt DevDays '15"); description: "The session detail page can be accessed by clicking the session in the schedule view. This page describes the session in more detail. \n You can also bookmark this session using the ribbon on the top right of the page." }
+            ListElement { backgroundColor: "#f1c40f"; titleColor: "#2d2d2d"; title: qsTr("Welcome to Qt DevDays '15"); description: "The session detail page can also present a short biography of each presenter - including their accomplishments and contributions to the Qt community." }
+            ListElement { backgroundColor: "#ecf0f1"; titleColor: "#2d2d2d"; title: qsTr("We are open source"); description: "go to http://github.com/ndesai/qtworldsummit to get the source code, submit your pull request to contribute!" }
         }
     }
 }

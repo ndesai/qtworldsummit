@@ -1,32 +1,32 @@
 <RCC>
-	<qresource prefix="/qml">
-		<file>qml/HttpRequest.qml</file>
-		<file>qml/Label.qml</file>
-		<file>qml/main.qml</file>
-		<file>qml/main_development.qml</file>
-		<file>qml/MainPage.qml</file>
-		<file>qml/PaginationDots.qml</file>
-		<file>qml/TabButtonStyle.qml</file>
-		<file>qml/ToolBar.qml</file>
-		<file>qml/TutorialPage.qml</file>
-		<file>qml/ui/+android/qmldir</file>
-		<file>qml/ui/+android/Theme.qml</file>
-		<file>qml/ui/+ios/qmldir</file>
-		<file>qml/ui/+ios/Theme.qml</file>
-		<file>qml/ui/qmldir</file>
-		<file>qml/ui/Theme.qml</file>
-	</qresource>
-	<qresource prefix="/images">
-		<file alias="bg.jpg">resources/images/bg.jpg</file>
-		<file alias="card.png">resources/images/card.png</file>
-		<file alias="favorite.svg">resources/images/favorite.svg</file>
-		<file alias="home.svg">resources/images/home.svg</file>
-		<file alias="home_active.svg">resources/images/home_active.svg</file>
-		<file alias="info.svg">resources/images/info.svg</file>
-		<file alias="info_active.svg">resources/images/info_active.svg</file>
-		<file alias="location.svg">resources/images/location.svg</file>
-		<file alias="location_active.svg">resources/images/location_active.svg</file>
-		<file alias="qt_preloader.gif">resources/images/qt_preloader.gif</file>
-		<file alias="triangular.png">resources/images/triangular.png</file>
-	</qresource>
+    <qresource prefix="/qml">
+        <file>qml/HttpRequest.qml</file>
+        <file>qml/Label.qml</file>
+        <file>qml/main.qml</file>
+        <file>qml/MainPage.qml</file>
+        <file>qml/PaginationDots.qml</file>
+        <file>qml/TabButtonStyle.qml</file>
+        <file>qml/ToolBar.qml</file>
+        <file>qml/TutorialPage.qml</file>
+        <file>qml/ui/+android/qmldir</file>
+        <file>qml/ui/+android/Theme.qml</file>
+        <file>qml/ui/+ios/qmldir</file>
+        <file>qml/ui/+ios/Theme.qml</file>
+        <file>qml/ui/qmldir</file>
+        <file>qml/ui/Theme.qml</file>
+        <file>qml/IntroView.qml</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="bg.jpg">resources/images/bg.jpg</file>
+        <file alias="card.png">resources/images/card.png</file>
+        <file alias="favorite.svg">resources/images/favorite.svg</file>
+        <file alias="home.svg">resources/images/home.svg</file>
+        <file alias="home_active.svg">resources/images/home_active.svg</file>
+        <file alias="info.svg">resources/images/info.svg</file>
+        <file alias="info_active.svg">resources/images/info_active.svg</file>
+        <file alias="location.svg">resources/images/location.svg</file>
+        <file alias="location_active.svg">resources/images/location_active.svg</file>
+        <file alias="qt_preloader.gif">resources/images/qt_preloader.gif</file>
+        <file alias="triangular.png">resources/images/triangular.png</file>
+    </qresource>
 </RCC>
