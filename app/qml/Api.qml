@@ -7,7 +7,7 @@ Item {
     property int status: Loader.Null
 
     property url url: "http://www.qtworldsummit.com/sessionsjson/"
-    property url urlSchedule: "http://localhost:6066/schedule"
+    property url urlSchedule: "http://api.app.st/qws15/schedule"
 
     property var schedule: null
     property var tracks: null
