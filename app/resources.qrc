@@ -15,6 +15,7 @@
         <file>qml/ui/qmldir</file>
         <file>qml/ui/Theme.qml</file>
         <file>qml/IntroView.qml</file>
+        <file>qml/+devel/main.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="bg.jpg">resources/images/bg.jpg</file>

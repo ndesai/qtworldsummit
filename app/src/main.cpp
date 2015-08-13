@@ -23,6 +23,11 @@ int main(int argc, char *argv[])
 
     QStringList extraSelectors;
 
+    bool devel = false;
+
+    if (devel)
+        extraSelectors << "devel";
+
 #ifdef Q_OS_ANDROID
     ScreenValues *sv = new ScreenValues();
 

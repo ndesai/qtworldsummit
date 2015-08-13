@@ -14,7 +14,7 @@ Rectangle {
         anchors.fill: parent
 
         buttonsContainerHeight: UI.Theme.paginationDotContainerHeight
-        rectangleDividerHeight: UI.Theme
+        rectangleDividerHeight: UI.Theme.dividerHeight
 
         delegate: Item {
             height: introView.view.height
