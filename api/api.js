@@ -109,13 +109,30 @@ function __formatMilitaryTime(time) {
 					}
 				},
 				"tracks" : timeMap[t[k]].map(function(e) { 
-					detail[e.session_id] = e;
-					return {
+					var ee = {
 						"id" : e.session_id,
 						"title" : decodeURIComponent(e.session_title),
 						"location" : (e.session_room || "").toUpperCase(),
 						"presenter" : [e.session_speaker_name, e.session_speaker_company].filter(Boolean).join(", ")
 					}
+					detail[e.session_id] = {
+						"id" : ee.id,
+						"presentation" : {
+							"title" : ee.title,
+							"abstract" : e.session_abstract,
+							"track" : {
+								// ..?
+							}
+
+						},
+						"presenter" : {
+							"image" : "",
+							"name" : e.session_speaker_name,
+							"organization" : e.session_speaker_company,
+							"bio" : ""
+						}
+					};
+					return ee;
 				})
 			}
 			o.sessions.push(session);

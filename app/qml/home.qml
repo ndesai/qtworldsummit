@@ -55,6 +55,7 @@ Viewport {
 
     Item {
         id: _itemPageContainer
+
         anchors.top: _header.bottom
         anchors.left: parent.left
         anchors.right: parent.right
@@ -81,5 +82,18 @@ Viewport {
                 source: "img/icon-qtloading.gif"
             }
         }
+    }
+
+    Rectangle {
+        id: _rectangleDarkener
+        anchors.fill: parent
+        color: "#000000"
+        opacity: 0.65 - (_trackDetailSheet.x / width)
+        z: _trackDetailSheet.z
+    }
+
+    TrackDetailSheet {
+        id: _trackDetailSheet
+        z: 3
     }
 }

@@ -7,7 +7,9 @@ Item {
     property int status: Loader.Null
 
     property url url: "http://www.qtworldsummit.com/sessionsjson/"
-    property url urlSchedule: "http://api.app.st/qws15/schedule"
+    property string urlBase: "http://api.app.st/qws15/"
+    property url urlSchedule: urlBase + "schedule"
+    property url urlTracks: urlBase + "tracks"
 
     property var schedule: null
     property var tracks: null
@@ -18,7 +20,10 @@ Item {
             if (response) {
                 console.log(response.length)
                 schedule = response;
-                status = Loader.Ready;
+                webRequest(urlTracks, function(response) {
+                    tracks = response;
+                    status = Loader.Ready;
+                });
             } else {
                 status = Loader.Error;
             }

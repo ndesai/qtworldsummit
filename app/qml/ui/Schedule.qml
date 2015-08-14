@@ -10,23 +10,27 @@ BaseTabBarPage {
 
         function isDataSufficient(tdo)
         {
-            return tdo.presentation.abstract !== ""
+            return true;
+            // TOOD: ND - replace
+            // return tdo.presentation.abstract !== ""
         }
 
         try {
-            var trackDetailObject = JSON.parse(JSON.stringify(__api.track[trackObject.id]))
+            console.log(JSON.stringify(trackObject, null, 2))
+            var trackDetailObject = JSON.parse(JSON.stringify(__api.tracks[trackObject.id]))
             trackDetailObject.id = trackObject.id
-            trackDetailObject.presentation.track.color = trackObject.color
+//            trackDetailObject.presentation.track.color = trackObject.color
             trackDetailObject.session = trackObject.session
             trackDetailObject.day = _ListView_DateView.currentItem.dataModel.day
             trackDetailObject.date = trackObject.date
+
             if(isDataSufficient(trackDetailObject))
             {
-                _TrackDetailSheet.openWithObject(trackDetailObject);
+                _trackDetailSheet.openWithObject(trackDetailObject);
             }
         } catch (ex)
         {
-            console.warn("track detail data does not exist")
+            console.warn("track detail data does not exist " + ex)
         }
     }
 
