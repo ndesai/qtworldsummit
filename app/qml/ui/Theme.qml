@@ -31,6 +31,7 @@ Item {
     // Geometry
     property int heightHeader: dp(128)
     property int marginTop: dp(40)
+    property int logoVerticalCenterOffset: dp(-4)
 
     property int dateViewHeight: dp(100)
     property int dateViewPixelSize: dp(34)
@@ -56,11 +57,15 @@ Item {
     property int informationDatePixelSize: dp(34)
     property int informationVenueDescriptionPixelSize: dp(28)
 
+    property int tabBarHeight: dp(100)
+
+    property bool simulatePlatform: false
+    property string simulatedPlatform: "android"
     property bool simulateDp: false
-    property double simulatedDp: ScreenValues.dpi
+    property double simulatedDp: ScreenValues.dp
 
     function dp(value) {
-        var _dp = simulateDp ? simulatedDp : ScreenValues.dpi
+        var _dp = simulateDp ? simulatedDp : ScreenValues.dp
         var factor = _dp*0.45;
         if ((Qt.platform.os === "osx"
                 || Qt.platform.os === "ios") && !simulateDp) {
@@ -104,22 +109,34 @@ Item {
 
     states: [
         State {
-            when: Qt.platform.os === "android"
+            when: Qt.platform.os === "android" || (simulatePlatform && Qt.platform.os === simulatedPlatform)
             PropertyChanges {
                 target: root
                 fontFamily: _fontLoaderOpenSansRegular.name
             }
             PropertyChanges {
                 target: _fontLoaderOpenSansRegular
-                source: "fonts/Open_Sans/OpenSans-Regular.ttf"
+                source: "qrc:/qml/qml/fonts/Open_Sans/OpenSans-Regular.ttf"
             }
             PropertyChanges {
                 target: _fontLoaderOpenSansSemiBold
-                source: "fonts/Open_Sans/OpenSans-Semibold.ttf"
+                source: "qrc:/qml/qml/fonts/Open_Sans/OpenSans-Semibold.ttf"
             }
             PropertyChanges {
                 target: _fontLoaderOpenSansBold
-                source: "fonts/Open_Sans/OpenSans-Bold.ttf"
+                source: "qrc:/qml/qml/fonts/Open_Sans/OpenSans-Bold.ttf"
+            }
+            //
+            PropertyChanges {
+                target: root
+                marginTop: __theme.dp(10)
+                tabBarHeight: __theme.dp(110)
+                logoVerticalCenterOffset: __theme.dp(0)
+
+                // Track Detail
+                detailDatePixelSize: __theme.dp(32)
+                detailTrackNamePixelSize: __theme.dp(40)
+                detailPresenterNamePixelSize: __theme.dp(40)
             }
         }
     ]

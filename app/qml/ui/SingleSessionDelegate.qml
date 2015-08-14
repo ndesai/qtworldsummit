@@ -21,6 +21,10 @@ Item {
             anchors.bottom: parent.bottom
             verticalAlignment: Text.AlignVCenter
             text: _Item_ScheduleDelegate.dataModel.date.formatted['24h']
+                  + "<font color=\"" + __theme.colorLightGrey + "\">__</font>" // create a two-letter long space
+                  + "<font color='" + __theme.colorConcreteGrey + "'>("
+                  + _Item_ScheduleDelegate.dataModel.date.formatted['12h']
+                  + ")</font>"
             color: "#222222"
             style: Text.Raised
             styleColor: "#ffffff"

@@ -33,7 +33,7 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        height: 100
+        height: root.height
         Repeater {
             id: _Repeater_TabBar
             model: root.tabBarModel
@@ -41,6 +41,7 @@ Item {
             delegate: TabBarButton {
                 property variant dataModel : modelData
                 width: Math.floor(root.width / root.tabBarModel.length)
+                height: parent.height
                 icon: modelData.icon
                 onClicked: {
                     root.tabClicked(modelData)

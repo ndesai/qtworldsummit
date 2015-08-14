@@ -23,7 +23,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        height: 2
+        height: __theme.dp(2)
         color: __theme.colorLightGreyAccent
     }
 
@@ -34,7 +34,7 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.left: enableLeftAndRightContainers ? _itemContainerLeft.right : parent.left
         anchors.right: enableLeftAndRightContainers ? _itemContainerRight.left : parent.right
-        anchors.leftMargin: 10
+        anchors.leftMargin: __theme.dp(10)
         anchors.rightMargin: anchors.leftMargin
 
         Utils.Fill { }
@@ -43,7 +43,7 @@ Rectangle {
     Item {
         id: _itemContainerLeft
         anchors.top: parent.top
-        anchors.topMargin: 40
+        anchors.topMargin: __theme.marginTop
         anchors.left: parent.left
         anchors.bottom: parent.bottom
         width: __theme.dp(110)
@@ -54,7 +54,7 @@ Rectangle {
     Item {
         id: _itemContainerRight
         anchors.top: parent.top
-        anchors.topMargin: 40
+        anchors.topMargin: __theme.marginTop
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         width: __theme.dp(110)

@@ -5,7 +5,7 @@ TabBarController {
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    height: __theme.dp(100)
+    height: __theme.tabBarHeight
 
     tabBarModel: [
         {

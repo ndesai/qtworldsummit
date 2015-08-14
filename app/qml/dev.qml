@@ -127,16 +127,20 @@ Utils.BaseWindow {
             }
 
             Controls.Slider {
-                value: ScreenValues.dpi
+                value: 3
                 stepSize: 1
-                minimumValue: ScreenValues.dpi / 2
-                maximumValue: 3 * ScreenValues.dpi
+                minimumValue: 1
+                maximumValue: 20
                 onValueChanged: {
                     console.log("value = " + value)
                     if (_Loader_Android.item) {
+                        _Loader_Android.item.__theme.simulatePlatform = true;
                         _Loader_Android.item.__theme.simulateDp = true;
                         _Loader_Android.item.__theme.simulatedDp = value;
                     }
+                }
+                Component.onCompleted: {
+                    valueChanged(value);
                 }
             }
         }

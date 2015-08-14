@@ -19,13 +19,16 @@ Rectangle {
         anchors.bottomMargin: __theme.dp(20)
         anchors.left: parent.left
         anchors.leftMargin: __theme.dp(20)
-        color: __theme.randomTrackColor() || _Rectangle_Track.trackDetail.color || __theme.colorQtMediumGreen
+//        color: || _Rectangle_Track.trackDetail.color || __theme.colorQtMediumGreen
         radius: __theme.dp(5)
         Rectangle {
             radius: parent.radius
             anchors.fill: parent
             opacity: 0.25
             border { width: __theme.colorIndicatorBorderWidth; color: Qt.darker(_Rectangle_TrackColor.color) }
+        }
+        Component.onCompleted: {
+            color = __theme.randomTrackColor();
         }
     }
 

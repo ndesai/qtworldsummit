@@ -52,7 +52,7 @@ Slide {
                     source: "../img/icon-bookmark.png"
                     color: "#222222"
                     anchors.centerIn: parent
-                    width: 52
+                    width: __theme.dp(52)
                 }
                 states: [
                     State {
@@ -119,8 +119,10 @@ Slide {
                         id: _imageHero
                         anchors.left: parent.left
                         anchors.right: parent.right
+                        // TODO: ND - Scale based on text?
+                        height: __theme.dp(240)
 
-                        fillMode: Image.PreserveAspectFit
+                        fillMode: Image.PreserveAspectCrop
 
                         source: "../img/qws2015-hero.jpg"
 
@@ -136,13 +138,13 @@ Slide {
                             color: __theme.colorPageBackground
                             font.pixelSize: __theme.detailTitlePixelSize
                             wrapMode: Text.WordWrap
-                            maximumLineCount: 2
                             elide: Text.ElideRight
+                            maximumLineCount: 3
 
                             text: root.getProperty('presentation').title
                         }
                     }
-                    Utils.VerticalSpacer { height: 30 }
+                    Utils.VerticalSpacer { height: __theme.dp(30) }
                     Column {
                         anchors.left: parent.left
                         anchors.right: parent.right
@@ -151,11 +153,11 @@ Slide {
                         Row {
                             id: _Row_TrackColor
                             width: parent.width
-                            height: 60
+                            height: __theme.dp(60)
                             Rectangle {
                                 id: _Rectangle_TrackColor
-                                width: 60
-                                height: 60
+                                width: __theme.dp(60)
+                                height: width
                                 radius: width / 2
                                 color: __theme.randomTrackColor()//root.getProperty('presentation').track.color
                                 visible: _Label_TrackTitle !== ""
@@ -163,10 +165,10 @@ Slide {
                                     radius: parent.radius
                                     anchors.fill: parent
                                     opacity: 0.25
-                                    border { width: 2; color: Qt.darker(_Rectangle_TrackColor.color) }
+                                    border { width: __theme.dp(2); color: Qt.darker(_Rectangle_TrackColor.color) }
                                 }
                             }
-                            Utils.HorizontalSpacer { width: 30 }
+                            Utils.HorizontalSpacer { width: __theme.dp(30) }
                             Label {
                                 id: _Label_TrackTitle
                                 anchors.verticalCenter: _Rectangle_TrackColor.verticalCenter
@@ -175,7 +177,7 @@ Slide {
                                 font.pixelSize: __theme.detailTrackNamePixelSize
                             }
                         }
-                        Utils.VerticalSpacer { height: 30; visible: _Row_TrackColor.visible }
+                        Utils.VerticalSpacer { height: __theme.dp(30); visible: _Row_TrackColor.visible }
                         Label {
                             id: _Label_Abstract
                             width: parent.width
@@ -183,7 +185,7 @@ Slide {
                             font.pixelSize: __theme.detailAbstractPixelSize
                             text: root.getProperty('presentation').abstract
                         }
-                        Utils.VerticalSpacer { height: 60 }
+                        Utils.VerticalSpacer { height: __theme.dp(60) }
                         Rectangle {
                             width: parent.width
                             height: 1
@@ -194,10 +196,10 @@ Slide {
                             height: 1
                             color: __theme.colorLightGreyAccent
                         }
-                        Utils.VerticalSpacer { height: 60 }
+                        Utils.VerticalSpacer { height: __theme.dp(60) }
                         Item {
                             width: parent.width
-                            height: 120
+                            height: __theme.dp(120)
                             Rectangle {
                                 id: _Rectangle_PresenterBackfill
                                 height: parent.height
@@ -223,7 +225,7 @@ Slide {
                             }
                             Column {
                                 anchors.left: _Rectangle_PresenterBackfill.right
-                                anchors.leftMargin: 36
+                                anchors.leftMargin: __theme.dp(36)
                                 anchors.right: parent.right
                                 height: childrenRect.height
                                 anchors.verticalCenter: _Rectangle_PresenterBackfill.verticalCenter
@@ -253,7 +255,7 @@ Slide {
                                 }
                             }
                         }
-                        Utils.VerticalSpacer { height: 40 }
+                        Utils.VerticalSpacer { height: __theme.dp(40) }
                         Label {
                             id: _Label_PresenterBio
                             width: parent.width

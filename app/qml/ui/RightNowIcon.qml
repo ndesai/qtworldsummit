@@ -10,8 +10,8 @@ Rectangle {
 
     anchors.verticalCenter: parent.verticalCenter
     width: _row.width
-    height: 52
-    radius: 10
+    height: __theme.dp(52)
+    radius: __theme.dp(10)
 
     color: !skeleton ? baseColor : "transparent"
     border {

@@ -27,7 +27,7 @@ Viewport {
             anchors.left: parent.left
             anchors.leftMargin: __theme.dp(20)
             anchors.verticalCenter: parent.verticalCenter
-            anchors.verticalCenterOffset: __theme.dp(-4)
+            anchors.verticalCenterOffset: __theme.logoVerticalCenterOffset
             width: __theme.dp(156)
 
             fillMode: Image.PreserveAspectFit

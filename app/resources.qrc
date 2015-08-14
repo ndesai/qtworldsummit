@@ -7,6 +7,17 @@
 		<file>qml/controls/TabBarButton.qml</file>
 		<file>qml/controls/TabBarController.qml</file>
 		<file>qml/dev.qml</file>
+		<file>qml/fonts/Open_Sans/LICENSE.txt</file>
+		<file>qml/fonts/Open_Sans/OpenSans-Bold.ttf</file>
+		<file>qml/fonts/Open_Sans/OpenSans-BoldItalic.ttf</file>
+		<file>qml/fonts/Open_Sans/OpenSans-ExtraBold.ttf</file>
+		<file>qml/fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf</file>
+		<file>qml/fonts/Open_Sans/OpenSans-Italic.ttf</file>
+		<file>qml/fonts/Open_Sans/OpenSans-Light.ttf</file>
+		<file>qml/fonts/Open_Sans/OpenSans-LightItalic.ttf</file>
+		<file>qml/fonts/Open_Sans/OpenSans-Regular.ttf</file>
+		<file>qml/fonts/Open_Sans/OpenSans-Semibold.ttf</file>
+		<file>qml/fonts/Open_Sans/OpenSans-SemiboldItalic.ttf</file>
 		<file>qml/home.qml</file>
 		<file>qml/img/floorplan-bcc.png</file>
 		<file>qml/img/icon-back.png</file>
