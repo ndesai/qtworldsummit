@@ -3,7 +3,6 @@
 		<file>qml/Api.qml</file>
 		<file>qml/Content.qml</file>
 		<file>qml/controls/BaseTabBarPage.qml</file>
-		<file>qml/controls/Sheet.qml</file>
 		<file>qml/controls/Slide.qml</file>
 		<file>qml/controls/TabBarButton.qml</file>
 		<file>qml/controls/TabBarController.qml</file>
