@@ -19,7 +19,7 @@ Rectangle {
         anchors.bottomMargin: __theme.dp(20)
         anchors.left: parent.left
         anchors.leftMargin: __theme.dp(20)
-        color: _Rectangle_Track.trackDetail.color || __theme.colorQtMediumGreen
+        color: __theme.randomTrackColor() || _Rectangle_Track.trackDetail.color || __theme.colorQtMediumGreen
         radius: __theme.dp(5)
         Rectangle {
             radius: parent.radius

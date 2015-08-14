@@ -11,12 +11,27 @@ Item {
     property color toolBarTextColor: "#bdbebf"
 
     property color colorQtGreen: "#81C343"
-    property color colorLightGrey: "#f3f3f3"
-    property color colorLightGreyAccent: "#d1d1d0"
-    property color colorQtMediumGreen: "#5c9c1c"
-    property color colorPageBackground: "#ffffff"
 
     property string fontFamily: "Avenir Next"
+
+    property color colorLightGrey : "#f3f3f3"
+    property color colorLightGreyAccent : "#d1d1d0"
+    property color colorLightGreyAccentSecondary : "#eeeeee"
+    property color colorQtMediumGreen : "#5c9c1c"
+    property color colorPageBackground: "#ffffff"
+
+    property color colorTrackLightGreen: "#80c342"
+    property color colorTrackDarkGreen: "#408500"
+    property color colorTrackYellow: "#face20"
+    property color colorTrackOrange: "#ff8c0a"
+    property color colorTrackRed: "#e41e25"
+    property color colorTrackBlue: "#46a2da"
+    property color colorConcreteGrey: "#a4a5a7"
+
+    function randomTrackColor() {
+        var keys = Object.keys(root).filter(function(e) { return (e.indexOf("colorTrack") > -1 && e.indexOf("Changed") === -1)});
+        return root[keys[Math.floor(Math.random()*keys.length)]];
+    }
 
     property int heightHeader: dp(128)
     property int marginTop: dp(40)
@@ -32,10 +47,13 @@ Item {
     property int colorIndicatorWidth: dp(10)
     property int colorIndicatorBorderWidth: dp(2)
 
-    property int detailPixelSize: dp(34)
+    property int detailDatePixelSize: dp(28)
+    property int detailPixelSize: dp(52)
+    property int detailTrackNamePixelSize: dp(36)
     property int detailTitlePixelSize: dp(40)
-    property int detailAbstractPixelSize: dp(30)
-    property int detailPresenterPixelSize: dp(36)
+    property int detailAbstractPixelSize: dp(32)
+    property int detailPresenterNamePixelSize: dp(36)
+    property int detailPresenterOrganizationPixelSize: dp(30)
 
     property int informationAddressPixelSize: dp(32)
     property int informationTitlePixelSize: dp(36)
