@@ -11,6 +11,8 @@ Utils.BaseWindow {
     width: screenWidth / 2
     height: screenHeight / 2
 
+    flags: Qt.MaximizeUsingFullscreenGeometryHint
+
 //    Utils.Platform {
 //        id: __Platform
 //        Connections {
