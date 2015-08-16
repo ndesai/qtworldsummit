@@ -143,11 +143,11 @@ Rectangle {
             }
 
             ListElement {
-                title: qsTr("Welcome to Qt DevDays '15")
+                title: qsTr("Qt Application Development")
                 backgroundColor: "#c0392b"
                 titleColor: "#ecf0f1"
                 textColor: "#cacaca"
-                description: "The session detail page can be accessed by clicking the session in the schedule view. This page describes the session in more detail. \n You can also bookmark this session using the ribbon on the top right of the page."
+                description: "Qt is the leading independent technology for cross-platform development."
                 images: [
                     ListElement { source: "qrc:/images/phone_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
                     ListElement { source: "qrc:/images/phone_2"; multiplier: 0.2; width: 0.4; y: 0.22; x: 0.18 },
