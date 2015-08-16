@@ -114,7 +114,7 @@ Rectangle {
 
             ListElement {
                 title: qsTr("Welcome to Qt DevDays '15")
-                backgroundColor: "#e74c3c"
+                backgroundColor: "#c0392b"
                 titleColor: "#ecf0f1"
                 textColor: "#cacaca"
                 description: "The session detail page can be accessed by clicking the session in the schedule view. This page describes the session in more detail. \n You can also bookmark this session using the ribbon on the top right of the page."
@@ -128,7 +128,7 @@ Rectangle {
 
             ListElement {
                 title: qsTr("Welcome to Qt DevDays '15")
-                backgroundColor: "#f1c40f"
+                backgroundColor: "#f39c12"
                 titleColor: "#2d2d2d"
                 textColor: "#050505"
                 description: "The session detail page can also present a short biography of each presenter - including their accomplishments and contributions to the Qt community."
