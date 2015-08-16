@@ -34,6 +34,9 @@ Rectangle {
                     height: parent.height * 0.34
                     fillMode: Image.PreserveAspectFit
                     source: "qrc:/images/next_white"
+
+                    sourceSize.width: parent.height * 0.34
+                    sourceSize.height: parent.height * 0.34
                 }
 
                 MouseArea {
