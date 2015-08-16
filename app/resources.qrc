@@ -29,5 +29,9 @@
         <file alias="location_active.svg">resources/images/location_active.svg</file>
         <file alias="qt_preloader.gif">resources/images/qt_preloader.gif</file>
         <file alias="triangular.png">resources/images/triangular.png</file>
+        <file alias="tutorial_1">resources/images/tutorial/cloud_1.svg</file>
+        <file alias="tutorial_2">resources/images/tutorial/cloud_2.svg</file>
+        <file alias="tutorial_3">resources/images/tutorial/cloud_3.svg</file>
+        <file alias="tutorial_4">resources/images/tutorial/berlin.svg</file>
     </qresource>
 </RCC>
