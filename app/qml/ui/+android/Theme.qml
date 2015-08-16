@@ -14,10 +14,12 @@ QtObject {
     property int paginationDotContainerHeight: 57 * ScreenValues.dp
     property int dividerHeight: 1 * ScreenValues.dp
     property int tabHeight: 38 * ScreenValues.dp
-    property int toolBarHeight: 56 * ScreenValues.dp
+    property int toolBarHeight: 56 * ScreenValues.dp   
+    property int tutorialDescriptionFontSize: 26 * ScreenValues.dp
+    property int tutorialDescriptionMargins: 28 * ScreenValues.dp
     property int tutorialTitleFontSize: 28 * ScreenValues.dp
     property int tutorialTitleMargins: 32 * ScreenValues.dp
-    property int tutorialContentMargin: 18 * ScreenValues.dp
+    property int tutorialContentMargin: 16 * ScreenValues.dp
     property int fontSizeSmall: 14 * ScreenValues.dp
     property int fontSizeRegular: 18 * ScreenValues.dp
     property int fontSizeLarge: 22 * ScreenValues.dp

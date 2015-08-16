@@ -14,9 +14,11 @@ QtObject {
     property int dividerHeight: 1
     property int tabHeight: 98
     property int toolBarHeight: 56
+    property int tutorialDescriptionFontSize: 26
     property int tutorialTitleFontSize: 34
-    property int tutorialTitleMargins: 32
-    property int tutorialContentMargin: 32
+    property int tutorialTitleMargins: 28
+    property int tutorialDescriptionMargins: 28
+    property int tutorialContentMargin: 22
     property int fontSizeSmall: 14
     property int fontSizeRegular: 18
     property int fontSizeLarge: 22
