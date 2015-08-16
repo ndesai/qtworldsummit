@@ -22,6 +22,8 @@ public:
     bool isTablet() const;
     void setIsTablet(bool isTablet);
 
+    Q_INVOKABLE void setStatusBarColor(const int r, const int g, const int b);
+
 signals:
     void dpChanged();
     void dpiChanged();

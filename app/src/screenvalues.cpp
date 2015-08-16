@@ -64,6 +64,15 @@ void ScreenValues::setIsTablet(bool isTablet)
     emit isTabletChanged();
 }
 
+void ScreenValues::setStatusBarColor(const int r, const int g, const int b)
+{
+#ifdef Q_OS_ANDROID
+    QAndroidJniObject::callStaticMethod<void>("com/iktwo/qtworldsummit/QtWorldSummit",
+                                              "setStatusBarColor",
+                                              "(III)V", r, g, b);
+#endif
+}
+
 int ScreenValues::retrieveDpi()
 {
 #ifdef Q_OS_ANDROID

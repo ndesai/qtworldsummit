@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="19.504408mm"
-   height="19.712147mm"
-   viewBox="0 0 69.110107 69.846189"
+   width="19.755556mm"
+   height="19.755556mm"
+   viewBox="0 0 70.000002 70.000002"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="315.66916"
-     inkscape:cy="93.248503"
+     inkscape:cx="206.38345"
+     inkscape:cy="93.248504"
      inkscape:document-units="px"
      inkscape:current-layer="flowRoot4136"
      showgrid="false"
@@ -56,12 +56,12 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-230.1416,-497.94979)">
+     transform="translate(-230.1416,-497.79598)">
     <g
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="flowRoot4136">
       <path
-         d="m 288.29224,532.7911 -58.15064,-24.7815 0,-10.05981 69.11011,30.91553 0,7.93335 -69.11011,30.99731 0,-10.1416 58.15064,-24.86328 z"
+         d="m 289.04101,532.71401 -58.89941,-24.83607 0,-10.08196 70,30.98361 0,7.95082 -70,31.06557 0,-10.16393 58.89941,-24.91804 z"
          style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:167.5px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';fill:#ffffff"
          id="path4145"
          inkscape:connector-curvature="0" />

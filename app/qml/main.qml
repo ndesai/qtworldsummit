@@ -44,6 +44,9 @@ QC.ApplicationWindow {
 
     Component {
         id: mainPage
-        MainPage { }
+
+        MainPage {
+            Component.onCompleted: ScreenValues.setStatusBarColor(149, 165, 166)
+        }
     }
 }
