@@ -14,6 +14,7 @@ FocusScope {
     property alias rectangleDividerHeight: rectangleDivider.height
 
     readonly property double xPosition: (listView.contentX / listView.width)
+    readonly property bool movingLeft: listView.movingLeft
 
     onXPositionChanged:  {
         if (currentIndex < 0)
