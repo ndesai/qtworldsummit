@@ -12,9 +12,20 @@ FocusScope {
     property alias view: listView
     property alias buttonsContainerHeight: buttonsContainer.height
     property alias rectangleDividerHeight: rectangleDivider.height
+    property alias buttons: buttonsContainer.data
 
     readonly property double xPosition: (listView.contentX / listView.width)
     readonly property bool movingLeft: listView.movingLeft
+
+
+    function incrementCurrentIndex() {
+        if (listView.moving)
+            return
+
+        contentXAnimation.enabled = true
+        listView.contentX += listView.width
+        contentXAnimation.enabled = false
+    }
 
     onXPositionChanged:  {
         if (currentIndex < 0)
@@ -71,6 +82,8 @@ FocusScope {
 
         property bool movingLeft
 
+        Behavior on contentX { id: contentXAnimation; enabled: false; NumberAnimation { alwaysRunToEnd: true; easing.type: Easing.OutQuad; duration: 450 } }
+
         anchors {
             top: parent.top
             bottom: buttonsContainer.top
@@ -81,7 +94,7 @@ FocusScope {
         model: model
         orientation: ListView.Horizontal
 
-        snapMode: ListView.SnapToItem
+        snapMode: ListView.SnapOneItem
 
         onContentXChanged: {
             if (previousX > contentX)

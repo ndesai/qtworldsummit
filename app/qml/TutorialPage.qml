@@ -16,6 +16,33 @@ Rectangle {
         buttonsContainerHeight: UI.Theme.paginationDotContainerHeight
         rectangleDividerHeight: UI.Theme.dividerHeight
 
+        buttons: Item {
+            anchors.fill: parent
+
+            Item {
+                anchors {
+                    top: parent.top
+                    bottom: parent.bottom
+                    right: parent.right
+                }
+
+                width: parent.width * 0.25
+
+                Image {
+                    anchors.centerIn: parent
+
+                    height: parent.height * 0.34
+                    fillMode: Image.PreserveAspectFit
+                    source: "qrc:/images/next_white"
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: introView.incrementCurrentIndex()
+                }
+            }
+        }
+
         delegate: Item {
             id: itemDelegate
 
@@ -119,10 +146,10 @@ Rectangle {
                 textColor: "#cacaca"
                 description: "The session detail page can be accessed by clicking the session in the schedule view. This page describes the session in more detail. \n You can also bookmark this session using the ribbon on the top right of the page."
                 images: [
-                    ListElement { source: "qrc:/images/tutorial_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
-                    ListElement { source: "qrc:/images/tutorial_2"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.18 },
-                    ListElement { source: "qrc:/images/tutorial_4"; multiplier: 0.1; width: 0.5; y: 0.35; x: 0.25 },
-                    ListElement { source: "qrc:/images/tutorial_3"; multiplier: 0.05; width: 0.35; y: 0.28; x: 0.53 }
+                    ListElement { source: "qrc:/images/phone_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
+                    ListElement { source: "qrc:/images/phone_2"; multiplier: 0.2; width: 0.4; y: 0.22; x: 0.18 },
+                    ListElement { source: "qrc:/images/phone_3"; multiplier: 0.1; width: 0.4; y: 0.35; x: 0.25 },
+                    ListElement { source: "qrc:/images/laptop"; multiplier: 0.05; width: 0.45; y: 0.28; x: 0.53 }
                 ]
             }
 
@@ -133,10 +160,10 @@ Rectangle {
                 textColor: "#050505"
                 description: "The session detail page can also present a short biography of each presenter - including their accomplishments and contributions to the Qt community."
                 images: [
-                    ListElement { source: "qrc:/images/tutorial_1"; multiplier: 0.3; width: 0.4; y: 0.3; x: 0.3},
-                    ListElement { source: "qrc:/images/tutorial_2"; multiplier: 0.2; width: 0.3; y: 0.25; x: 0.4 },
-                    ListElement { source: "qrc:/images/tutorial_4"; multiplier: 0.1; width: 0.5; y: 0.4; x: 0.5 },
-                    ListElement { source: "qrc:/images/tutorial_3"; multiplier: 0.05; width: 0.25; y: 0.28; x: 0.35 }
+                    ListElement { source: "qrc:/images/phone_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
+                    ListElement { source: "qrc:/images/phone_2"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.18 },
+                    ListElement { source: "qrc:/images/phone_3"; multiplier: 0.1; width: 0.5; y: 0.35; x: 0.25 },
+                    ListElement { source: "qrc:/images/laptop"; multiplier: 0.05; width: 0.35; y: 0.28; x: 0.53 }
                 ]
             }
 
