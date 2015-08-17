@@ -31,22 +31,21 @@ QC.ApplicationWindow {
 
         anchors.fill: parent
 
-        initialItem: tutorial
+        initialItem: mainPage
     }
 
-    Component {
-        id: tutorial
+    TutorialPage {
+        anchors.fill: parent
 
-        TutorialPage {
-            onSkipTutorial: stackView.replace(mainPage)
-        }
+        // onClosed: ScreenValues.setStatusBarColor(149, 165, 166)
+        onSkipTutorial: stackView.replace(mainPage)
     }
 
     Component {
         id: mainPage
 
         MainPage {
-            Component.onCompleted: ScreenValues.setStatusBarColor(149, 165, 166)
+
         }
     }
 }

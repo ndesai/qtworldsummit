@@ -37,6 +37,7 @@ Rectangle {
 
                     sourceSize.width: parent.height * 0.34
                     sourceSize.height: parent.height * 0.34
+                    opacity: 0.65
                 }
 
                 MouseArea {
@@ -65,15 +66,12 @@ Rectangle {
                     right: parent.right; rightMargin: UI.Theme.tutorialTitleMargins
                 }
 
-                font {
-                    pixelSize: UI.Theme.tutorialTitleFontSize
-                    weight: Font.Light
-                }
+                font.pixelSize: UI.Theme.tutorialTitleFontSize
 
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
                 lineHeight: 0.85
-                color: model.titleColor
+                color: model.textColor
                 text: model.title
             }
 
@@ -98,7 +96,9 @@ Rectangle {
                         fillMode: Image.PreserveAspectFit
                         width: parent.width * model.width
 
-                        x: (model.x * parent.width) + ((introView.view.contentX - itemDelegate.x) * model.multiplier)
+                        sourceSize.width: width
+
+                        x: (model.x * parent.width) + ((introView.view.contentX - itemDelegate.x) * model.multiplier) - (width / 2)
                         y: model.y * parent.height
                     }
                 }
@@ -130,38 +130,22 @@ Rectangle {
         model: ListModel {
             ListElement {
                 title: qsTr("Welcome to Qt World Summit 2015")
-                titleColor: "#ecf0f1"
                 backgroundColor: "#2c3e50"
-                textColor: "#cacaca"
+                textColor: "#BFC4CA"
                 description: "Experience the future of application development & device creation."
                 images: [
-                    ListElement { source: "qrc:/images/tutorial_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
-                    ListElement { source: "qrc:/images/tutorial_2"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.18 },
-                    ListElement { source: "qrc:/images/tutorial_4"; multiplier: 0.1; width: 0.5; y: 0.35; x: 0.25 },
-                    ListElement { source: "qrc:/images/tutorial_3"; multiplier: 0.05; width: 0.35; y: 0.28; x: 0.53 }
+                    ListElement { source: "qrc:/images/tutorial_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.26},
+                    ListElement { source: "qrc:/images/tutorial_2"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.48 },
+                    ListElement { source: "qrc:/images/berlin"; multiplier: 0.1; width: 0.10; y: 0.35; x: 0.5 },
+                    ListElement { source: "qrc:/images/tutorial_3"; multiplier: 0.05; width: 0.35; y: 0.28; x: 0.73 }
                 ]
             }
 
             ListElement {
-                title: qsTr("Qt Application Development")
-                backgroundColor: "#c0392b"
-                titleColor: "#ecf0f1"
-                textColor: "#cacaca"
-                description: "Qt is the leading independent technology for cross-platform development."
-                images: [
-                    ListElement { source: "qrc:/images/phone_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
-                    ListElement { source: "qrc:/images/phone_2"; multiplier: 0.2; width: 0.4; y: 0.22; x: 0.18 },
-                    ListElement { source: "qrc:/images/phone_3"; multiplier: 0.1; width: 0.4; y: 0.35; x: 0.25 },
-                    ListElement { source: "qrc:/images/laptop"; multiplier: 0.05; width: 0.45; y: 0.28; x: 0.53 }
-                ]
-            }
-
-            ListElement {
-                title: qsTr("Welcome to Qt DevDays '15")
-                backgroundColor: "#f39c12"
-                titleColor: "#2d2d2d"
-                textColor: "#050505"
-                description: "The session detail page can also present a short biography of each presenter - including their accomplishments and contributions to the Qt community."
+                title: qsTr("Keep track of your sessions.")
+                backgroundColor: "#be5a38"
+                textColor: "#EBCDC3"
+                description: "Qt World Summit 2015 helps you to keep track of all those awesome talks."
                 images: [
                     ListElement { source: "qrc:/images/phone_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
                     ListElement { source: "qrc:/images/phone_2"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.18 },
@@ -170,11 +154,21 @@ Rectangle {
                 ]
             }
 
+
             ListElement {
-                backgroundColor: "#ecf0f1"
-                titleColor: "#2d2d2d"
+                title: qsTr("Write your source code once, run it anywhere on any device.")
+                backgroundColor: "#533747"
+                textColor: "#CBC2C7"
+                description: "Qt is the leading independent technology for cross-platform development."
+                images: [
+                    ListElement { source: "qrc:/images/qt_logo"; multiplier: 0.25; width: 0.45; y: 0.28; x: 0.5 }
+                ]
+            }
+
+            ListElement {
+                backgroundColor: "#4F7CAC"
                 title: qsTr("We are open source")
-                textColor: "#050505"
+                textColor: "#CAD7E6"
                 /// TODO: support hyperlink
                 description: "Go to http://github.com/ndesai/qtworldsummit to get the source code, submit your pull request to contribute!"
                 images: [

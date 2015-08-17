@@ -32,11 +32,12 @@
         <file alias="tutorial_1">resources/images/tutorial/cloud_1.svg</file>
         <file alias="tutorial_2">resources/images/tutorial/cloud_2.svg</file>
         <file alias="tutorial_3">resources/images/tutorial/cloud_3.svg</file>
-        <file alias="tutorial_4">resources/images/tutorial/berlin.svg</file>
+        <file alias="berlin">resources/images/tutorial/berlin.svg</file>
         <file alias="phone_3">resources/images/tutorial/phone_3.svg</file>
         <file alias="phone_2">resources/images/tutorial/phone_2.svg</file>
         <file alias="phone_1">resources/images/tutorial/phone_1.svg</file>
         <file alias="laptop">resources/images/tutorial/laptop.svg</file>
         <file alias="next_white">resources/images/tutorial/next_white.svg</file>
+        <file alias="qt_logo">resources/images/qt_logo.svg</file>
     </qresource>
 </RCC>
