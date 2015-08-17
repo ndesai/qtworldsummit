@@ -2,7 +2,7 @@ import QtQuick 2.3
 import QtQuick.Controls 1.2 as Controls
 import QtQuick.Window 2.0
 import QtWorldSummit 1.5
-
+import "qrc:/qml/qml/ui" 1.5 as UI
 import "utils" as Utils
 
 Utils.BaseWindow {
@@ -21,22 +21,28 @@ Utils.BaseWindow {
 
     Item {
         id: _itemContainer
-        anchors.fill: parent
-        anchors.margins: 50
+
+        anchors {
+            fill: parent
+            margins: 50
+        }
 
         Item {
             id: _itemLoaderContainer
 
-            property bool largePhone : true
+            property bool largePhone: true
 
-            width:750 / 2
+            width: 750 / 2
             height: 1334 / 2
 
             Loader {
                 id: _Loader_iOS
 
-                anchors.left: parent.left;
-                anchors.top: parent.top
+                anchors {
+                    left: parent.left
+                    top: parent.top
+                }
+
                 width: parent.largePhone ? 750 : 640
                 height: parent.largePhone ? 1334 : 1136
 
@@ -64,10 +70,13 @@ Utils.BaseWindow {
 
         Item {
             id: _itemLoaderContainer1080p
-            anchors.left: _itemLoaderContainer.right
-            anchors.leftMargin: 100
 
             property double scaleFactor: 1 / 2.5
+
+            anchors {
+                left: _itemLoaderContainer.right
+                leftMargin: 100
+            }
 
             width: 1080 * scaleFactor
             height: 1920 * scaleFactor
@@ -75,10 +84,13 @@ Utils.BaseWindow {
             Loader {
                 id: _Loader_Android
 
-                anchors.left: parent.left;
-                anchors.top: parent.top
+                anchors {
+                    left: parent.left
+                    top: parent.top
+                }
+
                 width: 1080
-                height:1920
+                height: 1920
 
                 source: "home.qml"
                 clip: true
@@ -103,8 +115,10 @@ Utils.BaseWindow {
         }
 
         Column {
-            anchors.top: _itemLoaderContainer.bottom
-            anchors.topMargin: 25
+            anchors {
+                top: _itemLoaderContainer.bottom; topMargin: 25
+            }
+
             width: _itemLoaderContainer.width
             spacing: 20
 
@@ -112,18 +126,14 @@ Utils.BaseWindow {
                 width: parent.width
                 height: 40
                 text: "Show Fills"
-                onClicked: {
-                    superRoot.showFills ^= 1
-                }
+                onClicked: superRoot.showFills ^= 1
             }
 
             Controls.Button {
                 width: parent.width
                 height: 40
                 text: "Toggle Size"
-                onClicked: {
-                    _itemLoaderContainer.largePhone ^= 1
-                }
+                onClicked: _itemLoaderContainer.largePhone ^= 1
             }
 
             Controls.Slider {
@@ -133,10 +143,8 @@ Utils.BaseWindow {
                 maximumValue: 3 * ScreenValues.dpi
                 onValueChanged: {
                     console.log("value = " + value)
-                    if (_Loader_Android.item) {
-                        _Loader_Android.item.__theme.simulateDp = true;
-                        _Loader_Android.item.__theme.simulatedDp = value;
-                    }
+                    UI.Theme.simulateDp = true
+                    UI.Theme.simulatedDp = value
                 }
             }
         }

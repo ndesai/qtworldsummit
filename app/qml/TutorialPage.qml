@@ -33,7 +33,7 @@ Rectangle {
 
                     height: parent.height * 0.34
                     fillMode: Image.PreserveAspectFit
-                    source: "qrc:/images/next_white"
+                    source: "qrc:/images/next_white.svg"
 
                     sourceSize.width: parent.height * 0.34
                     sourceSize.height: parent.height * 0.34
@@ -134,10 +134,10 @@ Rectangle {
                 textColor: "#BFC4CA"
                 description: "Experience the future of application development & device creation."
                 images: [
-                    ListElement { source: "qrc:/images/tutorial_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.26},
-                    ListElement { source: "qrc:/images/tutorial_2"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.48 },
-                    ListElement { source: "qrc:/images/berlin"; multiplier: 0.1; width: 0.10; y: 0.35; x: 0.5 },
-                    ListElement { source: "qrc:/images/tutorial_3"; multiplier: 0.05; width: 0.35; y: 0.28; x: 0.73 }
+                    ListElement { source: "qrc:/images/cloud_1.svg"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.26},
+                    ListElement { source: "qrc:/images/cloud_2.svg"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.48 },
+                    ListElement { source: "qrc:/images/berlin.svg"; multiplier: 0.1; width: 0.10; y: 0.35; x: 0.5 },
+                    ListElement { source: "qrc:/images/cloud_3.svg"; multiplier: 0.05; width: 0.35; y: 0.28; x: 0.73 }
                 ]
             }
 
@@ -147,10 +147,10 @@ Rectangle {
                 textColor: "#EBCDC3"
                 description: "Qt World Summit 2015 helps you to keep track of all those awesome talks."
                 images: [
-                    ListElement { source: "qrc:/images/phone_1"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
-                    ListElement { source: "qrc:/images/phone_2"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.18 },
-                    ListElement { source: "qrc:/images/phone_3"; multiplier: 0.1; width: 0.5; y: 0.35; x: 0.25 },
-                    ListElement { source: "qrc:/images/laptop"; multiplier: 0.05; width: 0.35; y: 0.28; x: 0.53 }
+                    ListElement { source: "qrc:/images/cloud_1.svg"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
+                    ListElement { source: "qrc:/images/cloud_2.svg"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.18 },
+                    ListElement { source: "qrc:/images/cloud_3.svg"; multiplier: 0.1; width: 0.5; y: 0.35; x: 0.25 },
+                    ListElement { source: "qrc:/images/laptop.svg"; multiplier: 0.05; width: 0.35; y: 0.28; x: 0.53 }
                 ]
             }
 
@@ -161,7 +161,7 @@ Rectangle {
                 textColor: "#CBC2C7"
                 description: "Qt is the leading independent technology for cross-platform development."
                 images: [
-                    ListElement { source: "qrc:/images/qt_logo"; multiplier: 0.25; width: 0.45; y: 0.28; x: 0.5 }
+                    ListElement { source: "qrc:/images/qt_logo.svg"; multiplier: 0.25; width: 0.45; y: 0.28; x: 0.5 }
                 ]
             }
 
@@ -172,10 +172,10 @@ Rectangle {
                 /// TODO: support hyperlink
                 description: "Go to http://github.com/ndesai/qtworldsummit to get the source code, submit your pull request to contribute!"
                 images: [
-                    ListElement { source: "qrc:/images/tutorial_1"; multiplier: 0.3; width: 0.4; y: 0.3; x: 0.3},
-                    ListElement { source: "qrc:/images/tutorial_2"; multiplier: 0.2; width: 0.3; y: 0.25; x: 0.4 },
-                    ListElement { source: "qrc:/images/tutorial_4"; multiplier: 0.1; width: 0.5; y: 0.4; x: 0.5 },
-                    ListElement { source: "qrc:/images/tutorial_3"; multiplier: 0.05; width: 0.25; y: 0.28; x: 0.35 }
+                    ListElement { source: "qrc:/images/cloud_1.svg"; multiplier: 0.3; width: 0.4; y: 0.3; x: 0.3},
+                    ListElement { source: "qrc:/images/cloud_2.svg"; multiplier: 0.2; width: 0.3; y: 0.25; x: 0.4 },
+                    ListElement { source: "qrc:/images/cloud_3.svg"; multiplier: 0.1; width: 0.5; y: 0.4; x: 0.5 },
+                    ListElement { source: "qrc:/images/cloud_3.svg"; multiplier: 0.05; width: 0.25; y: 0.28; x: 0.35 }
                 ]
             }
         }

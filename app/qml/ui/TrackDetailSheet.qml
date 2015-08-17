@@ -2,6 +2,8 @@ import QtQuick 2.5
 import "../controls"
 import "../utils" as Utils
 import QtGraphicalEffects 1.0 as QGE
+import "qrc:/qml/qml/ui" 1.5 as UI
+import ".."
 
 Slide {
     id: root
@@ -59,7 +61,7 @@ Slide {
                         when: _ClickGuard_FavoriteButton.isFavorite
                         PropertyChanges {
                             target: _BaseIcon_Bookmark
-                            color: __theme.colorQtGreen
+                            color: UI.Theme.colorQtGreen
                             source: "../img/icon-bookmark-hl.png"
                         }
                     }
@@ -82,7 +84,7 @@ Slide {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 elide: Text.ElideRight
-                font.pixelSize: __theme.detailDatePixelSize
+                font.pixelSize: UI.Theme.detailDatePixelSize
                 font.weight: Font.DemiBold
 
                 text: root.getProperty('date.formatted')['12h']
@@ -127,14 +129,14 @@ Slide {
                         Label {
                             id: _Label_Title
                             anchors.fill: parent
-                            anchors.leftMargin: __theme.dp(30)
+                            anchors.leftMargin: UI.Theme.dp(30)
                             anchors.rightMargin: anchors.leftMargin
 
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
 
-                            color: __theme.colorPageBackground
-                            font.pixelSize: __theme.detailTitlePixelSize
+                            color: UI.Theme.colorPageBackground
+                            font.pixelSize: UI.Theme.detailTitlePixelSize
                             wrapMode: Text.WordWrap
                             maximumLineCount: 2
                             elide: Text.ElideRight
@@ -146,7 +148,7 @@ Slide {
                     Column {
                         anchors.left: parent.left
                         anchors.right: parent.right
-                        anchors.margins: __theme.dp(40)
+                        anchors.margins: UI.Theme.dp(40)
 
                         Row {
                             id: _Row_TrackColor
@@ -157,7 +159,7 @@ Slide {
                                 width: 60
                                 height: 60
                                 radius: width / 2
-                                color: __theme.randomTrackColor()//root.getProperty('presentation').track.color
+                                color: UI.Theme.randomTrackColor()//root.getProperty('presentation').track.color
                                 visible: _Label_TrackTitle !== ""
                                 Rectangle {
                                     radius: parent.radius
@@ -172,7 +174,7 @@ Slide {
                                 anchors.verticalCenter: _Rectangle_TrackColor.verticalCenter
                                 text: "Training"//root.getProperty('presentation').track.title
                                 color: "#222222"
-                                font.pixelSize: __theme.detailTrackNamePixelSize
+                                font.pixelSize: UI.Theme.detailTrackNamePixelSize
                             }
                         }
                         Utils.VerticalSpacer { height: 30; visible: _Row_TrackColor.visible }
@@ -180,19 +182,19 @@ Slide {
                             id: _Label_Abstract
                             width: parent.width
                             wrapMode: Text.WordWrap
-                            font.pixelSize: __theme.detailAbstractPixelSize
+                            font.pixelSize: UI.Theme.detailAbstractPixelSize
                             text: root.getProperty('presentation').abstract
                         }
                         Utils.VerticalSpacer { height: 60 }
                         Rectangle {
                             width: parent.width
                             height: 1
-                            color: __theme.colorLightGreyAccentSecondary
+                            color: UI.Theme.colorLightGreyAccentSecondary
                         }
                         Rectangle {
                             width: parent.width
                             height: 1
-                            color: __theme.colorLightGreyAccent
+                            color: UI.Theme.colorLightGreyAccent
                         }
                         Utils.VerticalSpacer { height: 60 }
                         Item {
@@ -202,7 +204,7 @@ Slide {
                                 id: _Rectangle_PresenterBackfill
                                 height: parent.height
                                 width: height
-                                color: __theme.colorLightGrey
+                                color: UI.Theme.colorLightGrey
                                 clip: true
                                 Image {
                                     id: _Image_Presenter
@@ -233,7 +235,7 @@ Slide {
                                     wrapMode: Text.WordWrap
                                     elide: Text.ElideRight
                                     maximumLineCount: 2
-                                    font.pixelSize: __theme.detailPresenterNamePixelSize
+                                    font.pixelSize: UI.Theme.detailPresenterNamePixelSize
                                     visible: text!==""
                                     text: root.getProperty('presenter').name
                                     lineHeight: 0.85
@@ -248,7 +250,7 @@ Slide {
                                     font.italic: true
                                     visible: text!==""
                                     text: root.getProperty('presenter').organization
-                                    font.pixelSize: __theme.detailPresenterOrganizationPixelSize
+                                    font.pixelSize: UI.Theme.detailPresenterOrganizationPixelSize
                                     Utils.Fill { color: "purple" }
                                 }
                             }
@@ -258,7 +260,7 @@ Slide {
                             id: _Label_PresenterBio
                             width: parent.width
                             wrapMode: Text.WordWrap
-                            font.pixelSize: __theme.detailAbstractPixelSize
+                            font.pixelSize: UI.Theme.detailAbstractPixelSize
                             text: root.getProperty('presenter').bio
                         }
 

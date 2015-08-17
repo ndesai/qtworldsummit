@@ -1,78 +1,87 @@
 <RCC>
-    <qresource prefix="/qml">
-        <file>qml/+devel/main.qml</file>
-        <file>qml/Api.qml</file>
-        <file>qml/Content.qml</file>
-        <file>qml/controls/BaseTabBarPage.qml</file>
-        <file>qml/controls/Slide.qml</file>
-        <file>qml/controls/TabBarButton.qml</file>
-        <file>qml/controls/TabBarController.qml</file>
-        <file>qml/dev.qml</file>
-        <file>qml/home.qml</file>
-        <file>qml/HttpRequest.qml</file>
-        <file>qml/img/floorplan-bcc.png</file>
-        <file>qml/img/icon-back.png</file>
-        <file>qml/img/icon-bookmark-hl.png</file>
-        <file>qml/img/icon-bookmark.png</file>
-        <file>qml/img/icon-clock-filled.png</file>
-        <file>qml/img/icon-home.png</file>
-        <file>qml/img/icon-information.png</file>
-        <file>qml/img/icon-location.png</file>
-        <file>qml/img/icon-qtloading.gif</file>
-        <file>qml/img/icon-star.png</file>
-        <file>qml/img/logo-qws.png</file>
-        <file>qml/img/qws2015-hero.jpg</file>
-        <file>qml/IntroView.qml</file>
-        <file>qml/Label.qml</file>
-        <file>qml/main.qml</file>
-        <file>qml/main_ios.qml</file>
-        <file>qml/MainPage.qml</file>
-        <file>qml/PaginationDots.qml</file>
-        <file>qml/TabButtonStyle.qml</file>
-        <file>qml/ToolBar.qml</file>
-        <file>qml/TutorialPage.qml</file>
-        <file>qml/ui/+android/qmldir</file>
-        <file>qml/ui/+android/Theme.qml</file>
-        <file>qml/ui/+ios/qmldir</file>
-        <file>qml/ui/+ios/Theme.qml</file>
-        <file>qml/ui/Header.qml</file>
-        <file>qml/ui/Location.qml</file>
-        <file>qml/ui/qmldir</file>
-        <file>qml/ui/RightNowIcon.qml</file>
-        <file>qml/ui/Schedule.qml</file>
-        <file>qml/ui/SingleDayDelegate.qml</file>
-        <file>qml/ui/SingleSessionDelegate.qml</file>
-        <file>qml/ui/SingleTrackDelegate.qml</file>
-        <file>qml/ui/TabBar.qml</file>
-        <file>qml/ui/Theme.qml</file>
-        <file>qml/ui/TrackDetailSheet.qml</file>
-        <file>qml/ui/Viewport.qml</file>
-        <file>qml/utils/BaseButtonTheme.qml</file>
-        <file>qml/utils/BaseIcon.qml</file>
-        <file>qml/utils/Fill.qml</file>
-    </qresource>
-    <qresource prefix="/images">
-        <file alias="bg.jpg">resources/images/bg.jpg</file>
-        <file alias="card.png">resources/images/card.png</file>
-        <file alias="triangular.png">resources/images/triangular.png</file>
-        <file alias="berlin">resources/images/tutorial/berlin.svg</file>
-        <file alias="card.png">resources/images/card.png</file>
-        <file alias="favorite.svg">resources/images/favorite.svg</file>
-        <file alias="home.svg">resources/images/home.svg</file>
-        <file alias="home_active.svg">resources/images/home_active.svg</file>
-        <file alias="info.svg">resources/images/info.svg</file>
-        <file alias="info_active.svg">resources/images/info_active.svg</file>
-        <file alias="laptop">resources/images/tutorial/laptop.svg</file>
-        <file alias="location.svg">resources/images/location.svg</file>
-        <file alias="location_active.svg">resources/images/location_active.svg</file>
-        <file alias="next_white">resources/images/tutorial/next_white.svg</file>
-        <file alias="phone_1">resources/images/tutorial/phone_1.svg</file>
-        <file alias="phone_2">resources/images/tutorial/phone_2.svg</file>
-        <file alias="phone_3">resources/images/tutorial/phone_3.svg</file>
-        <file alias="qt_logo">resources/images/qt_logo.svg</file>
-        <file alias="triangular.png">resources/images/triangular.png</file>
-        <file alias="tutorial_1">resources/images/tutorial/cloud_1.svg</file>
-        <file alias="tutorial_2">resources/images/tutorial/cloud_2.svg</file>
-        <file alias="tutorial_3">resources/images/tutorial/cloud_3.svg</file>
-    </qresource>
+	<qresource prefix="/qml">
+		<file>qml/+devel/main.qml</file>
+		<file>qml/Api.qml</file>
+		<file>qml/Content.qml</file>
+		<file>qml/controls/BaseTabBarPage.qml</file>
+		<file>qml/controls/Slide.qml</file>
+		<file>qml/controls/TabBarButton.qml</file>
+		<file>qml/controls/TabBarController.qml</file>
+		<file>qml/dev.qml</file>
+		<file>qml/home.qml</file>
+		<file>qml/HttpRequest.qml</file>
+		<file>qml/img/floorplan-bcc.png</file>
+		<file>qml/img/icon-back.png</file>
+		<file>qml/img/icon-bookmark-hl.png</file>
+		<file>qml/img/icon-bookmark.png</file>
+		<file>qml/img/icon-clock-filled.png</file>
+		<file>qml/img/icon-home.png</file>
+		<file>qml/img/icon-information.png</file>
+		<file>qml/img/icon-location.png</file>
+		<file>qml/img/icon-qtloading.gif</file>
+		<file>qml/img/icon-star.png</file>
+		<file>qml/img/logo-qws.png</file>
+		<file>qml/img/qws2015-hero.jpg</file>
+		<file>qml/IntroView.qml</file>
+		<file>qml/Label.qml</file>
+		<file>qml/main.qml</file>
+		<file>qml/main_ios.qml</file>
+		<file>qml/MainPage.qml</file>
+		<file>qml/PaginationDots.qml</file>
+		<file>qml/TabButtonStyle.qml</file>
+		<file>qml/ToolBar.qml</file>
+		<file>qml/TutorialPage.qml</file>
+		<file>qml/ui/+android/qmldir</file>
+		<file>qml/ui/+android/Theme.qml</file>
+		<file>qml/ui/+ios/qmldir</file>
+		<file>qml/ui/+ios/Theme.qml</file>
+		<file>qml/ui/Header.qml</file>
+		<file>qml/ui/Location.qml</file>
+		<file>qml/ui/qmldir</file>
+		<file>qml/ui/RightNowIcon.qml</file>
+		<file>qml/ui/Schedule.qml</file>
+		<file>qml/ui/SingleDayDelegate.qml</file>
+		<file>qml/ui/SingleSessionDelegate.qml</file>
+		<file>qml/ui/SingleTrackDelegate.qml</file>
+		<file>qml/ui/TabBar.qml</file>
+		<file>qml/ui/Theme.qml</file>
+		<file>qml/ui/TrackDetailSheet.qml</file>
+		<file>qml/ui/Viewport.qml</file>
+		<file>qml/utils/AccentBottom.qml</file>
+		<file>qml/utils/AccentLeft.qml</file>
+		<file>qml/utils/AccentRight.qml</file>
+		<file>qml/utils/AccentTop.qml</file>
+		<file>qml/utils/BaseButtonTheme.qml</file>
+		<file>qml/utils/BaseIcon.qml</file>
+		<file>qml/utils/BaseWindow.qml</file>
+		<file>qml/utils/ClickGuard.qml</file>
+		<file>qml/utils/Fill.qml</file>
+		<file>qml/utils/GestureArea.qml</file>
+		<file>qml/utils/HorizontalSpacer.qml</file>
+		<file>qml/utils/SafeLoader.qml</file>
+		<file>qml/utils/VerticalSpacer.qml</file>
+	</qresource>
+	<qresource prefix="/images">
+		<file alias="bg.jpg">resources/images/bg.jpg</file>
+		<file alias="card.png">resources/images/card.png</file>
+		<file alias="favorite.svg">resources/images/favorite.svg</file>
+		<file alias="home.svg">resources/images/home.svg</file>
+		<file alias="home_active.svg">resources/images/home_active.svg</file>
+		<file alias="info.svg">resources/images/info.svg</file>
+		<file alias="info_active.svg">resources/images/info_active.svg</file>
+		<file alias="location.svg">resources/images/location.svg</file>
+		<file alias="location_active.svg">resources/images/location_active.svg</file>
+		<file alias="qt_logo.svg">resources/images/qt_logo.svg</file>
+		<file alias="triangular.png">resources/images/triangular.png</file>
+		<file alias="berlin.svg">resources/images/tutorial/berlin.svg</file>
+		<file alias="calendar.svg">resources/images/tutorial/calendar.svg</file>
+		<file alias="cloud_1.svg">resources/images/tutorial/cloud_1.svg</file>
+		<file alias="cloud_2.svg">resources/images/tutorial/cloud_2.svg</file>
+		<file alias="cloud_3.svg">resources/images/tutorial/cloud_3.svg</file>
+		<file alias="laptop.svg">resources/images/tutorial/laptop.svg</file>
+		<file alias="next_white.svg">resources/images/tutorial/next_white.svg</file>
+		<file alias="phone_1.svg">resources/images/tutorial/phone_1.svg</file>
+		<file alias="phone_2.svg">resources/images/tutorial/phone_2.svg</file>
+		<file alias="phone_3.svg">resources/images/tutorial/phone_3.svg</file>
+	</qresource>
 </RCC>

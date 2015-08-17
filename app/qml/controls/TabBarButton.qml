@@ -1,30 +1,30 @@
-import QtQuick 2.2
+import QtQuick 2.5
 import "../utils"
+import "qrc:/qml/qml/ui" 1.5 as UI
 
 Rectangle {
     id: _root
 
-    signal clicked
     property alias icon : _BaseIcon.source
     property alias iconWidth : _BaseIcon.width
     property alias iconObject : _BaseIcon
     readonly property bool isActive : root.activeButton === this
 
-    property variant theme : root.theme
+    signal clicked
 
-    width: __theme.dp(120)
-    height: __theme.dp(100)
+    width: UI.Theme.dp(120)
+    height: UI.Theme.dp(100)
     color: !isActive ? (!_MouseArea.pressed ?
-                            theme.backgroundDefaultColor :
-                            theme.backgroundPressedColor) : theme.backgroundActiveColor
+                            root.theme.backgroundDefaultColor :
+                            root.theme.backgroundPressedColor) : root.theme.backgroundActiveColor
 
     BaseIcon {
         id: _BaseIcon
         anchors.centerIn: parent
-        width: __theme.dp(54)
+        width: UI.Theme.dp(54)
         color: !isActive ? (!_MouseArea.pressed ?
-                                theme.iconDefaultColor :
-                                theme.iconPressedColor) : theme.iconActiveColor
+                                root.theme.iconDefaultColor :
+                                root.theme.iconPressedColor) : root.theme.iconActiveColor
         transformOrigin: Item.Center
     }
 

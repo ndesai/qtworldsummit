@@ -1,12 +1,14 @@
 import QtQuick 2.0
 import "../utils" as Utils
+import "qrc:/qml/qml/ui" 1.5 as UI
+import ".."
 
 Rectangle {
     id: root
 
     property bool skeleton : false
     property alias rowWidth : _row.width
-    property color baseColor : __theme.colorQtMediumGreen
+    property color baseColor : UI.Theme.colorQtMediumGreen
 
     anchors.verticalCenter: parent.verticalCenter
     width: _row.width
@@ -32,7 +34,7 @@ Rectangle {
         height: parent.height
 
         Utils.HorizontalSpacer {
-            width: __theme.dp(12)
+            width: UI.Theme.dp(12)
         }
 
         Utils.BaseIcon {
@@ -40,20 +42,24 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
             source: "../img/icon-clock-filled.png"
             color: _labelNow.color
-            width: __theme.dp(24)
+            width: UI.Theme.dp(24)
 
             Utils.Fill { }
         }
 
         Utils.HorizontalSpacer {
-            width: __theme.dp(12)
+            width: UI.Theme.dp(12)
         }
 
         Label {
             id: _labelNow
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.verticalCenterOffset: 1
-            font.pixelSize: __theme.dp(24)
+
+            anchors {
+                verticalCenter: parent.verticalCenter
+                verticalCenterOffset: 1
+            }
+
+            font.pixelSize: UI.Theme.dp(24)
             color: !skeleton ? "#ffffff" : root.baseColor
             text: qsTr("NOW")
             style: Text.Raised
@@ -63,7 +69,7 @@ Rectangle {
         }
 
         Utils.HorizontalSpacer {
-            width: __theme.dp(24)
+            width: UI.Theme.dp(24)
         }
     }
 }

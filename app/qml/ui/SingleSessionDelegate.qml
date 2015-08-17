@@ -1,5 +1,7 @@
 import QtQuick 2.0
 import "../utils" as Utils
+import "qrc:/qml/qml/ui" 1.5 as UI
+import ".."
 
 Item {
     id: _Item_ScheduleDelegate
@@ -9,14 +11,14 @@ Item {
     height: _Rectangle_SessionTime.height + _Column_Tracks.height
     Rectangle {
         id: _Rectangle_SessionTime
-        width: parent.width - __theme.dp(2)
-        height: __theme.dp(80)
-        color: __theme.colorLightGrey
+        width: parent.width - UI.Theme.dp(2)
+        height: UI.Theme.dp(80)
+        color: UI.Theme.colorLightGrey
         Label {
             anchors.left: parent.left
-            anchors.leftMargin: __theme.dp(30)
+            anchors.leftMargin: UI.Theme.dp(30)
             anchors.right: _RightNowIcon.state !== "hidden" ? _RightNowIcon.left : parent.right
-            anchors.rightMargin: _RightNowIcon.state !== "hidden" ? __theme.dp(20) : __theme.dp(30)
+            anchors.rightMargin: _RightNowIcon.state !== "hidden" ? UI.Theme.dp(20) : UI.Theme.dp(30)
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             verticalAlignment: Text.AlignVCenter
@@ -24,7 +26,7 @@ Item {
             color: "#222222"
             style: Text.Raised
             styleColor: "#ffffff"
-            font.pixelSize: __theme.scheduleViewPixelSize
+            font.pixelSize: UI.Theme.scheduleViewPixelSize
             elide: Text.ElideRight
             Utils.Fill { color: "yellow" }
         }
@@ -33,7 +35,7 @@ Item {
             property bool isRightNow : false/*_Model.date_isRightNow(_Item_ScheduleDelegate.dataModel.date.plain.starting,
                                                               _Item_ScheduleDelegate.dataModel.date.plain.ending)*/
             anchors.right: parent.right
-            anchors.rightMargin: __theme.dp(30)
+            anchors.rightMargin: UI.Theme.dp(30)
             skeleton: true
             state: "hidden"
             states: [
@@ -75,10 +77,10 @@ Item {
             ]
         }
         Utils.AccentTop {
-            color: __theme.colorLightGrey
+            color: UI.Theme.colorLightGrey
         }
         Utils.AccentBottom {
-            color: __theme.colorLightGreyAccent
+            color: UI.Theme.colorLightGreyAccent
         }
     }
     Column {

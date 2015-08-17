@@ -1,11 +1,12 @@
 import QtQuick 2.3
 import "../controls"
+import "qrc:/qml/qml/ui" 1.5 as UI
 
 TabBarController {
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    height: __theme.dp(100)
+    height: UI.Theme.dp(100)
 
     tabBarModel: [
         {
@@ -26,7 +27,7 @@ TabBarController {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
-        height: __theme.dp(1)
+        height: UI.Theme.dp(1)
         color: "#d2d2d1"
         z: 2
     }

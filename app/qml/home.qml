@@ -1,13 +1,12 @@
 import QtQuick 2.4
 import QtQuick.Window 2.2
-
-import "ui"
+import "qrc:/qml/qml/ui" 1.5 as UI
 import "utils" as Utils
+import "ui"
 
 Viewport {
     id: root
 
-    property Theme __theme: Theme { id: theme }
     property Api __api: Api { }
 
     width: 1080
@@ -15,7 +14,7 @@ Viewport {
     color: "#000000"
 
     // TODO: Platform dependent status bar height
-    topMargin: __theme.marginTop
+    topMargin: UI.Theme.marginTop
 
     Header {
         id: _header
@@ -24,11 +23,12 @@ Viewport {
         Image {
             id: _imageLogo
 
-            anchors.left: parent.left
-            anchors.leftMargin: __theme.dp(20)
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.verticalCenterOffset: __theme.dp(-4)
-            width: __theme.dp(156)
+            anchors {
+                left: parent.left; leftMargin: UI.Theme.dp(20)
+                verticalCenter: parent.verticalCenter; verticalCenterOffset: UI.Theme.dp(-4)
+            }
+
+            width: UI.Theme.dp(156)
 
             fillMode: Image.PreserveAspectFit
             smooth: true
@@ -38,13 +38,17 @@ Viewport {
         RightNowIcon {
             id: _RightNowIcon
 
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.right: parent.right
-            anchors.rightMargin: __theme.dp(24)
+            anchors {
+                verticalCenter: parent.verticalCenter
+                right: parent.right; rightMargin: UI.Theme.dp(24)
+            }
 
             Utils.ClickGuard {
-                anchors.fill: parent
-                anchors.margins: __theme.dp(-10)
+                anchors {
+                    fill: parent
+                    margins: UI.Theme.dp(-10)
+                }
+
                 Utils.Fill { color: "blue" }
                 onClicked: {
                     // TODO: ND - Show today's schedule
@@ -56,15 +60,18 @@ Viewport {
     Item {
         id: _itemPageContainer
 
-        anchors.top: _header.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
+        anchors {
+            top: _header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         clip: true
 
         Rectangle {
             anchors.fill: parent
-            color: __theme.colorPageBackground
+            color: UI.Theme.colorPageBackground
 
             Loader {
                 id: _loaderMainContent

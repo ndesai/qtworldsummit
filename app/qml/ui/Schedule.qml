@@ -1,6 +1,8 @@
 import QtQuick 2.3
 import "../utils"
 import "../controls"
+import "qrc:/qml/qml/ui" 1.5 as UI
+import ".."
 
 BaseTabBarPage {
     id: root
@@ -60,8 +62,8 @@ BaseTabBarPage {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
-        height: __theme.dateViewHeight
-        color: __theme.colorQtGreen
+        height: UI.Theme.dateViewHeight
+        color: UI.Theme.colorQtGreen
 
         ListView {
             id: _ListView_DateView
@@ -72,7 +74,7 @@ BaseTabBarPage {
             highlightRangeMode: ListView.StrictlyEnforceRange
             preferredHighlightBegin: ((width - delegateWidth) / 2)
             preferredHighlightEnd: preferredHighlightBegin + delegateWidth
-            highlightMoveDuration: __theme.dp(400)
+            highlightMoveDuration: UI.Theme.dp(400)
 
             onCurrentIndexChanged: {
                 _ListView_ScheduleView.currentIndex = currentIndex
@@ -93,13 +95,13 @@ BaseTabBarPage {
                     height: _Rectangle_DateView.height
                     Label {
                         anchors.fill: parent
-                        anchors.margins: __theme.dp(15)
-                        anchors.topMargin: __theme.dp(18)
+                        anchors.margins: UI.Theme.dp(15)
+                        anchors.topMargin: UI.Theme.dp(18)
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         text: modelData.day.date.formatted
                         color: "#ffffff"
-                        font.pixelSize: __theme.dateViewPixelSize
+                        font.pixelSize: UI.Theme.dateViewPixelSize
                         Fill { }
                     }
                     Fill { color: index%2==0?"red":"yellow" }
@@ -111,9 +113,9 @@ BaseTabBarPage {
         }
         Rectangle {
             width: parent.width
-            height: __theme.dp(2)
+            height: UI.Theme.dp(2)
             anchors.bottom: parent.bottom
-            color: __theme.colorQtMediumGreen
+            color: UI.Theme.colorQtMediumGreen
             //opacity: _Item_Delegate.ListView.isCurrentItem ? 1 : 0
             //Behavior on opacity { NumberAnimation { duration: 100 } }
         }
