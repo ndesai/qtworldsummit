@@ -34,18 +34,22 @@ QC.ApplicationWindow {
         initialItem: mainPage
     }
 
-    TutorialPage {
-        anchors.fill: parent
+    Component {
+        id: tutorialPage
 
-        // onClosed: ScreenValues.setStatusBarColor(149, 165, 166)
-        onSkipTutorial: stackView.replace(mainPage)
+        TutorialPage {
+            clip: true
+            // onClosed: ScreenValues.setStatusBarColor(149, 165, 166)
+            onClosed: stackView.pop()
+        }
     }
 
     Component {
         id: mainPage
 
         MainPage {
-
         }
     }
+
+    Component.onCompleted: stackView.push(tutorialPage)
 }

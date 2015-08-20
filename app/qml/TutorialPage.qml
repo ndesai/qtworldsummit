@@ -3,10 +3,10 @@ import QtQuick.Controls 1.3
 import QtQuick.Controls.Styles 1.3
 import "qrc:/qml/qml/ui" 1.5 as UI
 
-Rectangle {
+FocusScope {
     id: root
 
-    signal skipTutorial
+    signal closed
 
     IntroView {
         id: introView
@@ -18,6 +18,40 @@ Rectangle {
 
         buttons: Item {
             anchors.fill: parent
+
+            Item {
+                anchors {
+                    top: parent.top
+                    bottom: parent.bottom
+                    left: parent.left
+                }
+
+                width: parent.width * 0.25
+
+                Label {
+                    anchors {
+                        fill: parent
+                        leftMargin: parent.width * 0.05
+                        rightMargin: parent.width * 0.05
+                        topMargin: parent.height * 0.05
+                        bottomMargin: parent.height * 0.05
+                    }
+
+                    text: qsTr("Skip")
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                    font.pixelSize: parent.height * 0.4
+                    fontSizeMode: Text.Fit
+                    color: "#ffffff"
+                    opacity: 0.65
+
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: root.closed()
+                }
+            }
 
             Item {
                 anchors {
@@ -42,7 +76,12 @@ Rectangle {
 
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: introView.incrementCurrentIndex()
+                    onClicked: {
+                        if (introView.currentIndex !== introView.view.count -1)
+                            introView.incrementCurrentIndex()
+                        else
+                            root.closed()
+                    }
                 }
             }
         }
@@ -147,10 +186,7 @@ Rectangle {
                 textColor: "#EBCDC3"
                 description: "Qt World Summit 2015 helps you to keep track of all those awesome talks."
                 images: [
-                    ListElement { source: "qrc:/images/cloud_1.svg"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.06},
-                    ListElement { source: "qrc:/images/cloud_2.svg"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.18 },
-                    ListElement { source: "qrc:/images/cloud_3.svg"; multiplier: 0.1; width: 0.5; y: 0.35; x: 0.25 },
-                    ListElement { source: "qrc:/images/laptop.svg"; multiplier: 0.05; width: 0.35; y: 0.28; x: 0.53 }
+                    ListElement { source: "qrc:/images/calendar.svg"; multiplier: 0.3; width: 0.48; y: 0.28; x: 0.5}
                 ]
             }
 
@@ -169,13 +205,12 @@ Rectangle {
                 backgroundColor: "#4F7CAC"
                 title: qsTr("We are open source")
                 textColor: "#CAD7E6"
+
                 /// TODO: support hyperlink
                 description: "Go to http://github.com/ndesai/qtworldsummit to get the source code, submit your pull request to contribute!"
                 images: [
-                    ListElement { source: "qrc:/images/cloud_1.svg"; multiplier: 0.3; width: 0.4; y: 0.3; x: 0.3},
-                    ListElement { source: "qrc:/images/cloud_2.svg"; multiplier: 0.2; width: 0.3; y: 0.25; x: 0.4 },
-                    ListElement { source: "qrc:/images/cloud_3.svg"; multiplier: 0.1; width: 0.5; y: 0.4; x: 0.5 },
-                    ListElement { source: "qrc:/images/cloud_3.svg"; multiplier: 0.05; width: 0.25; y: 0.28; x: 0.35 }
+                    ListElement { source: "qrc:/images/code.svg"; multiplier: 0.3; width: 0.3; y: 0.35; x: 0.33 },
+                    ListElement { source: "qrc:/images/code.svg"; multiplier: 0.2; width: 0.3; y: 0.25; x: 0.55 }
                 ]
             }
         }
