@@ -161,7 +161,9 @@ FocusScope {
                 title: qsTr("Welcome to Qt World Summit 2015")
                 backgroundColor: "#2c3e50"
                 textColor: "#BFC4CA"
-                description: "Experience the future of application development & device creation."
+
+                description: qsTr("Experience the future of application development & device creation.")
+
                 images: [
                     ListElement { source: "qrc:/images/cloud_1.svg"; multiplier: 0.3; width: 0.4; y: 0.28; x: 0.26},
                     ListElement { source: "qrc:/images/cloud_2.svg"; multiplier: 0.2; width: 0.45; y: 0.22; x: 0.48 },
@@ -174,7 +176,9 @@ FocusScope {
                 title: qsTr("Keep track of your sessions.")
                 backgroundColor: "#be5a38"
                 textColor: "#EBCDC3"
-                description: "Qt World Summit 2015 helps you to keep track of all those awesome talks."
+
+                description: qsTr("Qt World Summit 2015 helps you to keep track of all those awesome talks.")
+
                 images: [
                     ListElement { source: "qrc:/images/calendar.svg"; multiplier: 0.3; width: 0.48; y: 0.28; x: 0.5}
                 ]
@@ -185,7 +189,9 @@ FocusScope {
                 title: qsTr("Write your source code once, run it anywhere on any device.")
                 backgroundColor: "#533747"
                 textColor: "#CBC2C7"
-                description: "Qt is the leading independent technology for cross-platform development."
+
+                description: qsTr("Qt is the leading independent technology for cross-platform development.")
+
                 images: [
                     ListElement { source: "qrc:/images/qt_logo.svg"; multiplier: 0.25; width: 0.45; y: 0.28; x: 0.5 }
                 ]
@@ -196,8 +202,8 @@ FocusScope {
                 title: qsTr("We are open source")
                 textColor: "#CAD7E6"
 
-                /// TODO: support hyperlink
-                description: "Go to http://github.com/ndesai/qtworldsummit to get the source code, submit your pull request to contribute!"
+                description: qsTr("Qt World Summit is open source, submit your pull request to contribute!")
+
                 images: [
                     ListElement { source: "qrc:/images/code.svg"; multiplier: 0.3; width: 0.3; y: 0.35; x: 0.33 },
                     ListElement { source: "qrc:/images/code.svg"; multiplier: 0.2; width: 0.3; y: 0.25; x: 0.55 }
