@@ -6,6 +6,7 @@ Row {
 
     property ListView view
     property color color: "#34db98"
+    property color activeColor: "#3498db"
 
     Repeater {
         model: root.view.count
@@ -23,23 +24,7 @@ Row {
                 width: height
                 radius: height
 
-                color: root.color
-
-                state: index === root.view.currentIndex ? "active" : ""
-
-                states: [
-                    State {
-                        name: "active"
-                        PropertyChanges {
-                            target: rectangleIndicator
-                            height: Math.round(UI.Theme.paginationDotBaseSize * 0.66)
-                        }
-                    }
-                ]
-
-                transitions: Transition {
-                    NumberAnimation { target: rectangleIndicator; properties: "width,height"; easing.type: Easing.OutInQuad; duration: 250 }
-                }
+                color: index === root.view.currentIndex ? root.activeColor : root.color
             }
         }
     }

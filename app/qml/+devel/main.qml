@@ -39,7 +39,7 @@ QC.ApplicationWindow {
         id: tutorial
 
         TutorialPage {
-            onSkipTutorial: stackView.replace(mainPage)
+            onClosed: stackView.replace(mainPage)
         }
     }
 

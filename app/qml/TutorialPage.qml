@@ -1,6 +1,7 @@
 import QtQuick 2.5
-import QtQuick.Controls 1.3
-import QtQuick.Controls.Styles 1.3
+import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.4
+import QtQuick.Layouts 1.1
 import "qrc:/qml/qml/ui" 1.5 as UI
 
 FocusScope {
@@ -16,71 +17,60 @@ FocusScope {
         buttonsContainerHeight: UI.Theme.paginationDotContainerHeight
         rectangleDividerHeight: UI.Theme.dividerHeight
 
-        buttons: Item {
+        buttons: RowLayout {
             anchors.fill: parent
 
             Item {
-                anchors {
-                    top: parent.top
-                    bottom: parent.bottom
-                    left: parent.left
-                }
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+            }
 
-                width: parent.width * 0.25
+            Item {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
-                Label {
-                    anchors {
-                        fill: parent
-                        leftMargin: parent.width * 0.05
-                        rightMargin: parent.width * 0.05
-                        topMargin: parent.height * 0.05
-                        bottomMargin: parent.height * 0.05
-                    }
+                PaginationDots {
+                    anchors.centerIn: parent
 
-                    text: qsTr("Skip")
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: parent.height * 0.4
-                    fontSizeMode: Text.Fit
-                    color: "#ffffff"
-                    opacity: 0.65
-
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: root.closed()
+                    color: "#44ffffff"
+                    activeColor: "#ffffff"
+                    view: introView.view
                 }
             }
 
             Item {
-                anchors {
-                    top: parent.top
-                    bottom: parent.bottom
-                    right: parent.right
-                }
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
-                width: parent.width * 0.25
+                Item {
+                    anchors {
+                        top: parent.top
+                        bottom: parent.bottom
+                        right: parent.right
+                    }
 
-                Image {
-                    anchors.centerIn: parent
+                    width: parent.width * 0.25
 
-                    height: parent.height * 0.34
-                    fillMode: Image.PreserveAspectFit
-                    source: "qrc:/images/next_white.svg"
+                    Image {
+                        anchors.centerIn: parent
 
-                    sourceSize.width: parent.height * 0.34
-                    sourceSize.height: parent.height * 0.34
-                    opacity: 0.65
-                }
+                        height: parent.height * 0.34
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/images/next_white.svg"
 
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        if (introView.currentIndex !== introView.view.count -1)
-                            introView.incrementCurrentIndex()
-                        else
-                            root.closed()
+                        sourceSize.width: parent.height * 0.34
+                        sourceSize.height: parent.height * 0.34
+                        opacity: 0.65
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            if (introView.currentIndex !== introView.view.count -1)
+                                introView.incrementCurrentIndex()
+                            else
+                                root.closed()
+                        }
                     }
                 }
             }
