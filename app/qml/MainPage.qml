@@ -1,18 +1,33 @@
 import QtQuick 2.5
-import QtQuick.Controls 1.4 as QC
-import QtQuick.Layouts 1.1 as LA
+import QtQuick.Controls 1.4
+import QtQuick.Layouts 1.1
 import QtWorldSummit 1.5
 import "qrc:/qml/qml/ui" 1.5 as UI
+import "."
 
 FocusScope {
     ToolBar {
+        id: toolbar
+
         anchors {
             left: parent.left
             right: parent.right
+            top: parent.top
         }
     }
 
-    LA.RowLayout {
+    StackView {
+        anchors {
+            left: parent.left
+            right: parent.right
+            top: toolbar.bottom
+            bottom: rowTabs.top
+        }
+    }
+
+    RowLayout {
+        id: rowTabs
+
         anchors {
             left: parent.left
             right: parent.right
@@ -22,9 +37,9 @@ FocusScope {
         height: UI.Theme.tabHeight
         spacing: 0
 
-        QC.Button {
-            LA.Layout.fillWidth: true
-            LA.Layout.fillHeight: true
+        Button {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
             checkable: true
             checked: true
@@ -35,9 +50,9 @@ FocusScope {
             }
         }
 
-        QC.Button {
-            LA.Layout.fillWidth: true
-            LA.Layout.fillHeight: true
+        Button {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
             checkable: true
             exclusiveGroup: group
@@ -47,9 +62,9 @@ FocusScope {
             }
         }
 
-        QC.Button {
-            LA.Layout.fillWidth: true
-            LA.Layout.fillHeight: true
+        Button {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
             checkable: true
             exclusiveGroup: group
@@ -60,7 +75,7 @@ FocusScope {
         }
     }
 
-    QC.ExclusiveGroup {
+    ExclusiveGroup {
         id: group
     }
 }

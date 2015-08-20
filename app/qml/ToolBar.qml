@@ -6,6 +6,35 @@ Rectangle {
 
     height: UI.Theme.toolBarHeight
 
+    Row {
+        anchors {
+            top: parent.top
+            bottom: parent.bottom
+            left: parent.left; leftMargin: UI.Theme.headerMargin
+        }
+
+        spacing: UI.Theme.spacing
+
+        Image {
+            anchors.verticalCenter: parent.verticalCenter
+
+            height: parent.height * 0.8
+
+            sourceSize.height: parent.height * 0.8
+
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+            source: "qrc:/images/qt_logo.svg"
+        }
+
+        Label {
+            anchors.verticalCenter: parent.verticalCenter
+
+            color: "#000000"
+            text: "WORLD\nSUMMIT"
+        }
+    }
+
     Image {
         anchors {
             right: parent.right; rightMargin: 4
@@ -19,5 +48,6 @@ Rectangle {
         sourceSize.width: parent.height * 0.52
 
         source: "qrc:/images/favorite.svg"
+        visible: false
     }
 }

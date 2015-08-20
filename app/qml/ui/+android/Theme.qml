@@ -15,6 +15,8 @@ QtObject {
     property int dividerHeight: 1 * ScreenValues.dp
     property int tabHeight: 38 * ScreenValues.dp
     property int toolBarHeight: 56 * ScreenValues.dp   
+    property int spacing: 8 * ScreenValues.dp
+    property int headerMargin: 16 * ScreenValues.dp
     property int tutorialDescriptionFontSize: 20 * ScreenValues.dp
     property int tutorialDescriptionMargins: 22 * ScreenValues.dp
     property int tutorialTitleFontSize: 24 * ScreenValues.dp
