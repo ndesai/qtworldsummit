@@ -17,12 +17,37 @@ FocusScope {
     }
 
     StackView {
+        id: stackView
+
+        property string currentView: "schedule"
+
         anchors {
             left: parent.left
             right: parent.right
             top: toolbar.bottom
             bottom: rowTabs.top
         }
+
+        initialItem: schedule
+    }
+
+    Component {
+        id: schedule
+
+        Schedule { }
+    }
+
+
+    Component {
+        id: map
+
+        Rectangle { color: "#3498db" }
+    }
+
+    Component {
+        id: information
+
+        Rectangle { color: "#34db98" }
     }
 
     RowLayout {
@@ -48,6 +73,13 @@ FocusScope {
             style: TabButtonStyle {
                 imageSource: "qrc:/images/home" + (control.checked ? "_active" : "") + ".svg"
             }
+
+            onClicked: {
+                if (stackView.currentView !== "schedule") {
+                    stackView.currentView = "schedule"
+                    stackView.replace(schedule)
+                }
+            }
         }
 
         Button {
@@ -60,6 +92,13 @@ FocusScope {
             style: TabButtonStyle {
                 imageSource: "qrc:/images/location" + (control.checked ? "_active" : "") + ".svg"
             }
+
+            onClicked: {
+                if (stackView.currentView !== "map") {
+                    stackView.currentView = "map"
+                    stackView.replace(map)
+                }
+            }
         }
 
         Button {
@@ -71,6 +110,13 @@ FocusScope {
 
             style: TabButtonStyle {
                 imageSource: "qrc:/images/info" + (control.checked ? "_active" : "") + ".svg"
+            }
+
+            onClicked: {
+                if (stackView.currentView !== "information") {
+                    stackView.currentView = "information"
+                    stackView.replace(information)
+                }
             }
         }
     }

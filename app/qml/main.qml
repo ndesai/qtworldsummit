@@ -22,6 +22,8 @@ QC.ApplicationWindow {
 
     property bool isScreenPortrait: height >= width
 
+    property Api __api: Api { }
+
     visible: true
     width: resolutions[currentResolution]["width"]
     height: resolutions[currentResolution]["height"]
@@ -32,6 +34,14 @@ QC.ApplicationWindow {
         anchors.fill: parent
 
         initialItem: mainPage
+        opacity: 0
+
+        Behavior on opacity {
+            SequentialAnimation {
+                PauseAnimation { duration: 350  }
+                NumberAnimation { target: stackView; property: "opacity"; to: 1 }
+            }
+        }
     }
 
     Component {
@@ -41,14 +51,15 @@ QC.ApplicationWindow {
             clip: true
             // onClosed: ScreenValues.setStatusBarColor(149, 165, 166)
             onClosed: stackView.pop()
+
+            Component.onCompleted: stackView.opacity = 1
         }
     }
 
     Component {
         id: mainPage
 
-        MainPage {
-        }
+        MainPage { }
     }
 
     Component.onCompleted: stackView.push(tutorialPage)

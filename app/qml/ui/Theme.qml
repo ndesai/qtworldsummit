@@ -60,6 +60,8 @@ Item {
     property int informationDatePixelSize: dp(34)
     property int informationVenueDescriptionPixelSize: dp(28)
 
+    property var activeObject
+    property bool showFills: false
     property bool simulateDp: false
     property double simulatedDp: ScreenValues.dpi
 

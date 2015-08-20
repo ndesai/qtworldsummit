@@ -24,9 +24,14 @@
         <file>qml/img/qws2015-hero.jpg</file>
         <file>qml/IntroView.qml</file>
         <file>qml/Label.qml</file>
+        <file>qml/main.qml</file>
         <file>qml/main_ios.qml</file>
         <file>qml/MainPage.qml</file>
         <file>qml/PaginationDots.qml</file>
+        <file>qml/Schedule.qml</file>
+        <file>qml/SingleDayDelegate.qml</file>
+        <file>qml/SingleSessionDelegate.qml</file>
+        <file>qml/SingleTrackDelegate.qml</file>
         <file>qml/TabButtonStyle.qml</file>
         <file>qml/ToolBar.qml</file>
         <file>qml/TutorialPage.qml</file>
@@ -59,7 +64,6 @@
         <file>qml/utils/HorizontalSpacer.qml</file>
         <file>qml/utils/SafeLoader.qml</file>
         <file>qml/utils/VerticalSpacer.qml</file>
-        <file>qml/main.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="berlin.svg">resources/images/tutorial/berlin.svg</file>
@@ -73,6 +77,8 @@
         <file alias="favorite.svg">resources/images/favorite.svg</file>
         <file alias="home.svg">resources/images/home.svg</file>
         <file alias="home_active.svg">resources/images/home_active.svg</file>
+        <file alias="icon-bookmark-hl.png">resources/images/icon-bookmark-hl.png</file>
+        <file alias="icon-bookmark.png">resources/images/icon-bookmark.png</file>
         <file alias="info.svg">resources/images/info.svg</file>
         <file alias="info_active.svg">resources/images/info_active.svg</file>
         <file alias="location_active.svg">resources/images/location_active.svg</file>
