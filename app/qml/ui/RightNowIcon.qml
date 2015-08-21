@@ -1,6 +1,6 @@
 import QtQuick 2.0
-import "../utils" as Utils
-import "qrc:/qml/qml/ui" 1.5 as UI
+import utils 1.5 as Utils
+import ui 1.5 as UI
 import ".."
 
 Rectangle {
@@ -40,7 +40,7 @@ Rectangle {
         Utils.BaseIcon {
             anchors.centerIn: undefined
             anchors.verticalCenter: parent.verticalCenter
-            source: "../img/icon-clock-filled.png"
+            source: "qrc:/images/icon-clock-filled.png"
             color: _labelNow.color
             width: UI.Theme.dp(24)
 

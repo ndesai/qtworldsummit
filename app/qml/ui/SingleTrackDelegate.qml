@@ -1,13 +1,15 @@
 import QtQuick 2.0
-import "../utils" as Utils
-import "qrc:/qml/qml/ui" 1.5 as UI
+import utils 1.5 as Utils
+import ui 1.5 as UI
 import ".."
 
 Rectangle {
     id: _Rectangle_Track
-    property variant dataModel : modelData
-    property var trackDetail : { "color" : "#2299FF" }//_Model.legend[_Rectangle_Track.dataModel.track] || { }
-    property bool isFavorite : Math.floor(Math.random()*12)%2===0
+
+    property variant dataModel: modelData
+    property var trackDetail: { "color" : "#2299FF" }//_Model.legend[_Rectangle_Track.dataModel.track] || { }
+    property bool isFavorite: Math.floor(Math.random()*12)%2===0
+
     height: Math.max(UI.Theme.dp(80), _Column_TrackInformation.height + UI.Theme.dp(30))
     width: _Column_Tracks.width
     color: _ClickGuard_Track.pressed ? "#dddddd" : "#ffffff"
@@ -68,7 +70,9 @@ Rectangle {
 
             text: (_Rectangle_Track.trackDetail.name || "")
         }
+
         Utils.VerticalSpacer { height: UI.Theme.dp(6); visible: _Label_TrackLocation.visible }
+
         Label {
             id: _Label_TrackTitle
 
@@ -83,7 +87,9 @@ Rectangle {
             text: _Rectangle_Track.dataModel.title
             Utils.Fill { color: index%2===0?"blue":"green" }
         }
+
         Utils.VerticalSpacer { height: UI.Theme.dp(4); visible: _Label_TrackPresenter.visible }
+
         Label {
             id: _Label_TrackPresenter
 
@@ -99,7 +105,9 @@ Rectangle {
             color: "#525252"
             font.italic: true
         }
+
         Utils.VerticalSpacer { height: UI.Theme.dp(4); visible: _Label_TrackLocation.visible }
+
         Label {
             id: _Label_TrackLocation
 
@@ -126,7 +134,7 @@ Rectangle {
         }
 
         color: UI.Theme.colorQtGreen
-        source: "../img/icon-bookmark-hl.png"
+        source: "qrc:/images/icon-bookmark-hl.png"
         visible: _Rectangle_Track.isFavorite
         //        Connections {
         //            target: _Model

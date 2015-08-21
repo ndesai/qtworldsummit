@@ -16,6 +16,8 @@ RESOURCES += resources.qrc
 
 include(deployment.pri)
 
+QML_IMPORT_PATH = $$PWD/qml
+
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 
 DISTFILES += \

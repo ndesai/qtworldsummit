@@ -1,6 +1,6 @@
 import QtQuick 2.3
 import "../controls"
-import "qrc:/qml/qml/ui" 1.5 as UI
+import ui 1.5 as UI
 
 TabBarController {
     anchors.left: parent.left
@@ -10,15 +10,15 @@ TabBarController {
 
     tabBarModel: [
         {
-            icon : "../img/icon-home.png",
+            icon : "qrc:/images/icon-home.png",
             sourceComponent: _schedule
         },
         {
-            icon : "../img/icon-location.png",
+            icon : "qrc:/images/icon-location.png",
             sourceComponent: _location
         },
         {
-            icon : "../img/icon-information.png",
+            icon : "qrc:/images/icon-information.png",
             sourceComponent: _information
         }
     ]

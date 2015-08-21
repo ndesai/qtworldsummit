@@ -1,6 +1,6 @@
-import QtQuick 2.4
-import "../utils" as Utils
-import "qrc:/qml/qml/ui" 1.5 as UI
+import QtQuick 2.5
+import utils 1.5 as Utils
+import ui 1.5 as UI
 
 Rectangle {
     id: root
@@ -12,41 +12,50 @@ Rectangle {
 
     property bool enableLeftAndRightContainers : false
 
-    anchors.top: parent.top
-    anchors.left: parent.left
-    anchors.right: parent.right
+    anchors {
+        top: parent.top
+        left: parent.left
+        right: parent.right
+    }
+
     height: UI.Theme.heightHeader
 
     color: UI.Theme.colorLightGrey
     clip: true
 
     Rectangle {
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         height: 2
         color: UI.Theme.colorLightGreyAccent
     }
 
     Item {
         id: _itemContainer
-        anchors.top: parent.top
-        anchors.topMargin: UI.Theme.marginTop
-        anchors.bottom: parent.bottom
-        anchors.left: enableLeftAndRightContainers ? _itemContainerLeft.right : parent.left
-        anchors.right: enableLeftAndRightContainers ? _itemContainerRight.left : parent.right
-        anchors.leftMargin: 10
-        anchors.rightMargin: anchors.leftMargin
+
+        anchors {
+            top: parent.top; topMargin: UI.Theme.marginTop
+            bottom: parent.bottom
+            left: enableLeftAndRightContainers ? _itemContainerLeft.right : parent.left; leftMargin: 10
+            right: enableLeftAndRightContainers ? _itemContainerRight.left : parent.right; rightMargin: anchors.leftMargin
+        }
 
         Utils.Fill { }
     }
 
     Item {
         id: _itemContainerLeft
-        anchors.top: parent.top
-        anchors.topMargin: 40
-        anchors.left: parent.left
-        anchors.bottom: parent.bottom
+
+        anchors {
+            top: parent.top; topMargin: 40
+            left: parent.left
+            bottom: parent.bottom
+        }
+
         width: UI.Theme.dp(110)
 
         Utils.Fill { color: "yellow" }
@@ -54,10 +63,13 @@ Rectangle {
 
     Item {
         id: _itemContainerRight
-        anchors.top: parent.top
-        anchors.topMargin: 40
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
+
+        anchors {
+            top: parent.top; topMargin: 40
+            right: parent.right
+            bottom: parent.bottom
+        }
+
         width: UI.Theme.dp(110)
 
         Utils.Fill { color: "red" }

@@ -1,6 +1,6 @@
 import QtQuick 2.4
-import "utils" as Utils
-import "qrc:/qml/qml/ui" 1.5 as UI
+import utils 1.5 as Utils
+import ui 1.5 as UI
 
 Rectangle {
     id: root

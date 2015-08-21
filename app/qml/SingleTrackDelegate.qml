@@ -1,5 +1,5 @@
 import QtQuick 2.5
-import "utils" as Utils
+import utils 1.5 as Utils
 import "qrc:/qml/qml/ui" 1.5 as UI
 
 Rectangle {

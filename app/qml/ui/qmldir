@@ -1,1 +1,12 @@
+Header 1.5 Header.qml
+Location 1.5 Location.qml
+RightNowIcon 1.5 RightNowIcon.qml
+Schedule 1.5 Schedule.qml
+SingleDayDelegate 1.5 SingleDayDelegate.qml
+SingleSessionDelegate 1.5 SingleSessionDelegate.qml
+SingleTrackDelegate 1.5 SingleTrackDelegate.qml
+TabBar 1.5 TabBar.qml
+TrackDetailSheet 1.5 TrackDetailSheet.qml
+Viewport 1.5 Viewport.qml
+
 singleton Theme 1.5 Theme.qml

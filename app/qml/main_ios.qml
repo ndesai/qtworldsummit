@@ -1,7 +1,7 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
-import "utils" as Utils
+import utils 1.5 as Utils
 
 Utils.BaseWindow {
     id: superRoot

@@ -1,8 +1,7 @@
 import QtQuick 2.5
-import "utils"
-import "controls"
-import "ui"
-import "qrc:/qml/qml/ui" 1.5 as UI
+import utils 1.5
+import controls 1.5
+import ui 1.5
 
 FocusScope {
     id: root
@@ -18,7 +17,7 @@ FocusScope {
             console.log(JSON.stringify(trackObject, null, 2))
             var trackDetailObject = JSON.parse(JSON.stringify(__api.tracks[trackObject.id]))
             trackDetailObject.id = trackObject.id
-//            trackDetailObject.presentation.track.color = trackObject.color
+            // trackDetailObject.presentation.track.color = trackObject.color
             trackDetailObject.session = trackObject.session
             trackDetailObject.day = _ListView_DateView.currentItem.dataModel.day
             trackDetailObject.date = trackObject.date
@@ -52,62 +51,78 @@ FocusScope {
 
     Rectangle {
         id: _Rectangle_DateView
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        height: UI.Theme.dateViewHeight
-        color: UI.Theme.colorQtGreen
+
+        anchors {
+            left: parent.left
+            right: parent.right
+            top: parent.top
+        }
+
+        height: Theme.dateViewHeight
+        color: Theme.colorQtGreen
 
         ListView {
             id: _ListView_DateView
+
             property int delegateWidth : width / 1.5
+
             anchors.fill: parent
+
             orientation: ListView.Horizontal
             snapMode: ListView.SnapOneItem
             highlightRangeMode: ListView.StrictlyEnforceRange
             preferredHighlightBegin: ((width - delegateWidth) / 2)
             preferredHighlightEnd: preferredHighlightBegin + delegateWidth
-            highlightMoveDuration: UI.Theme.dp(400)
+            highlightMoveDuration: Theme.dp(400)
 
-            onCurrentIndexChanged: {
-                _ListView_ScheduleView.currentIndex = currentIndex
-            }
+            onCurrentIndexChanged: _ListView_ScheduleView.currentIndex = currentIndex
+
             model: __api.schedule && __api.schedule.schedule ?
                        __api.schedule.schedule
                      : 0
 
             delegate: Item {
                 id: _Item_Delegate
-                property variant dataModel : modelData
+
+                property variant dataModel: modelData
+
                 width: ListView.view.delegateWidth
                 height: ListView.view.height
 
                 Item {
                     id: _Item_DateView
+
                     width: parent.width
                     height: _Rectangle_DateView.height
+
                     Label {
-                        anchors.fill: parent
-                        anchors.margins: UI.Theme.dp(15)
-                        anchors.topMargin: UI.Theme.dp(18)
+                        anchors {
+                            fill: parent
+                            margins: Theme.dp(15)
+                            topMargin: Theme.dp(18)
+                        }
+
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         text: modelData.day.date.formatted
                         color: "#ffffff"
-                        font.pixelSize: UI.Theme.dateViewPixelSize
+                        font.pixelSize: Theme.dateViewPixelSize
                     }
                 }
+
                 MouseArea {
                     anchors.fill: parent
                     onClicked: _Item_Delegate.ListView.view.currentIndex = index
                 }
             }
         }
+
         Rectangle {
-            width: parent.width
-            height: UI.Theme.dp(2)
             anchors.bottom: parent.bottom
-            color: UI.Theme.colorQtMediumGreen
+
+            width: parent.width
+            height: Theme.dp(2)
+            color: Theme.colorQtMediumGreen
             //opacity: _Item_Delegate.ListView.isCurrentItem ? 1 : 0
             //Behavior on opacity { NumberAnimation { duration: 100 } }
         }
@@ -115,6 +130,7 @@ FocusScope {
 
     ListView {
         id: _ListView_ScheduleView
+
         // This ListView has one delegate per day of schedule
         // SingleDayDelegate (ListView)
         // - SingleSessionDelegate (Repeater)

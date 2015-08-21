@@ -1,5 +1,5 @@
 import QtQuick 2.5
-import "utils" as Utils
+import utils 1.5 as Utils
 
 Component {
     Item {

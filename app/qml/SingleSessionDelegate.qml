@@ -1,6 +1,6 @@
 import QtQuick 2.5
-import "utils" as Utils
-import "qrc:/qml/qml/ui" 1.5 as UI
+import utils 1.5 as Utils
+import ui 1.5 as UI
 
 Item {
     id: _Item_ScheduleDelegate

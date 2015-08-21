@@ -1,0 +1,13 @@
+AccentBottom 1.5 AccentBottom.qml
+AccentLeft 1.5 AccentLeft.qml
+AccentRight 1.5 AccentRight.qml
+AccentTop 1.5 AccentTop.qml
+BaseButtonTheme 1.5 BaseButtonTheme.qml
+BaseIcon 1.5 BaseIcon.qml
+BaseWindow 1.5 BaseWindow.qml
+ClickGuard 1.5 ClickGuard.qml
+Fill 1.5 Fill.qml
+GestureArea 1.5 GestureArea.qml
+HorizontalSpacer 1.5 HorizontalSpacer.qml
+SafeLoader 1.5 SafeLoader.qml
+VerticalSpacer 1.5 VerticalSpacer.qml

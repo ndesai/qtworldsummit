@@ -8,22 +8,10 @@
         <file>qml/controls/TabBarButton.qml</file>
         <file>qml/controls/TabBarController.qml</file>
         <file>qml/dev.qml</file>
+        <file>qml/Header.qml</file>
         <file>qml/home.qml</file>
         <file>qml/HttpRequest.qml</file>
-        <file>qml/img/floorplan-bcc.png</file>
-        <file>qml/img/icon-back.png</file>
-        <file>qml/img/icon-bookmark-hl.png</file>
-        <file>qml/img/icon-bookmark.png</file>
-        <file>qml/img/icon-clock-filled.png</file>
-        <file>qml/img/icon-home.png</file>
-        <file>qml/img/icon-information.png</file>
-        <file>qml/img/icon-location.png</file>
-        <file>qml/img/icon-qtloading.gif</file>
-        <file>qml/img/icon-star.png</file>
-        <file>qml/img/logo-qws.png</file>
-        <file>qml/img/qws2015-hero.jpg</file>
         <file>qml/IntroView.qml</file>
-        <file>qml/Label.qml</file>
         <file>qml/main.qml</file>
         <file>qml/main_ios.qml</file>
         <file>qml/MainPage.qml</file>
@@ -64,8 +52,9 @@
         <file>qml/utils/HorizontalSpacer.qml</file>
         <file>qml/utils/SafeLoader.qml</file>
         <file>qml/utils/VerticalSpacer.qml</file>
-        <file>qml/TrackDetailSheet.qml</file>
-        <file>qml/Header.qml</file>
+        <file>qml/Label.qml</file>
+        <file>qml/controls/qmldir</file>
+        <file>qml/utils/qmldir</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="berlin.svg">resources/images/tutorial/berlin.svg</file>
@@ -77,18 +66,26 @@
         <file alias="cloud_3.svg">resources/images/tutorial/cloud_3.svg</file>
         <file alias="code.svg">resources/images/tutorial/code.svg</file>
         <file alias="favorite.svg">resources/images/favorite.svg</file>
+        <file alias="floorplan-bcc.png">resources/images/floorplan-bcc.png</file>
         <file alias="home.svg">resources/images/home.svg</file>
         <file alias="home_active.svg">resources/images/home_active.svg</file>
+        <file alias="icon-back.png">resources/images/icon-back.png</file>
         <file alias="icon-bookmark-hl.png">resources/images/icon-bookmark-hl.png</file>
         <file alias="icon-bookmark.png">resources/images/icon-bookmark.png</file>
+        <file alias="icon-clock-filled.png">resources/images/icon-clock-filled.png</file>
+        <file alias="icon-home.png">resources/images/icon-home.png</file>
+        <file alias="icon-information.png">resources/images/icon-information.png</file>
+        <file alias="icon-location.png">resources/images/icon-location.png</file>
+        <file alias="icon-qtloading.gif">resources/images/icon-qtloading.gif</file>
+        <file alias="icon-star.png">resources/images/icon-star.png</file>
         <file alias="info.svg">resources/images/info.svg</file>
         <file alias="info_active.svg">resources/images/info_active.svg</file>
+        <file alias="location.svg">resources/images/location.svg</file>
         <file alias="location_active.svg">resources/images/location_active.svg</file>
+        <file alias="logo-qws.png">resources/images/logo-qws.png</file>
         <file alias="next_white.svg">resources/images/tutorial/next_white.svg</file>
         <file alias="qt_logo.svg">resources/images/qt_logo.svg</file>
-        <file alias="triangular.png">resources/images/triangular.png</file>
-        <file alias="location.svg">resources/images/location.svg</file>
         <file alias="qws2015-hero.jpg">resources/images/qws2015-hero.jpg</file>
-        <file alias="icon-back.png">resources/images/icon-back.png</file>
+        <file alias="triangular.png">resources/images/triangular.png</file>
     </qresource>
 </RCC>

@@ -2,7 +2,7 @@ import QtQuick 2.5
 import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.1
 import QtWorldSummit 1.5
-import "qrc:/qml/qml/ui" 1.5 as UI
+import ui 1.5 as UI
 import "."
 
 FocusScope {
@@ -32,7 +32,7 @@ FocusScope {
 
             fillMode: Image.PreserveAspectFit
             smooth: true
-            source: "img/logo-qws.png"
+            source: "qrc:/images/logo-qws.png"
         }
     }
 
@@ -145,7 +145,7 @@ FocusScope {
         id: group
     }
 
-    TrackDetailSheet {
+    UI.TrackDetailSheet {
         id: _trackDetailSheet
         z: 3
     }

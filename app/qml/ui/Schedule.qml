@@ -1,7 +1,7 @@
 import QtQuick 2.3
-import "../utils"
-import "../controls"
-import "qrc:/qml/qml/ui" 1.5 as UI
+import utils 1.5
+import controls 1.5
+import ui 1.5 as UI
 import ".."
 
 BaseTabBarPage {

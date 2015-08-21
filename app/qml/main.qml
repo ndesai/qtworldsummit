@@ -3,7 +3,7 @@ import QtQuick.Controls 1.4 as QC
 import QtQuick.Controls.Styles 1.4 as CS
 import QtQuick.Layouts 1.1 as LA
 import QtWorldSummit 1.5
-import "qrc:/qml/qml/ui" 1.5 as UI
+import ui 1.5 as UI
 
 QC.ApplicationWindow {
     property var resolutions: [

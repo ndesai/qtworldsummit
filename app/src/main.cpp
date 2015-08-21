@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     if (!extraSelectors.isEmpty())
         selector->setExtraSelectors(extraSelectors);
 
-    engine.addImportPath("qrc:/");
+    engine.addImportPath("qrc:/qml/qml");
 
     qmlRegisterSingletonType<ScreenValues>("QtWorldSummit", 1, 5, "ScreenValues", screen_values_provider);
 

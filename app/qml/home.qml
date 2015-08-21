@@ -1,8 +1,8 @@
 import QtQuick 2.4
 import QtQuick.Window 2.2
-import "qrc:/qml/qml/ui" 1.5 as UI
-import "utils" as Utils
-import "ui"
+import ui 1.5 as UI
+import utils 1.5 as Utils
+import ui 1.5
 
 Viewport {
     id: root
@@ -32,7 +32,7 @@ Viewport {
 
             fillMode: Image.PreserveAspectFit
             smooth: true
-            source: "img/logo-qws.png"
+            source: "qrc:/images/logo-qws.png"
         }
 
         RightNowIcon {
@@ -86,7 +86,7 @@ Viewport {
                 anchors.centerIn: parent
                 playing: visible
                 visible: !_loaderMainContent.active
-                source: "img/icon-qtloading.gif"
+                source: "qrc:/images/icon-qtloading.gif"
             }
         }
     }

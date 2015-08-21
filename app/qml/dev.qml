@@ -2,8 +2,8 @@ import QtQuick 2.3
 import QtQuick.Controls 1.2 as Controls
 import QtQuick.Window 2.0
 import QtWorldSummit 1.5
-import "qrc:/qml/qml/ui" 1.5 as UI
-import "utils" as Utils
+import ui 1.5 as UI
+import utils 1.5 as Utils
 
 Utils.BaseWindow {
     id: superRoot
