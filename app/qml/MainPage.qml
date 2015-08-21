@@ -16,6 +16,26 @@ FocusScope {
         }
     }
 
+    Header {
+        id: _header
+        z: 2
+
+        Image {
+            id: _imageLogo
+
+            anchors {
+                left: parent.left; leftMargin: UI.Theme.dp(20)
+                verticalCenter: parent.verticalCenter; verticalCenterOffset: UI.Theme.dp(-4)
+            }
+
+            width: UI.Theme.dp(156)
+
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+            source: "img/logo-qws.png"
+        }
+    }
+
     StackView {
         id: stackView
 
@@ -123,5 +143,10 @@ FocusScope {
 
     ExclusiveGroup {
         id: group
+    }
+
+    TrackDetailSheet {
+        id: _trackDetailSheet
+        z: 3
     }
 }

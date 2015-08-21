@@ -45,11 +45,12 @@ QtObject {
     property color toolBarColor: "#ffffff"
     property color toolBarTextColor: "#bdbebf"
 
-    property color colorLightGrey : "#f3f3f3"
-    property color colorLightGreyAccent : "#d1d1d0"
-    property color colorLightGreyAccentSecondary : "#eeeeee"
-    property color colorQtMediumGreen : "#5c9c1c"
+    property color colorLightGrey: "#f3f3f3"
+    property color colorLightGreyAccent: "#d1d1d0"
+    property color colorLightGreyAccentSecondary: "#eeeeee"
+    property color colorQtMediumGreen: "#5c9c1c"
     property color colorPageBackground: "#ffffff"
+    property color colorQtGreen: "#81C343"
 
     property color colorTrackLightGreen: "#80c342"
     property color colorTrackDarkGreen: "#408500"
@@ -61,7 +62,7 @@ QtObject {
 
     property string fontFamily: "Roboto"
 
-    property int paginationDotBaseSize: 14 * ScreenValues.dp
+    property int paginationDotBaseSize: 10 * ScreenValues.dp
     property int paginationDotContainerHeight: 57 * ScreenValues.dp
     property int dividerHeight: 1 * ScreenValues.dp
     property int tabHeight: 38 * ScreenValues.dp

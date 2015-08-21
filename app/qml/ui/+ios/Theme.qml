@@ -44,11 +44,12 @@ QtObject {
     property color toolBarColor: "#ffffff"
     property color toolBarTextColor: "#bdbebf"
 
-    property color colorLightGrey : "#f3f3f3"
-    property color colorLightGreyAccent : "#d1d1d0"
+    property color colorLightGrey: "#f3f3f3"
+    property color colorLightGreyAccent: "#d1d1d0"
     property color colorLightGreyAccentSecondary : "#eeeeee"
-    property color colorQtMediumGreen : "#5c9c1c"
+    property color colorQtMediumGreen: "#5c9c1c"
     property color colorPageBackground: "#ffffff"
+    property color colorQtGreen: "#81C343"
 
     property color colorTrackLightGreen: "#80c342"
     property color colorTrackDarkGreen: "#408500"

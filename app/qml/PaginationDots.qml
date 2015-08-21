@@ -8,6 +8,8 @@ Row {
     property color color: "#34db98"
     property color activeColor: "#3498db"
 
+    spacing: UI.Theme.spacing
+
     Repeater {
         model: root.view.count
 
@@ -20,7 +22,7 @@ Row {
 
                 anchors.centerIn: parent
 
-                height: Math.round(UI.Theme.paginationDotBaseSize * 0.30)
+                height: UI.Theme.paginationDotBaseSize
                 width: height
                 radius: height
 

@@ -64,6 +64,8 @@
         <file>qml/utils/HorizontalSpacer.qml</file>
         <file>qml/utils/SafeLoader.qml</file>
         <file>qml/utils/VerticalSpacer.qml</file>
+        <file>qml/TrackDetailSheet.qml</file>
+        <file>qml/Header.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="berlin.svg">resources/images/tutorial/berlin.svg</file>
@@ -86,5 +88,7 @@
         <file alias="qt_logo.svg">resources/images/qt_logo.svg</file>
         <file alias="triangular.png">resources/images/triangular.png</file>
         <file alias="location.svg">resources/images/location.svg</file>
+        <file alias="qws2015-hero.jpg">resources/images/qws2015-hero.jpg</file>
+        <file alias="icon-back.png">resources/images/icon-back.png</file>
     </qresource>
 </RCC>

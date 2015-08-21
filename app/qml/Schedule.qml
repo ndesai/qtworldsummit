@@ -7,12 +7,9 @@ import "qrc:/qml/qml/ui" 1.5 as UI
 FocusScope {
     id: root
 
-    function trackDetailClicked(trackObject)
-    {
-
-        function isDataSufficient(tdo)
-        {
-            return true;
+    function trackDetailClicked(trackObject) {
+        function isDataSufficient(tdo) {
+            return true
             // TOOD: ND - replace
             // return tdo.presentation.abstract !== ""
         }
@@ -30,23 +27,19 @@ FocusScope {
             {
                 _trackDetailSheet.openWithObject(trackDetailObject);
             }
-        } catch (ex)
-        {
+        } catch (ex) {
             console.warn("track detail data does not exist " + ex)
         }
     }
 
-    function showToday()
-    {
+    function showToday() {
         _ListView_ScheduleView.highlightMoveDuration = 1
 
-        for(var i = 0; i < __api.schedule.schedule.length; i++)
-        {
+        for (var i = 0; i < __api.schedule.schedule.length; i++) {
             var modelData = __api.schedule.schedule[i]
             var s = new Date(modelData.day.startingSession)
             var e = new Date(modelData.day.endingSession)
-            if(__api.today > s && __api.today < e)
-            {
+            if (__api.today > s && __api.today < e) {
                 _ListView_DateView.currentIndex = i
                 _ListView_DateView.positionViewAtIndex(i, ListView.Center)
                 _ListView_ScheduleView.positionViewAtIndex(i, ListView.Center)

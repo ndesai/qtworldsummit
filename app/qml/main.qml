@@ -38,7 +38,7 @@ QC.ApplicationWindow {
 
         Behavior on opacity {
             SequentialAnimation {
-                PauseAnimation { duration: 350  }
+                PauseAnimation { duration: 450  }
                 NumberAnimation { target: stackView; property: "opacity"; to: 1 }
             }
         }
