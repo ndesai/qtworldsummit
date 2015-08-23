@@ -49,7 +49,7 @@ Rectangle {
         id: itemContainerLeft
 
         anchors {
-            top: parent.top; topMargin: 40
+            top: parent.top; topMargin: UI.Theme.marginTop
             left: parent.left
             bottom: parent.bottom
         }
@@ -61,7 +61,7 @@ Rectangle {
         id: itemContainerRight
 
         anchors {
-            top: parent.top; topMargin: 40
+            top: parent.top; topMargin: UI.Theme.marginTop
             right: parent.right
             bottom: parent.bottom
         }

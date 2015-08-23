@@ -1,23 +1,15 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.1
 import QtWorldSummit 1.5
 import ui 1.5 as UI
 import "."
 
 FocusScope {
-    ToolBar {
-        id: toolbar
-
-        anchors {
-            left: parent.left
-            right: parent.right
-            top: parent.top
-        }
-    }
-
     Header {
         id: _header
+
         z: 2
 
         Image {
@@ -25,7 +17,7 @@ FocusScope {
 
             anchors {
                 left: parent.left; leftMargin: UI.Theme.dp(20)
-                verticalCenter: parent.verticalCenter; verticalCenterOffset: UI.Theme.dp(-4)
+                verticalCenter: parent.verticalCenter
             }
 
             width: UI.Theme.dp(156)
@@ -36,6 +28,48 @@ FocusScope {
         }
     }
 
+    Schedule {
+        id: schedule
+
+        clip: true
+    }
+
+    ScrollView {
+        id: map
+
+        flickableItem.focus: true
+        flickableItem.interactive: true
+
+        Rectangle {
+            anchors.fill: parent
+        }
+
+        Flickable {
+            id: _Flickable
+
+            anchors.fill: parent
+
+            contentHeight: image.height
+            contentWidth: image.width
+
+            Image {
+                id: image
+
+                source: "qrc:/images/floorplan-bcc.png"
+                smooth: true
+                fillMode: Image.PreserveAspectFit
+                height: map.height * 1.5
+                width: map.width * 1.5
+            }
+        }
+    }
+
+    Rectangle {
+        id: information
+
+        color: "#34db98"
+    }
+
     StackView {
         id: stackView
 
@@ -44,30 +78,11 @@ FocusScope {
         anchors {
             left: parent.left
             right: parent.right
-            top: toolbar.bottom
+            top: _header.bottom
             bottom: rowTabs.top
         }
 
         initialItem: schedule
-    }
-
-    Component {
-        id: schedule
-
-        Schedule { }
-    }
-
-
-    Component {
-        id: map
-
-        Rectangle { color: "#3498db" }
-    }
-
-    Component {
-        id: information
-
-        Rectangle { color: "#34db98" }
     }
 
     RowLayout {
@@ -97,7 +112,7 @@ FocusScope {
             onClicked: {
                 if (stackView.currentView !== "schedule") {
                     stackView.currentView = "schedule"
-                    stackView.replace(schedule)
+                    stackView.replace({item: schedule, destroyOnPop: false, replace: true})
                 }
             }
         }
@@ -116,7 +131,7 @@ FocusScope {
             onClicked: {
                 if (stackView.currentView !== "map") {
                     stackView.currentView = "map"
-                    stackView.replace(map)
+                    stackView.push({item: map, destroyOnPop: false, replace: true})
                 }
             }
         }
@@ -135,7 +150,7 @@ FocusScope {
             onClicked: {
                 if (stackView.currentView !== "information") {
                     stackView.currentView = "information"
-                    stackView.replace(information)
+                    stackView.push({item: information, destroyOnPop: false, replace: true})
                 }
             }
         }

@@ -17,60 +17,42 @@ FocusScope {
         buttonsContainerHeight: UI.Theme.paginationDotContainerHeight
         rectangleDividerHeight: UI.Theme.dividerHeight
 
-        buttons: RowLayout {
+        buttons: Item {
             anchors.fill: parent
 
-            Item {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+            PaginationDots {
+                anchors.centerIn: parent
+
+                color: "#44ffffff"
+                activeColor: "#ffffff"
+                view: introView.view
             }
 
             Item {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+                anchors.right: parent.right
 
-                PaginationDots {
+                width: parent.width * 0.2
+                height: parent.height
+
+                Image {
                     anchors.centerIn: parent
 
-                    color: "#44ffffff"
-                    activeColor: "#ffffff"
-                    view: introView.view
+                    height: parent.height * 0.34
+                    fillMode: Image.PreserveAspectFit
+                    source: "qrc:/images/next_white.svg"
+
+                    sourceSize.width: parent.height * 0.34
+                    sourceSize.height: parent.height * 0.34
+                    opacity: 0.65
                 }
-            }
 
-            Item {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-
-                Item {
-                    anchors {
-                        top: parent.top
-                        bottom: parent.bottom
-                        right: parent.right
-                    }
-
-                    width: parent.width * 0.25
-
-                    Image {
-                        anchors.centerIn: parent
-
-                        height: parent.height * 0.34
-                        fillMode: Image.PreserveAspectFit
-                        source: "qrc:/images/next_white.svg"
-
-                        sourceSize.width: parent.height * 0.34
-                        sourceSize.height: parent.height * 0.34
-                        opacity: 0.65
-                    }
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            if (introView.currentIndex !== introView.view.count -1)
-                                introView.incrementCurrentIndex()
-                            else
-                                root.closed()
-                        }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        if (introView.currentIndex !== introView.view.count -1)
+                            introView.incrementCurrentIndex()
+                        else
+                            root.closed()
                     }
                 }
             }

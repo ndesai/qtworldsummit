@@ -120,6 +120,4 @@ Item {
             delegate: SingleTrackDelegate { }
         }
     }
-
-    Utils.Fill { color: "blue"; anchors.fill: _Column_Tracks }
 }

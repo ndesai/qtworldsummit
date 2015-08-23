@@ -33,7 +33,7 @@ Rectangle {
 
             Rectangle {
                 anchors.fill: parent
-                color: "blue"
+                color: "#3498db"
             }
         }
     }

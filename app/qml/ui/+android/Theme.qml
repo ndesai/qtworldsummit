@@ -11,7 +11,7 @@ QtObject {
     }
 
     property int heightHeader: dp(128)
-    property int marginTop: dp(40)
+    property int marginTop: 0
 
     property int dateViewHeight: dp(100)
     property int dateViewPixelSize: dp(34)
@@ -66,7 +66,7 @@ QtObject {
     property int paginationDotContainerHeight: 57 * ScreenValues.dp
     property int dividerHeight: 1 * ScreenValues.dp
     property int tabHeight: 38 * ScreenValues.dp
-    property int toolBarHeight: 56 * ScreenValues.dp   
+    property int toolBarHeight: 56 * ScreenValues.dp
     property int spacing: 8 * ScreenValues.dp
     property int headerMargin: 16 * ScreenValues.dp
     property int tutorialDescriptionFontSize: 20 * ScreenValues.dp

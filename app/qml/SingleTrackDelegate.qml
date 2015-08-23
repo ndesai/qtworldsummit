@@ -4,9 +4,11 @@ import "qrc:/qml/qml/ui" 1.5 as UI
 
 Rectangle {
     id: _Rectangle_Track
-    property variant dataModel : modelData
-    property var trackDetail : { "color" : "#2299FF" }//_Model.legend[_Rectangle_Track.dataModel.track] || { }
-    property bool isFavorite : Math.floor(Math.random()*12)%2===0
+
+    property variant dataModel: modelData
+    property var trackDetail: { "color" : "#2299FF" }//_Model.legend[_Rectangle_Track.dataModel.track] || { }
+    property bool isFavorite: Math.floor(Math.random()*12)%2===0
+
     height: Math.max(UI.Theme.dp(80), _Column_TrackInformation.height + UI.Theme.dp(30))
     width: _Column_Tracks.width
     color: _ClickGuard_Track.pressed ? "#dddddd" : "#ffffff"
@@ -67,7 +69,9 @@ Rectangle {
 
             text: (_Rectangle_Track.trackDetail.name || "")
         }
+
         Utils.VerticalSpacer { height: UI.Theme.dp(6); visible: _Label_TrackLocation.visible }
+
         Label {
             id: _Label_TrackTitle
 
@@ -81,7 +85,9 @@ Rectangle {
             wrapMode: Text.WordWrap
             text: _Rectangle_Track.dataModel.title
         }
+
         Utils.VerticalSpacer { height: UI.Theme.dp(4); visible: _Label_TrackPresenter.visible }
+
         Label {
             id: _Label_TrackPresenter
 
@@ -97,7 +103,9 @@ Rectangle {
             color: "#525252"
             font.italic: true
         }
+
         Utils.VerticalSpacer { height: UI.Theme.dp(4); visible: _Label_TrackLocation.visible }
+
         Label {
             id: _Label_TrackLocation
 
@@ -158,6 +166,6 @@ Rectangle {
 
     Utils.AccentBottom {
         color: UI.Theme.colorLightGreyAccent
-        visible: index<_Repeater_Tracks.count-1
+        visible: index < _Repeater_Tracks.count-1
     }
 }

@@ -64,7 +64,7 @@ FocusScope {
         ListView {
             id: _ListView_DateView
 
-            property int delegateWidth : width / 1.5
+            property int delegateWidth: width / 1.5
 
             anchors.fill: parent
 
@@ -148,7 +148,7 @@ FocusScope {
         preferredHighlightBegin: 0
         preferredHighlightEnd: width
         highlightMoveDuration: _ListView_DateView.highlightMoveDuration
-        cacheBuffer: 2*width*count
+        cacheBuffer: 2 * width * count
         boundsBehavior: Flickable.StopAtBounds
 
         onCurrentIndexChanged: {
