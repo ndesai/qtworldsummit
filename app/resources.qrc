@@ -55,6 +55,7 @@
         <file>qml/Label.qml</file>
         <file>qml/controls/qmldir</file>
         <file>qml/utils/qmldir</file>
+        <file>qml/Information.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="berlin.svg">resources/images/tutorial/berlin.svg</file>

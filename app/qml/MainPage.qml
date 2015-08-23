@@ -64,10 +64,8 @@ FocusScope {
         }
     }
 
-    Rectangle {
+    Information {
         id: information
-
-        color: "#34db98"
     }
 
     StackView {
