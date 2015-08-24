@@ -92,6 +92,7 @@ ScrollView {
                 }
 
                 text: qsTr("Qt World Summit, hosted by The Qt Company, is the global event for all things Qt. Whether you are a technology director, business decision maker, tech strategist, product manager, engineer or developer there is something here for you.")
+                horizontalAlignment: Text.AlignJustify
 
                 font {
                     pixelSize: Theme.fontSizeRegular
@@ -110,7 +111,11 @@ ScrollView {
                     right: parent.right
                 }
 
-                text: qsTr("This application is open source. You can find the source code at https://github.com/ndesai/qtworldsummit.")
+                linkColor: "#2c3e50"
+                text: qsTr("This application is open source. You can find the source code at <a href=\"https://github.com/ndesai/qtworldsummit\">Github</a>.")
+                horizontalAlignment: Text.AlignJustify
+
+                onLinkActivated: Qt.openUrlExternally(link)
 
                 font {
                     pixelSize: Theme.fontSizeRegular

@@ -1,11 +1,8 @@
 import QtQuick 2.5
-import QtQuick.Controls 1.4 as QC
-import QtQuick.Controls.Styles 1.4 as CS
-import QtQuick.Layouts 1.1 as LA
+import QtQuick.Controls 1.4
 import QtWorldSummit 1.5
-import ui 1.5 as UI
 
-QC.ApplicationWindow {
+ApplicationWindow {
     property var resolutions: [
         {"height": 480, "width": 320, "name": "HVGA", "ratio": "3:2"},
         {"height": 640, "width": 360, "name": "nHD", "ratio": "16:9"},
@@ -28,13 +25,17 @@ QC.ApplicationWindow {
     width: resolutions[currentResolution]["width"]
     height: resolutions[currentResolution]["height"]
 
-    QC.StackView {
+    StackView {
         id: stackView
 
+        property int timesBackWasPressed: 0
         anchors.fill: parent
 
         initialItem: mainPage
         opacity: 0
+        focus: true
+
+        Keys.onBackPressed: currentItem.handleBackKey(event)
 
         Behavior on opacity {
             SequentialAnimation {
@@ -56,10 +57,8 @@ QC.ApplicationWindow {
         }
     }
 
-    Component {
+    MainPage {
         id: mainPage
-
-        MainPage { }
     }
 
     Component.onCompleted: stackView.push(tutorialPage)

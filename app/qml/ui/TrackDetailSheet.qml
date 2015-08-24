@@ -15,8 +15,7 @@ Slide {
             layer.enabled: true
             Rectangle {
                 anchors.fill: parent
-                color: "white"
-                opacity: 0.9
+                color: "#ecf0f1"
             }
 
             radius: 15

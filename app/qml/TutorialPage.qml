@@ -9,6 +9,13 @@ FocusScope {
 
     signal closed
 
+    function handleBackKey(event) {
+        if (introView.currentIndex === 0)
+            event.accepted = false
+        else
+            introView.decrementCurrentIndex()
+    }
+
     IntroView {
         id: introView
 

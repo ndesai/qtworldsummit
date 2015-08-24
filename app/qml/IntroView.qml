@@ -27,6 +27,15 @@ FocusScope {
         contentXAnimation.enabled = false
     }
 
+    function decrementCurrentIndex() {
+        if (listView.moving || listView.currentIndex === 0)
+            return
+
+        contentXAnimation.enabled = true
+        listView.contentX -= listView.width
+        contentXAnimation.enabled = false
+    }
+
     onXPositionChanged:  {
         if (currentIndex < 0)
             return

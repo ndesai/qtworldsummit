@@ -7,6 +7,19 @@ import ui 1.5 as UI
 import "."
 
 FocusScope {
+    function handleBackKey(event) {
+        if (stackView.currentView === "schedule") {
+            if (_trackDetailSheet.isOpen)
+                _trackDetailSheet.close()
+            else
+                event.accepted = false
+        } else {
+            buttonSchedule.checked = true
+            stackView.currentView = "schedule"
+            stackView.replace({item: schedule, destroyOnPop: false, replace: true})
+        }
+    }
+
     Rectangle {
         anchors.fill: parent
     }
@@ -74,6 +87,8 @@ FocusScope {
         spacing: 0
 
         Button {
+            id: buttonSchedule
+
             Layout.fillWidth: true
             Layout.fillHeight: true
 

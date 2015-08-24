@@ -9,11 +9,15 @@ Item {
     property variant dataObject
     property Component sourceComponent
     property int animationDuration: 400
+    property bool isOpen: false
 
     signal opening
     signal opened
     signal closing
     signal closed
+
+    onClosed: isOpen = false
+    onOpened: isOpen = true
 
     function getProperty(propertyName) {
         if (!propertyName || !dataObject)
