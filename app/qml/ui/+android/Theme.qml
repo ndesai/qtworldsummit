@@ -40,6 +40,7 @@ QtObject {
     property var activeObject
     property bool showFills: false
 
+    property color fontColor: "#000000"
     property color activeTabColor: "#81c343"
     property color unactiveTabColor: "#f3f3f3"
     property color toolBarColor: "#ffffff"

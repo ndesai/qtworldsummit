@@ -7,6 +7,10 @@ import ui 1.5 as UI
 import "."
 
 FocusScope {
+    Rectangle {
+        anchors.fill: parent
+    }
+
     Header {
         id: _header
 
@@ -34,34 +38,8 @@ FocusScope {
         clip: true
     }
 
-    ScrollView {
+    Map {
         id: map
-
-        flickableItem.focus: true
-        flickableItem.interactive: true
-
-        Rectangle {
-            anchors.fill: parent
-        }
-
-        Flickable {
-            id: _Flickable
-
-            anchors.fill: parent
-
-            contentHeight: image.height
-            contentWidth: image.width
-
-            Image {
-                id: image
-
-                source: "qrc:/images/floorplan-bcc.png"
-                smooth: true
-                fillMode: Image.PreserveAspectFit
-                height: map.height * 1.5
-                width: map.width * 1.5
-            }
-        }
     }
 
     Information {

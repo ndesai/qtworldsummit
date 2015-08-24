@@ -56,6 +56,7 @@
         <file>qml/controls/qmldir</file>
         <file>qml/utils/qmldir</file>
         <file>qml/Information.qml</file>
+        <file>qml/Map.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="berlin.svg">resources/images/tutorial/berlin.svg</file>
@@ -88,5 +89,8 @@
         <file alias="qt_logo.svg">resources/images/qt_logo.svg</file>
         <file alias="qws2015-hero.jpg">resources/images/qws2015-hero.jpg</file>
         <file alias="triangular.png">resources/images/triangular.png</file>
+        <file alias="level_a.svg">resources/images/level_a.svg</file>
+        <file alias="level_b.svg">resources/images/level_b.svg</file>
+        <file alias="level_c.svg">resources/images/level_c.svg</file>
     </qresource>
 </RCC>

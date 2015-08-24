@@ -30,6 +30,7 @@ ScrollView {
                 text: qsTr("Qt World Summit 2015")
                 font.pixelSize: Theme.fontSizeLarge
                 wrapMode: Text.Wrap
+                color: Theme.fontColor
             }
 
             Item { height: Theme.spacing; width: 1 }
@@ -48,6 +49,7 @@ ScrollView {
                 }
 
                 wrapMode: Text.Wrap
+                color: Theme.fontColor
             }
 
             Item { height: Theme.spacing * 2; width: 1 }
@@ -78,6 +80,7 @@ ScrollView {
                 }
 
                 wrapMode: Text.Wrap
+                color: Theme.fontColor
             }
 
             Item { height: Theme.spacing * 2; width: 1 }
@@ -96,6 +99,26 @@ ScrollView {
                 }
 
                 wrapMode: Text.Wrap
+                color: Theme.fontColor
+            }
+
+            Item { height: Theme.spacing * 2; width: 1 }
+
+            Label {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+
+                text: qsTr("This application is open source. You can find the source code at https://github.com/ndesai/qtworldsummit.")
+
+                font {
+                    pixelSize: Theme.fontSizeRegular
+                    weight: Font.Light
+                }
+
+                wrapMode: Text.Wrap
+                color: Theme.fontColor
             }
         }
     }
