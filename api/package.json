@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "latest",
     "redis" : "latest",
-    "request" : "latest"
+    "request" : "latest",
+    "underscore.string": "^3.1.1"
   }
 }

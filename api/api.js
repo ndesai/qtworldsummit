@@ -1,5 +1,6 @@
 var request = require("request");
 var fs = require('fs');
+var unescapeHTML = require('underscore.string/unescapeHTML');
 
 var base = {
 	sourceUrl: "http://www.qtworldsummit.com/sessionsjson/", //http://localhost/2015.json",
@@ -111,14 +112,14 @@ function __formatMilitaryTime(time) {
 				"tracks" : timeMap[t[k]].map(function(e) { 
 					var ee = {
 						"id" : e.session_id,
-						"title" : decodeURIComponent(e.session_title),
+						"title" : unescapeHTML(e.session_title),
 						"location" : (e.session_room || "").toUpperCase(),
 						"presenter" : [e.session_speaker_name, e.session_speaker_company].filter(Boolean).join(", ")
 					}
 					detail[e.session_id] = {
 						"id" : ee.id,
 						"presentation" : {
-							"title" : ee.title,
+							"title" : unescapeHTML(ee.title),
 							"abstract" : e.session_abstract,
 							"track" : {
 								// ..?
