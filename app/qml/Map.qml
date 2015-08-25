@@ -16,15 +16,21 @@ Item {
         anchors.fill: parent
     }
 
-    TabView {
-        anchors.fill: parent
+    Row {
+        id: rowTabs
 
-        style: TabViewStyle {
-            tab: Rectangle {
-                color: styleData.selected ? "#dedede" : "#ffffff"
+        anchors {
+            left: parent.left
+            right: parent.right
+        }
 
-                implicitWidth: Math.round(root.width / 3)
-                implicitHeight: text.height + (Theme.spacing * 2)
+        Repeater {
+            model: root.model
+
+            delegate: Rectangle {
+                color: listView.currentIndex === index ? "#00000000" : "#dedede"
+
+                width: parent.width / 3
                 height: text.height + (Theme.spacing * 2)
 
                 Label {
@@ -40,40 +46,48 @@ Item {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     color: "#000000"
-                    text: styleData.title
+                    text: modelData.title
+                }
 
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: listView.positionViewAtIndex(index, ListView.Contain)
                 }
             }
         }
+    }
 
-        Repeater {
-            model: root.model
+    ListView {
+        id: listView
 
-            delegate: Tab {
-                title: modelData.title
+        anchors {
+            top: rowTabs.bottom
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+        }
 
-                /// TODO: add ScrollView
+        orientation: ListView.Horizontal
+        highlightRangeMode: ListView.StrictlyEnforceRange
+        snapMode: ListView.SnapOneItem
 
-                Item {
-                    anchors.fill: parent
+        model: root.model
 
-                    Rectangle {
-                        anchors.fill: parent
-                    }
+        delegate: Item {
+            height: ListView.view.height
+            width: ListView.view.width
 
-                    Image {
-                        id: image
+            Image {
+                id: image
 
-                        anchors {
-                            fill: parent
-                            margins: Theme.spacing
-                        }
-
-                        source: modelData.source
-                        smooth: true
-                        fillMode: Image.PreserveAspectFit
-                    }
+                anchors {
+                    fill: parent
+                    margins: Theme.spacing
                 }
+
+                source: modelData.source
+                smooth: true
+                fillMode: Image.PreserveAspectFit
             }
         }
     }
