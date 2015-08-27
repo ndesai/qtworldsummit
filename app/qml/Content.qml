@@ -16,21 +16,14 @@ Rectangle {
             controller: _tabBarController
         }
 
-        // TODO: ND - Location.qml
         Location {
             id: _location
             controller: _tabBarController
         }
 
-        // TODO: ND - Information.qml
-        BaseTabBarPage {
+        Information {
             id: _information
             controller: _tabBarController
-
-            Rectangle {
-                anchors.fill: parent
-                color: "blue"
-            }
         }
     }
 

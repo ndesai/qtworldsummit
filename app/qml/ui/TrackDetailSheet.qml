@@ -9,28 +9,28 @@ Slide {
     sourceComponent: Item {
         id: _Item
 
-        QGE.FastBlur {
-            layer.enabled: true
+//        QGE.FastBlur {
+//            layer.enabled: true
             Rectangle {
                 anchors.fill: parent
                 color: "white"
-                opacity: 0.9
+//                opacity: 0.9
             }
 
-            radius: 15
-            width: root.width / _scale.xScale
-            height: root.height / _scale.yScale
-            transform: Scale {
-                id: _scale
-                xScale: 6; yScale: xScale
-            }
+//            radius: 15
+//            width: root.width / _scale.xScale
+//            height: root.height / _scale.yScale
+//            transform: Scale {
+//                id: _scale
+//                xScale: 6; yScale: xScale
+//            }
 
-            source: ShaderEffectSource {
-                sourceItem: _itemPageContainer
-                sourceRect: Qt.rect(root.x, -1*_header.height, root.width, root.height)
-                live: true
-            }
-        }
+//            source: ShaderEffectSource {
+//                sourceItem: _itemPageContainer
+//                sourceRect: Qt.rect(root.x, -1*_header.height, root.width, root.height)
+//                live: true
+//            }
+//        }
 
         Header {
             id: _Header
@@ -46,7 +46,7 @@ Slide {
             }
             rightContent: Utils.ClickGuard {
                 id: _ClickGuard_FavoriteButton
-                property bool isFavorite : __api.favoritesModelContainsTrack(root.getProperty('id'))
+                property bool isFavorite : __api.favoritesModelContainsTrack(root.dataObject)
                 Utils.BaseIcon {
                     id: _BaseIcon_Bookmark
                     source: "../img/icon-bookmark.png"

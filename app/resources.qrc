@@ -19,6 +19,7 @@
 		<file>qml/fonts/Open_Sans/OpenSans-Semibold.ttf</file>
 		<file>qml/fonts/Open_Sans/OpenSans-SemiboldItalic.ttf</file>
 		<file>qml/home.qml</file>
+		<file>qml/img/avatar-default.jpg</file>
 		<file>qml/img/floorplan-bcc.png</file>
 		<file>qml/img/icon-back.png</file>
 		<file>qml/img/icon-bookmark-hl.png</file>
@@ -29,11 +30,16 @@
 		<file>qml/img/icon-location.png</file>
 		<file>qml/img/icon-qtloading.gif</file>
 		<file>qml/img/icon-star.png</file>
+		<file>qml/img/level_a.svg</file>
+		<file>qml/img/level_b.svg</file>
+		<file>qml/img/level_c.svg</file>
+		<file>qml/img/logo-appstreet.png</file>
 		<file>qml/img/logo-qws.png</file>
 		<file>qml/img/qws2015-hero.jpg</file>
 		<file>qml/main_android.qml</file>
 		<file>qml/main_ios.qml</file>
 		<file>qml/ui/Header.qml</file>
+		<file>qml/ui/Information.qml</file>
 		<file>qml/ui/Label.qml</file>
 		<file>qml/ui/Location.qml</file>
 		<file>qml/ui/RightNowIcon.qml</file>
@@ -53,6 +59,7 @@
 		<file>qml/utils/BaseIcon.qml</file>
 		<file>qml/utils/BaseWindow.qml</file>
 		<file>qml/utils/ClickGuard.qml</file>
+		<file>qml/utils/ColumnDivider.qml</file>
 		<file>qml/utils/Fill.qml</file>
 		<file>qml/utils/GestureArea.qml</file>
 		<file>qml/utils/HorizontalSpacer.qml</file>

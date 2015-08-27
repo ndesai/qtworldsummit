@@ -36,7 +36,7 @@ Item {
     property int dateViewHeight: dp(100)
     property int dateViewPixelSize: dp(34)
 
-    property int scheduleViewPixelSize: dp(36)
+    property int scheduleViewPixelSize: dp(32)
     property int scheduleViewTitlePixelSize: dp(34)
     property int scheduleViewTrackNamePixelSize : dp(22)
     property int scheduleViewPresenterPixelSize : dp(30)

@@ -1,4 +1,5 @@
 import QtQuick 2.4
+import Qt.labs.settings 1.0
 
 // TODO: ND - Convert to singleton C++ (allow for caching, etc.)
 Item {
@@ -13,6 +14,21 @@ Item {
 
     property var schedule: null
     property var tracks: null
+
+    property alias settings: _settings
+
+    Settings {
+        id: _settings
+        property var favoriteTracks: []
+
+        property string __favoriteTracks: favoriteTracks.join(",");
+
+        Component.onCompleted: {
+            favoriteTracks = __favoriteTracks.split(",").filter(Boolean);
+            console.log("favoriteTracks = " + favoriteTracks);
+        }
+
+    }
 
     Component.onCompleted: {
         status = Loader.Loading;
@@ -48,6 +64,42 @@ Item {
         }
         request.open("GET", requestUrl, true); // only async supported
         request.send();
+    }
+
+    signal favoritesUpdated
+
+    function insertFavorite(trackObject)
+    {
+        if (!favoritesModelContainsTrack(trackObject)) {
+            var m = _settings.favoriteTracks;
+            m.push(trackObject.id);
+            _settings.favoriteTracks = m;
+
+            favoritesUpdated();
+        }
+    }
+
+    function removeFavorite(trackObject)
+    {
+        _settings.favoriteTracks = _settings.favoriteTracks.filter(function(e) {
+            return e !== trackObject.id;
+        });
+        favoritesUpdated();
+    }
+
+    function favoritesModelContainsTrack(trackObject)
+    {
+        for (var i = 0; i < _settings.favoriteTracks.length; i++) {
+            if (_settings.favoriteTracks[i] == trackObject.id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function getFavorites()
+    {
+        return _settings.favoriteTracks;
     }
 }
 
