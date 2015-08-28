@@ -23,11 +23,13 @@ Item {
 
         property string __favoriteTracks: favoriteTracks.join(",");
 
+        property var scheduleJson
+        property var tracksJson
+
         Component.onCompleted: {
             favoriteTracks = __favoriteTracks.split(",").filter(Boolean);
             console.log("favoriteTracks = " + favoriteTracks);
         }
-
     }
 
     Component.onCompleted: {
@@ -36,12 +38,23 @@ Item {
             if (response) {
                 console.log(response.length)
                 schedule = response;
+                _settings.scheduleJson = schedule;
                 webRequest(urlTracks, function(response) {
                     tracks = response;
+                    _settings.tracksJson = tracks;
                     status = Loader.Ready;
                 });
             } else {
-                status = Loader.Error;
+                // Check Settings for a cached value
+                if (_settings.scheduleJson) {
+                    schedule = _settings.scheduleJson;
+                    if (_settings.tracksJson) {
+                        tracks = _settings.tracksJson;
+                        status = Loader.Ready;
+                    }
+                } else {
+                    status = Loader.Error;
+                }
             }
         });
     }
