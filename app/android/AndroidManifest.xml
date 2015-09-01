@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <manifest package="com.iktwo.qtworldsummit" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.31" android:versionCode="5" android:installLocation="auto">
     <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="-- %%INSERT_APP_NAME%% --" android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|locale|fontScale|keyboard|keyboardHidden|navigation" android:name="com.iktwo.qtworldsummit.QtWorldSummit" android:label="-- %%INSERT_APP_NAME%% --" android:screenOrientation="portrait" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -41,9 +44,29 @@
             <meta-data android:name="android.app.background_running" android:value="false"/>
             <!-- Background running -->
         </activity>
+
+        <receiver android:name="com.iktwo.qtworldsummit.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+
+                <category android:name="com.google.android.gcm.demo.app"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.iktwo.qtworldsummit.GcmIntentService"/>
+
     </application>
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21"/>
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21"/>
     <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
+    <permission android:name="com.iktwo.qtworldsummit.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+
+    <uses-permission android:name="com.iktwo.qtworldsummit.permission.C2D_MESSAGE"/>
 
     <!-- The following comment will be replaced upon deployment with default permissions based on the dependencies of the application.
          Remove the comment if you do not require these default permissions. -->
