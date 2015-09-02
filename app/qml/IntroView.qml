@@ -16,7 +16,7 @@ FocusScope {
 
     readonly property double xPosition: (listView.contentX / listView.width)
     readonly property bool movingLeft: listView.movingLeft
-
+    readonly property bool busy: listView.flicking || listView.moving || numberAnimationX.running
 
     function incrementCurrentIndex() {
         if (listView.moving)
@@ -91,7 +91,7 @@ FocusScope {
 
         property bool movingLeft
 
-        Behavior on contentX { id: contentXAnimation; enabled: false; NumberAnimation { alwaysRunToEnd: true; easing.type: Easing.OutQuad; duration: 450 } }
+        Behavior on contentX { id: contentXAnimation; enabled: false; NumberAnimation { id: numberAnimationX; alwaysRunToEnd: true; easing.type: Easing.OutQuad; duration: 450 } }
 
         anchors {
             top: parent.top

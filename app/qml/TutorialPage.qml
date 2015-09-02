@@ -56,6 +56,9 @@ FocusScope {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
+                        if (introView.busy)
+                            return
+
                         if (introView.currentIndex !== introView.view.count -1)
                             introView.incrementCurrentIndex()
                         else
