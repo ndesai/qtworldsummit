@@ -12,6 +12,8 @@ Item {
         { "title" : "Level C", "source" : "qrc:/images/level_c.svg", "width" : 1024, "height" : 1024 }
     ]
 
+    clip: true
+
     Rectangle {
         anchors.fill: parent
     }
