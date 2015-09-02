@@ -1,8 +1,11 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.4
 import QtWorldSummit 1.5
+import Qt.labs.settings 1.0
 
 ApplicationWindow {
+    id: applicationWindow
+
     property var resolutions: [
         {"height": 480, "width": 320, "name": "HVGA", "ratio": "3:2"},
         {"height": 640, "width": 360, "name": "nHD", "ratio": "16:9"},
@@ -21,9 +24,17 @@ ApplicationWindow {
 
     property Api __api: Api { }
 
+    property bool isFirstTimeRunning: true
+
     visible: true
     width: resolutions[currentResolution]["width"]
     height: resolutions[currentResolution]["height"]
+
+    Settings {
+        id: settings
+
+        property alias isFirstTimeRunning: applicationWindow.isFirstTimeRunning
+    }
 
     StackView {
         id: stackView
@@ -61,5 +72,12 @@ ApplicationWindow {
         id: mainPage
     }
 
-    Component.onCompleted: stackView.push(tutorialPage)
+    Component.onCompleted: {
+        if (isFirstTimeRunning)
+            stackView.push(tutorialPage)
+        else
+            stackView.opacity = 1
+
+        settings.isFirstTimeRunning = false
+    }
 }
