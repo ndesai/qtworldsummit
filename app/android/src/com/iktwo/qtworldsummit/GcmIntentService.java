@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.net.Uri;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
@@ -35,18 +36,23 @@ public class GcmIntentService extends IntentService {
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_DELETED.equals(messageType)) {
                 // sendNotification("Deleted messages on server: " + extras.toString());
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
-                sendNotification(extras.getString("title"), extras.getString("message"));
+              String action = extras.getString("action");
+
+              if (action == null)
+                  action = QtWorldSummit.ACTION_MAIN;
+
+              sendNotification(extras.getString("title"), extras.getString("message"), action);
             }
         }
         // Release the wake lock provided by the WakefulBroadcastReceiver.
         GcmBroadcastReceiver.completeWakefulIntent(intent);
     }
 
-    public void sendNotification(String title, String msg) {
+    public void sendNotification(String title, String msg, String action) {
         mNotificationManager = (NotificationManager)
                 this.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, QtWorldSummit.class), 0);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(action, Uri.parse("qtworldsummit://QtWorldSummit"), this, QtWorldSummit.class), 0);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_stat_gcm)
@@ -64,21 +70,5 @@ public class GcmIntentService extends IntentService {
         } else {
             Log.d(TAG, "Skipping notification");
         }
-    }
-
-    private void sendNotification(String msg) {
-        mNotificationManager = (NotificationManager)
-                this.getSystemService(Context.NOTIFICATION_SERVICE);
-
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, QtWorldSummit.class), 0);
-
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_stat_gcm)
-                .setContentTitle("GCM Notification")
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
-                .setContentText(msg);
-
-        mBuilder.setContentIntent(contentIntent);
-        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 }

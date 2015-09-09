@@ -29,6 +29,9 @@ import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.iktwo.qtworldsummit.R;
 
 public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity {
+    public static final String ACTION_MAIN = "MAIN";
+    public static final String ACTION_SPONSOR = "SPONSOR";
+
     public static final String UPLOADED_ID = "uploaded_id";
     public static final String PROPERTY_REG_ID = "registration_id";
     
@@ -37,7 +40,9 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
     private static final String PROPERTY_APP_VERSION = "appVersion";
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private static final String TAG_UPLOADER_FRAGMENT = "uploader_fragment";
-    
+
+    static boolean hasManagedAction = false;
+
     TokenUploaderFragment mTokenUploaderFragment;
     String regid;
     Context context;
@@ -131,6 +136,11 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (getIntent().getAction() != null && getIntent().getAction().equals(ACTION_SPONSOR) && !hasManagedAction) {
+          /// TODO: display ad
+          hasManagedAction = true;
+        }
+
         FragmentManager fm = getFragmentManager();
 
         mTokenUploaderFragment = (TokenUploaderFragment) fm.findFragmentByTag(TAG_UPLOADER_FRAGMENT);
@@ -158,6 +168,21 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
             Log.d(TAG, "Google Services is needed to show notifications");
             /// TODO show toast, finish app
         }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+      super.onNewIntent(intent);
+
+      String action = intent.getAction();
+
+      FragmentManager fragmentManager = getFragmentManager();
+
+      if (action.equals(ACTION_MAIN)) {
+
+      } else if (action.equals(ACTION_SPONSOR)) {
+
+      }
     }
 
     private void registerInBackground() {
