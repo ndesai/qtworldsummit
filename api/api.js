@@ -98,11 +98,29 @@ function __formatMilitaryTime(time) {
 			// k = time range, or session
 			var timeRange = t[k];
 			var timeRangeSplit = timeRange.split("-");
+
+			var startingDateObject = new Date(dateObject);
+			var startingTime = timeRangeSplit[0];
+			var splitStartingTime = startingTime.split(":");
+
+			if (splitStartingTime.length === 2) {
+				startingDateObject.setHours(splitStartingTime[0] - 7); // -7 timezone correction
+				startingDateObject.setMinutes(splitStartingTime[1]);
+			}
+
+			var endingDateObject = new Date(dateObject);
+			var endingTime = timeRangeSplit[1];
+			var splitEndingTime = endingTime.split(":");
+			if (splitEndingTime.length === 2) {
+				endingDateObject.setHours(splitEndingTime[0] - 7); // -7 timezone correction
+				endingDateObject.setMinutes(splitEndingTime[1]);
+			}
+
 			var session = {
 				"date" : {
 					"plain" : {
-						"starting" : timeRangeSplit[0],
-						"ending" : timeRangeSplit[1]
+						"starting" : startingDateObject.toISOString(),
+						"ending" : endingDateObject.toISOString()
 					},
 					"formatted" : {
 						"12h" : __formatMilitaryTime(timeRangeSplit[0]) + " to " + __formatMilitaryTime(timeRangeSplit[1]),
@@ -137,6 +155,13 @@ function __formatMilitaryTime(time) {
 				})
 			}
 			o.sessions.push(session);
+			
+			if (k === 0) {
+				o.day.startingSession = startingDateObject.toISOString();
+			}
+			if (k === t.length - 1) {
+				o.day.endingSession = endingDateObject.toISOString();
+			}
 		}
 		base.schedule.push(o);
 	}
