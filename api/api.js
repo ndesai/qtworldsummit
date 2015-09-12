@@ -2,12 +2,7 @@ var request = require("request");
 var fs = require('fs');
 var unescapeHTML = require('underscore.string/unescapeHTML');
 
-var base = {
-	sourceUrl: "http://www.qtworldsummit.com/sessionsjson/", //http://localhost/2015.json",
-	lastUpdated: new Date(),
-	schedule: [],
-	__scheduleMap: {},
-}
+var base = { }
 
 var detail = {
 	// session_id => session
@@ -20,18 +15,27 @@ var daysToDateMap = {
 		"Wednesday" : new Date(2015, 9, 7)
 	}
 
-	request({ url: base.sourceUrl, json: true }, function(error, response, body) {
-		var doc = body;
-		for (var i = 0; i < doc.length; i++) {
-			var session = doc[i];
-			if (!base.__scheduleMap[session.session_day]) {
-				base.__scheduleMap[session.session_day] = new Array;
-			}
-			base.__scheduleMap[session.session_day].push(session);
+	function initialize() {
+		base = {
+			sourceUrl: "http://www.qtworldsummit.com/sessionsjson/", //http://localhost/2015.json",
+			lastUpdated: new Date(),
+			schedule: [],
+			__scheduleMap: {}
 		}
-		condition();
-		saveToFile();
-	});
+
+		request({ url: base.sourceUrl, json: true }, function(error, response, body) {
+			var doc = body;
+			for (var i = 0; i < doc.length; i++) {
+				var session = doc[i];
+				if (!base.__scheduleMap[session.session_day]) {
+					base.__scheduleMap[session.session_day] = new Array;
+				}
+				base.__scheduleMap[session.session_day].push(session);
+			}
+			condition();
+			saveToFile();
+		});
+	}
 
 	var condition = function() {
 		
@@ -168,13 +172,14 @@ function __formatMilitaryTime(time) {
 	delete base.__scheduleMap;
 }
 
-var saveToFile = function() {	
-	fs.writeFile("schedule.json", JSON.stringify(base, null, 2), function(err) {
+var saveToFile = function() {
+	var d = new Date();	
+	fs.writeFile("schedule." + d.getTime() + ".json", JSON.stringify(base, null, 2), function(err) {
 		if(err) {
 			return console.log(err);
 		}
 		console.log("Schedule saved");
-		fs.writeFile("tracks.json", JSON.stringify(detail, null, 2), function(err) {
+		fs.writeFile("tracks." + d.getTime() + ".json", JSON.stringify(detail, null, 2), function(err) {
 			if(err) {
 				return console.log(err);
 			}
@@ -182,6 +187,8 @@ var saveToFile = function() {
 		}); 
 	}); 	
 }
+
+initialize();
 
 module.exports = function(app) {
 
@@ -195,5 +202,10 @@ module.exports = function(app) {
 
 	app.get('/track/:session_id', function(req, res) {
 		res.send(detail[req.params.session_id] || { });
+	});
+
+	app.get('/update', function(req, res) {
+		initialize();
+		res.send({ "status" : "updating" });
 	});
 }
