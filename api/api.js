@@ -2,6 +2,8 @@ var request = require("request");
 var fs = require('fs');
 var unescapeHTML = require('underscore.string/unescapeHTML');
 
+global.allowUpdate = true;
+
 var base = { }
 
 var detail = {
@@ -205,7 +207,17 @@ module.exports = function(app) {
 	});
 
 	app.get('/update', function(req, res) {
-		initialize();
-		res.send({ "status" : "updating" });
+		var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+		console.log("/update", ip, global.allowUpdate);
+		if (global.allowUpdate) {
+			initialize();
+			global.allowUpdate = false;
+			setTimeout(function() { 
+				global.allowUpdate = true; 
+			}, 60000 * 10);
+			res.send({ "status" : "updating" });
+		} else {
+			res.send({ "status" : "updating not allowed. wait a maximum of 10 minutes." });
+		}
 	});
 }
