@@ -9,6 +9,7 @@ Viewport {
 
     property Theme __theme: Theme { id: theme }
     property Api __api: Api { }
+    property DateTimeController __dateTimeController: DateTimeController { }
 
     width: 1080
     height: 1920

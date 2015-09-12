@@ -30,6 +30,10 @@ Item {
             favoriteTracks = __favoriteTracks.split(",").filter(Boolean);
             console.log("favoriteTracks = " + favoriteTracks);
         }
+
+        onFavoriteTracksChanged: {
+            console.log("fav="+favoriteTracks);
+        }
     }
 
     Component.onCompleted: {
