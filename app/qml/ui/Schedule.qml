@@ -43,7 +43,7 @@ BaseTabBarPage {
             var modelData = __api.schedule.schedule[i]
             var s = new Date(modelData.day.startingSession)
             var e = new Date(modelData.day.endingSession)
-            if(__api.today > s && __api.today < e)
+            if(__dateTimeController.today > s && __dateTimeController.today < e)
             {
                 _ListView_DateView.currentIndex = i
                 _ListView_DateView.positionViewAtIndex(i, ListView.Center)
@@ -53,6 +53,13 @@ BaseTabBarPage {
             }
         }
         _ListView_ScheduleView.highlightMoveDuration = _ListView_DateView.highlightMoveDuration
+    }
+
+    Connections {
+        target: __dateTimeController
+        onShowToday: {
+            root.showToday();
+        }
     }
 
     Rectangle {

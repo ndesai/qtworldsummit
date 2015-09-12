@@ -20,11 +20,7 @@ Item {
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             verticalAlignment: Text.AlignVCenter
-            text: _Item_ScheduleDelegate.dataModel.date.formatted['24h']
-                  + "<font color=\"" + __theme.colorLightGrey + "\">__</font>" // create a two-letter long space
-                  + "<font color='" + __theme.colorConcreteGrey + "'>("
-                  + _Item_ScheduleDelegate.dataModel.date.formatted['12h']
-                  + ")</font>"
+            text: _Item_ScheduleDelegate.dataModel.date.formatted['12h']
             color: "#222222"
             style: Text.Raised
             styleColor: "#ffffff"
@@ -34,8 +30,8 @@ Item {
         }
         RightNowIcon {
             id: _RightNowIcon
-            property bool isRightNow : false/*_Model.date_isRightNow(_Item_ScheduleDelegate.dataModel.date.plain.starting,
-                                                              _Item_ScheduleDelegate.dataModel.date.plain.ending)*/
+            property bool isRightNow : __dateTimeController.date_isRightNow(_Item_ScheduleDelegate.dataModel.date.plain.starting,
+                                                              _Item_ScheduleDelegate.dataModel.date.plain.ending)
             anchors.right: parent.right
             anchors.rightMargin: __theme.dp(30)
             skeleton: true

@@ -48,7 +48,7 @@ Viewport {
                 anchors.margins: __theme.dp(-10)
                 Utils.Fill { color: "blue" }
                 onClicked: {
-                    // TODO: ND - Show today's schedule
+                    __dateTimeController.showToday();
                 }
             }
         }
