@@ -40,6 +40,7 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
     private static final String PROPERTY_APP_VERSION = "appVersion";
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private static final String TAG_UPLOADER_FRAGMENT = "uploader_fragment";
+    public static final String PUSH_NOTIFICATIONS_ID = "push_notifications_id";
 
     static boolean hasManagedAction = false;
 
@@ -56,6 +57,22 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
 
     public static QtWorldSummit getInstance() {
         return m_instance;
+    }
+
+    public static boolean getNotificationsEnabled() {
+        SharedPreferences prefs = m_instance.getSharedPreferences(QtWorldSummit.class.getSimpleName(), Context.MODE_PRIVATE);
+        boolean result = prefs.getBoolean(PUSH_NOTIFICATIONS_ID, true);
+        Log.d(TAG, "getNotificationsEnabled: " + Boolean.toString(result));
+        return result;
+    }
+
+    public static void setNotificationsEnabled(boolean enabled) {
+        Log.d(TAG, "setNotificationsEnabled: " + Boolean.toString(enabled));
+        SharedPreferences prefs = m_instance.getSharedPreferences(QtWorldSummit.class.getSimpleName(), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.putBoolean(PUSH_NOTIFICATIONS_ID, enabled);
+        editor.commit();
     }
 
     public QtWorldSummit() {
@@ -181,7 +198,7 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
       if (action.equals(ACTION_MAIN)) {
 
       } else if (action.equals(ACTION_SPONSOR)) {
-
+          /// TODO: display ad
       }
     }
 

@@ -11,8 +11,11 @@
 ScreenValues::ScreenValues(QObject *parent) :
     QObject(parent),
     m_dpi(0),
-    m_isTablet(false)
+    m_isTablet(false),
+    m_notificationsEnabled(false)
 {
+    m_notificationsEnabled = getNotificationsEnabled();
+
     m_dpi = retrieveDpi();
 
     m_isTablet = retrieveIsTablet();
@@ -73,6 +76,27 @@ void ScreenValues::setStatusBarColor(const int r, const int g, const int b)
 #endif
 }
 
+bool ScreenValues::notificationsEnabled() const
+{
+    return m_notificationsEnabled;
+}
+
+void ScreenValues::setNotificationsEnabled(bool notificationsEnabled)
+{
+    if (m_notificationsEnabled == notificationsEnabled)
+        return;
+
+    m_notificationsEnabled = notificationsEnabled;
+
+#ifdef Q_OS_ANDROID
+    QAndroidJniObject::callStaticMethod<void>("com/iktwo/qtworldsummit/QtWorldSummit",
+                                              "setNotificationsEnabled", "(Z)V",
+                                              m_notificationsEnabled);
+#endif
+
+    emit notificationsEnabledChanged();
+}
+
 int ScreenValues::retrieveDpi()
 {
 #ifdef Q_OS_ANDROID
@@ -118,6 +142,16 @@ bool ScreenValues::retrieveIsTablet()
     jint smallestScreenWidthDp = configuration.getField<jint>("smallestScreenWidthDp");
 
     return smallestScreenWidthDp >= 600;
+#else
+    return false;
+#endif
+}
+
+bool ScreenValues::getNotificationsEnabled()
+{
+#ifdef Q_OS_ANDROID
+    return QAndroidJniObject::callStaticMethod<jboolean>("com/iktwo/qtworldsummit/QtWorldSummit",
+                                              "getNotificationsEnabled", "()Z");
 #else
     return false;
 #endif

@@ -1,6 +1,7 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.4
 import ui 1.5
+import QtWorldSummit 1.5
 
 ScrollView {
     flickableItem.focus: true
@@ -124,6 +125,33 @@ ScrollView {
 
                 wrapMode: Text.Wrap
                 color: Theme.fontColor
+            }
+
+            Item { height: Theme.spacing * 2; width: 1 }
+
+            Row {
+                Label {
+                    font {
+                        pixelSize: Theme.fontSizeRegular
+                        weight: Font.Light
+                    }
+
+                    wrapMode: Text.Wrap
+                    color: Theme.fontColor
+
+                    text: qsTr("Notifications")
+                }
+
+                Item {
+                    width: Theme.spacing
+                    height: 1
+                }
+
+                Switch {
+                    checked: ScreenValues.notificationsEnabled
+
+                    onCheckedChanged: ScreenValues.notificationsEnabled = checked
+                }
             }
         }
     }

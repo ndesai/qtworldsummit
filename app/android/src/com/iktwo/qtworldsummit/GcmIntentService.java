@@ -60,8 +60,8 @@ public class GcmIntentService extends IntentService {
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
                 .setContentText(msg);
 
-        // SharedPreferences prefs = getSharedPreferences(SettingsActivity.class.getSimpleName(), Context.MODE_PRIVATE);
-        boolean pushNotificationsActiveState = true; // prefs.getBoolean(SettingsActivity.PUSH_NOTIFICATIONS_ID, true);
+        SharedPreferences prefs = getSharedPreferences(QtWorldSummit.class.getSimpleName(), Context.MODE_PRIVATE);
+        boolean pushNotificationsActiveState = prefs.getBoolean(QtWorldSummit.PUSH_NOTIFICATIONS_ID, true);
         mBuilder.setAutoCancel(true);
 
         if (pushNotificationsActiveState) {
