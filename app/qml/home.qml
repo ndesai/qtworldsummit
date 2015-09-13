@@ -1,4 +1,4 @@
-import QtQuick 2.4
+import QtQuick 2.5
 import QtQuick.Window 2.2
 
 import "ui"
@@ -26,10 +26,10 @@ Viewport {
             id: _imageLogo
 
             anchors.left: parent.left
-            anchors.leftMargin: __theme.dp(20)
+            anchors.leftMargin: __theme.dp(16)
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset: __theme.logoVerticalCenterOffset
-            width: __theme.dp(156)
+            width: __theme.dp(285)
 
             fillMode: Image.PreserveAspectFit
             smooth: true
@@ -76,11 +76,23 @@ Viewport {
                 }
             }
 
-            AnimatedImage {
+            Image {
+                id: _imageLoadingIcon
                 anchors.centerIn: parent
-                playing: visible
                 visible: !_loaderMainContent.active
-                source: "img/icon-qtloading.gif"
+                source: "img/loading-icon.png"
+                width: __theme.dp(120)
+
+                fillMode: Image.PreserveAspectFit
+
+                RotationAnimator {
+                    target: _imageLoadingIcon;
+                    duration: 1000
+                    from: 0
+                    to: 360
+                    running: visible
+                    loops: Animation.Infinite
+                }
             }
         }
     }

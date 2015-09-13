@@ -123,7 +123,7 @@ Network with The Qt Company team, developers and industry experts from across th
                 font.pixelSize: __theme.dp(28)
                 wrapMode: Text.WordWrap
 
-                text: qsTr("This application is built entirely in Qt and QML. It has also been fully open-sourced. \n\nSee more information: http://app.st/qws15")
+                text: qsTr("This application is built entirely in Qt and QML. It has also been fully open-sourced. \n\nSee more information: http://app.st/qws15\n\nQt® is a registered trademark of The Qt Company and/or its subsidiaries. AppStreet is in no way affiliated with the The Qt Company, QtProject, Digia, ICS, or KDAB.")
             }
 
             Utils.VerticalSpacer { height: __theme.dp(120) }
