@@ -25,4 +25,10 @@ DISTFILES += \
     android/res/values-v21/styles.xml \
     android/res/values/libs.xml \
     android/src/org/qtproject/qt5/android/bindings/QtActivity.java \
-    android/src/com/iktwo/qtworldsummit/*.java
+    android/src/com/iktwo/qtworldsummit/*.java \
+    qml/*.qml \
+    qml/controls/*.qml \
+    qml/ui/*.qml \
+    qml/utils/*.qml \
+    qml/utils/+android/*.qml \
+    qml/utils/+ios/*.qml

@@ -7,11 +7,18 @@ Rectangle {
 
     property variant dataModel: modelData
     property var trackDetail: { "color" : "#2299FF" }//_Model.legend[_Rectangle_Track.dataModel.track] || { }
-    property bool isFavorite: Math.floor(Math.random()*12)%2===0
+    property bool isFavorite: __api.favoritesModelContainsTrack(_Rectangle_Track.dataModel)
 
     height: Math.max(UI.Theme.dp(80), _Column_TrackInformation.height + UI.Theme.dp(30))
     width: _Column_Tracks.width
     color: _ClickGuard_Track.pressed ? "#dddddd" : "#ffffff"
+
+    Connections {
+        target: __api
+        onFavoritesUpdated: {
+            _Rectangle_Track.isFavorite = __api.favoritesModelContainsTrack(_Rectangle_Track.dataModel)
+        }
+    }
 
     Rectangle {
         id: _Rectangle_TrackColor

@@ -47,7 +47,7 @@ Slide {
             }
             rightContent: Utils.ClickGuard {
                 id: _ClickGuard_FavoriteButton
-                property bool isFavorite : __api.favoritesModelContainsTrack(root.getProperty('id'))
+                property bool isFavorite : __api.favoritesModelContainsTrack(root.dataObject)
                 Utils.BaseIcon {
                     id: _BaseIcon_Bookmark
                     source: "qrc:/images/icon-bookmark.png"
@@ -55,6 +55,7 @@ Slide {
                     anchors.centerIn: parent
                     width: 52
                 }
+
                 states: [
                     State {
                         when: _ClickGuard_FavoriteButton.isFavorite
@@ -65,13 +66,13 @@ Slide {
                         }
                     }
                 ]
+
                 onClicked: {
                     isFavorite ^= 1
-                    if(isFavorite)
-                    {
+
+                    if (isFavorite) {
                         __api.insertFavorite(root.dataObject)
-                    } else
-                    {
+                    } else {
                         __api.removeFavorite(root.dataObject)
                     }
                 }

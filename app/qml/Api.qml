@@ -1,4 +1,5 @@
 import QtQuick 2.4
+import Qt.labs.settings 1.0
 
 // TODO: ND - Convert to singleton C++ (allow for caching, etc.)
 Item {
@@ -14,26 +15,14 @@ Item {
     property var schedule: null
     property var tracks: null
 
-    Component.onCompleted: {
-        status = Loader.Loading;
-        webRequest(urlSchedule, function(response) {
-            if (response) {
-                console.log(response.length)
-                schedule = response;
-                webRequest(urlTracks, function(response) {
-                    tracks = response;
-                    status = Loader.Ready;
-                });
-            } else {
-                status = Loader.Error;
-            }
-        });
-    }
+    property alias settings: _settings
+
+    signal favoritesUpdated
 
     // Utility methods
     function webRequest(requestUrl, callback){
-        console.log(arguments.callee.name, "requestUrl="+requestUrl)
-        var request = new XMLHttpRequest();
+        // console.log(arguments.callee.name, "requestUrl="+requestUrl)
+        var request = new XMLHttpRequest()
         request.onreadystatechange = function() {
             var response;
             if(request.readyState === XMLHttpRequest.DONE) {
@@ -46,8 +35,90 @@ Item {
                 callback(response, request, requestUrl)
             }
         }
-        request.open("GET", requestUrl, true); // only async supported
-        request.send();
+        request.open("GET", requestUrl)
+        request.send()
+    }
+
+    function insertFavorite(trackObject, debug) {
+        if (debug)
+            console.log("insertFavorite")
+
+        if (!favoritesModelContainsTrack(trackObject)) {
+            if (debug)
+                console.log("inserting in favorites")
+
+            var m = _settings.favoriteTracks
+
+            m.push(trackObject.id)
+            _settings.favoriteTracks = m
+
+            favoritesUpdated()
+        } else {
+            if (debug)
+                console.log("object already favorited")
+        }
+    }
+
+    function removeFavorite(trackObject) {
+        _settings.favoriteTracks = _settings.favoriteTracks.filter(function(e) {
+            return e !== trackObject.id
+        })
+
+        favoritesUpdated()
+    }
+
+    function favoritesModelContainsTrack(trackObject) {
+        for (var i = 0; i < _settings.favoriteTracks.length; i++) {
+            if (_settings.favoriteTracks[i] == trackObject.id) {
+                return true
+            }
+        }
+
+        return false
+    }
+
+    function getFavorites() {
+        return _settings.favoriteTracks
+    }
+
+    Settings {
+        id: _settings
+
+        property var favoriteTracks: []
+        property string __favoriteTracks: favoriteTracks.join(",");
+        property var scheduleJson
+        property var tracksJson
+
+        Component.onCompleted: {
+            favoriteTracks = __favoriteTracks.split(",").filter(Boolean);
+            console.log("favoriteTracks = " + favoriteTracks);
+        }
+    }
+
+    Component.onCompleted: {
+        status = Loader.Loading;
+        webRequest(urlSchedule, function(response) {
+            if (response) {
+                console.log(response.length)
+                schedule = response;
+                _settings.scheduleJson = schedule;
+                webRequest(urlTracks, function(response) {
+                    tracks = response;
+                    _settings.tracksJson = tracks;
+                    status = Loader.Ready;
+                });
+            } else {
+                // Check Settings for a cached value
+                if (_settings.scheduleJson) {
+                    schedule = _settings.scheduleJson;
+                    if (_settings.tracksJson) {
+                        tracks = _settings.tracksJson;
+                        status = Loader.Ready;
+                    }
+                } else {
+                    status = Loader.Error;
+                }
+            }
+        });
     }
 }
-
