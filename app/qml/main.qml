@@ -26,6 +26,13 @@ ApplicationWindow {
 
     property bool isFirstTimeRunning: true
 
+    function openNotification(title, message, url) {
+        sponsorNotifications.title = title
+        sponsorNotifications.message = message
+        sponsorNotifications.imageSource = url
+        sponsorNotifications.open()
+    }
+
     visible: true
     width: resolutions[currentResolution]["width"]
     height: resolutions[currentResolution]["height"]
@@ -72,6 +79,28 @@ ApplicationWindow {
         id: mainPage
     }
 
+    MouseArea {
+        anchors.fill: parent
+        enabled: sponsorNotifications.isOpen
+    }
+
+    SponsorNotification {
+        id: sponsorNotifications
+
+        anchors.fill: parent
+    }
+
+    Connections {
+        target: ScreenValues
+
+        onSponsorNotification: {
+            sponsorNotifications.title = title
+            sponsorNotifications.message = message
+            sponsorNotifications.imageSource = url
+            sponsorNotifications.open()
+        }
+    }
+
     Component.onCompleted: {
         if (isFirstTimeRunning)
             stackView.push(tutorialPage)
@@ -79,5 +108,11 @@ ApplicationWindow {
             stackView.opacity = 1
 
         settings.isFirstTimeRunning = false
+    }
+
+    Timer {
+        interval: 1500
+        running: true
+        onTriggered: ScreenValues.checkIfPendingNotification()
     }
 }

@@ -2,11 +2,32 @@
 
 #include <QScreen>
 #include <QGuiApplication>
+#include <QDebug>
 
 #ifdef Q_OS_ANDROID
-#include <QAndroidJniEnvironment>
-#include <QAndroidJniObject>
+
+static void receivedSponsorNotification(JNIEnv *env, jobject thiz, jstring title, jstring message, jstring url, jlong qtObject)
+{
+    Q_UNUSED(env)
+    Q_UNUSED(thiz)
+    reinterpret_cast<ScreenValues*>(qtObject)->emitSponsorNotification(ScreenValues::jstringToQString(title).simplified(), ScreenValues::jstringToQString(message).simplified(), ScreenValues::jstringToQString(url).simplified());
+}
+
+QString ScreenValues::jstringToQString(jstring string)
+{
+    QAndroidJniEnvironment env;
+    jboolean jfalse = false;
+    return QString(env->GetStringUTFChars(string, &jfalse));
+}
 #endif
+
+
+void ScreenValues::emitSponsorNotification(const QString &title, const QString &message, const QString &url)
+{
+    qDebug() << "Calling emit sponsor notification " << title << " message " << message << " url " << url;
+    emit sponsorNotification(title, message, url);
+}
+
 
 ScreenValues::ScreenValues(QObject *parent) :
     QObject(parent),
@@ -21,6 +42,8 @@ ScreenValues::ScreenValues(QObject *parent) :
     m_isTablet = retrieveIsTablet();
 
     m_dp = (float) m_dpi / 160;
+
+    registerNative();
 }
 
 int ScreenValues::dpi() const
@@ -151,8 +174,78 @@ bool ScreenValues::getNotificationsEnabled()
 {
 #ifdef Q_OS_ANDROID
     return QAndroidJniObject::callStaticMethod<jboolean>("com/iktwo/qtworldsummit/QtWorldSummit",
-                                              "getNotificationsEnabled", "()Z");
+                                                         "getNotificationsEnabled", "()Z");
 #else
     return false;
+#endif
+}
+
+
+void ScreenValues::registerNative()
+{
+    qDebug() << Q_FUNC_INFO;
+
+#ifdef Q_OS_ANDROID
+    QAndroidJniEnvironment env;
+
+    QAndroidJniObject activity = QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative",
+                                                                           "activity",
+                                                                           "()Landroid/app/Activity;");
+
+    QAndroidJniObject::callStaticMethod<void>("com/iktwo/qtworldsummit/QtWorldSummit",
+                                              "setQtObject", "(J)V",
+                                              "(J)V", reinterpret_cast<long>(this));
+
+    if (env->ExceptionCheck()) {
+        env->ExceptionDescribe();
+        env->ExceptionClear();
+
+        qCritical() << "Exception in registerNative";
+
+        return;
+    }
+
+    jclass clazz = env->GetObjectClass(activity.object<jobject>());
+
+    if (!clazz) {
+        qDebug() << "Can't find class";
+
+        if (env->ExceptionOccurred()) {
+            env->ExceptionDescribe();
+            env->ExceptionClear();
+            qCritical() << "Exception in registerNative";
+        }
+    } else {
+        JNINativeMethod methods[] {{"jreceivedSponsorNotification", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V", reinterpret_cast<void *>(receivedSponsorNotification)}};
+
+        if (env->ExceptionCheck())
+            env->ExceptionClear();
+
+        if (env->ExceptionCheck())
+            env->ExceptionClear();
+
+        env->RegisterNatives(clazz,
+                             methods,
+                             sizeof(methods) / sizeof(methods[0]));
+
+        env->DeleteLocalRef(clazz);
+    }
+#endif
+}
+
+void ScreenValues::checkIfPendingNotification()
+{
+#ifdef Q_OS_ANDROID
+    QAndroidJniEnvironment env;
+
+    QAndroidJniObject::callStaticMethod<void>("com/iktwo/qtworldsummit/QtWorldSummit",
+                                              "checkIfPendingNotification", "()V",
+                                              "()V");
+
+    if (env->ExceptionOccurred()) {
+        env->ExceptionDescribe();
+        env->ExceptionClear();
+        qCritical() << "Exception in checkIfPendingNotification";
+    }
 #endif
 }

@@ -41,24 +41,38 @@ public class GcmIntentService extends IntentService {
               if (action == null)
                   action = QtWorldSummit.ACTION_MAIN;
 
-              sendNotification(extras.getString("title"), extras.getString("message"), action);
+
+              String url = extras.getString("url");
+
+              if (url == null)
+                url = "";
+
+              sendNotification(extras.getString("title"), extras.getString("message"), url, action);
             }
         }
         // Release the wake lock provided by the WakefulBroadcastReceiver.
         GcmBroadcastReceiver.completeWakefulIntent(intent);
     }
 
-    public void sendNotification(String title, String msg, String action) {
+    public void sendNotification(String title, String msg, String url, String action) {
         mNotificationManager = (NotificationManager)
                 this.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(action, Uri.parse("qtworldsummit://QtWorldSummit"), this, QtWorldSummit.class), 0);
+        Intent intent = new Intent(action, Uri.parse("qtworldsummit://QtWorldSummit"), this, QtWorldSummit.class);
+
+        intent.putExtra("TITLE", title);
+        intent.putExtra("MESSAGE", msg);
+        intent.putExtra("URL", url);
+
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_stat_gcm)
                 .setContentTitle(title)
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
-                .setContentText(msg);
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(msg));
+
+        if (!action.equals(QtWorldSummit.ACTION_SPONSOR))
+            mBuilder.setContentText(msg);
 
         SharedPreferences prefs = getSharedPreferences(QtWorldSummit.class.getSimpleName(), Context.MODE_PRIVATE);
         boolean pushNotificationsActiveState = prefs.getBoolean(QtWorldSummit.PUSH_NOTIFICATIONS_ID, true);

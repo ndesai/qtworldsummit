@@ -28,15 +28,6 @@ int main(int argc, char *argv[])
     if (devel)
         extraSelectors << "devel";
 
-#ifdef Q_OS_ANDROID
-    ScreenValues *sv = new ScreenValues();
-
-    if (sv->isTablet())
-        extraSelectors << "android_tablet";
-
-    delete sv;
-#endif
-
     if (!extraSelectors.isEmpty())
         selector->setExtraSelectors(extraSelectors);
 

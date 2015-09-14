@@ -34,13 +34,18 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
 
     public static final String UPLOADED_ID = "uploaded_id";
     public static final String PROPERTY_REG_ID = "registration_id";
+    public static final String PUSH_NOTIFICATIONS_ID = "push_notifications_id";
     
     private static QtWorldSummit m_instance;
     private static final String TAG = QtWorldSummit.class.getSimpleName();
     private static final String PROPERTY_APP_VERSION = "appVersion";
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private static final String TAG_UPLOADER_FRAGMENT = "uploader_fragment";
-    public static final String PUSH_NOTIFICATIONS_ID = "push_notifications_id";
+    private static long qtObject = 0;
+
+    public static String title;
+    public static String message;
+    public static String url;
 
     static boolean hasManagedAction = false;
 
@@ -59,10 +64,29 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
         return m_instance;
     }
 
+    public static void setQtObject(long obj) {
+        // Log.d(TAG, "calling setQtObject with: " + Long.toString(obj));
+        qtObject = obj;
+    }
+
+    public static void checkIfPendingNotification() {
+        if (title != null && !title.isEmpty() && message != null && !message.isEmpty() && url != null && !url.isEmpty()) {
+            Log.d(TAG, "found pending notification");
+            jreceivedSponsorNotification(title, message, url, qtObject);
+            title = "";
+            message = "";
+            url = "";
+        } else {
+            Log.d(TAG, "No pending notification");
+        }
+    }
+
+    private static native void jreceivedSponsorNotification(String title, String message, String url, long qtObject);
+
     public static boolean getNotificationsEnabled() {
         SharedPreferences prefs = m_instance.getSharedPreferences(QtWorldSummit.class.getSimpleName(), Context.MODE_PRIVATE);
         boolean result = prefs.getBoolean(PUSH_NOTIFICATIONS_ID, true);
-        Log.d(TAG, "getNotificationsEnabled: " + Boolean.toString(result));
+        // Log.d(TAG, "getNotificationsEnabled: " + Boolean.toString(result));
         return result;
     }
 
@@ -154,7 +178,12 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
         super.onCreate(savedInstanceState);
 
         if (getIntent().getAction() != null && getIntent().getAction().equals(ACTION_SPONSOR) && !hasManagedAction) {
-          /// TODO: display ad
+          String action = getIntent().getAction();
+
+          title = getIntent().getStringExtra("TITLE");
+          message = getIntent().getStringExtra("MESSAGE");
+          url = getIntent().getStringExtra("URL");
+
           hasManagedAction = true;
         }
 
@@ -193,12 +222,17 @@ public class QtWorldSummit extends org.qtproject.qt5.android.bindings.QtActivity
 
       String action = intent.getAction();
 
-      FragmentManager fragmentManager = getFragmentManager();
+      if (action == null)
+        action = "";
 
-      if (action.equals(ACTION_MAIN)) {
+      // Log.d(TAG, "onNewIntent action: " + action);
 
-      } else if (action.equals(ACTION_SPONSOR)) {
-          /// TODO: display ad
+      if (action != null && action.equals(ACTION_SPONSOR)) {
+          String title = intent.getStringExtra("TITLE");
+          String message = intent.getStringExtra("MESSAGE");
+          String url = intent.getStringExtra("URL");
+
+          jreceivedSponsorNotification(title, message, url, qtObject);
       }
     }
 

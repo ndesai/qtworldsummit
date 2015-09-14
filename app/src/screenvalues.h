@@ -3,6 +3,11 @@
 
 #include <QObject>
 
+#ifdef Q_OS_ANDROID
+#include <QAndroidJniEnvironment>
+#include <QAndroidJniObject>
+#endif
+
 class ScreenValues : public QObject
 {
     Q_OBJECT
@@ -24,17 +29,25 @@ public:
     void setIsTablet(bool isTablet);
 
     Q_INVOKABLE void setStatusBarColor(const int r, const int g, const int b);
+    Q_INVOKABLE void registerNative();
+    Q_INVOKABLE void checkIfPendingNotification();
 
     bool notificationsEnabled() const;
 
+#ifdef Q_OS_ANDROID
+    static QString jstringToQString(jstring string);
+#endif
+
 public slots:
     void setNotificationsEnabled(bool notificationsEnabled);
+    void emitSponsorNotification(const QString &title, const QString &message, const QString &url);
 
 signals:
     void dpChanged();
     void dpiChanged();
     void isTabletChanged();
     void notificationsEnabledChanged();
+    void sponsorNotification(QString title, QString message, QString url);
 
 private:
     float m_dp;
