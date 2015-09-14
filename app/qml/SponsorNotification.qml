@@ -31,10 +31,15 @@ Rectangle {
             margins: Theme.spacing
         }
 
+        enabled: root.isOpen
+
         Flickable {
             anchors.fill: parent
 
             contentHeight: column.height
+
+            enabled: root.isOpen
+
 
             Column {
                 id: column
@@ -53,6 +58,8 @@ Rectangle {
 
                         height: 48 * ScreenValues.dp
                         width: 48 * ScreenValues.dp
+
+                        enabled: root.isOpen
 
                         onClicked: root.close()
 
