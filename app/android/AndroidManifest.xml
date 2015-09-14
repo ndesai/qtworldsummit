@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<manifest package="com.iktwo.qtworldsummit" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.41" android:versionCode="9" android:installLocation="auto">
+<manifest package="com.iktwo.qtworldsummit" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.42" android:versionCode="10" android:installLocation="auto">
     <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="-- %%INSERT_APP_NAME%% --" android:icon="@mipmap/ic_launcher">
 
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
