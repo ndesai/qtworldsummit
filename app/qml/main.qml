@@ -53,7 +53,12 @@ ApplicationWindow {
         opacity: 0
         focus: true
 
-        Keys.onBackPressed: currentItem.handleBackKey(event)
+        Keys.onBackPressed: {
+            if (sponsorNotifications.isOpen)
+                sponsorNotifications.close()
+            else
+                currentItem.handleBackKey(event)
+        }
 
         Behavior on opacity {
             SequentialAnimation {
