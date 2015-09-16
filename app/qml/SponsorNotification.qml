@@ -21,6 +21,8 @@ Rectangle {
         opacity = 1
     }
 
+    color: UI.Theme.colorLightGrey
+
     opacity: 0
 
     Behavior on opacity { NumberAnimation { easing.type: Easing.OutQuad } }
@@ -81,19 +83,29 @@ Rectangle {
                     font.pixelSize: Theme.fontSizeLarge
                     wrapMode: Text.Wrap
                     color: Theme.fontColor
+                    horizontalAlignment: Text.AlignHCenter
                 }
 
                 Item { height: Theme.spacing * 2; width: 1 }
 
-                Image {
-                    id: image
-
-                    mipmap: true
+                Item {
+                    height: image.paintedHeight
                     width: parent.width
 
-                    fillMode: Image.PreserveAspectFit
+                    Image {
+                        id: image
 
-                    sourceSize.width: parent.width
+                        anchors.centerIn: parent
+
+                        mipmap: true
+                        width: Math.round(parent.width * 0.75)
+
+                        fillMode: Image.PreserveAspectFit
+
+                        height: sourceSize.height
+                        sourceSize.width: Math.round(parent.width * 0.75)
+                        sourceSize.height: Math.round(parent.width * 0.75)
+                    }
                 }
 
                 Item { height: Theme.spacing * 2; width: 1 }

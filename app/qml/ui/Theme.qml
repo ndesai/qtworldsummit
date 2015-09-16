@@ -15,10 +15,10 @@ Item {
 
     property string fontFamily: "Avenir Next"
 
-    property color colorLightGrey : "#f3f3f3"
-    property color colorLightGreyAccent : "#d1d1d0"
-    property color colorLightGreyAccentSecondary : "#eeeeee"
-    property color colorQtMediumGreen : "#5c9c1c"
+    property color colorLightGrey: "#f3f3f3"
+    property color colorLightGreyAccent: "#d1d1d0"
+    property color colorLightGreyAccentSecondary: "#eeeeee"
+    property color colorQtMediumGreen: "#5c9c1c"
     property color colorPageBackground: "#ffffff"
 
     property color colorTrackLightGreen: "#80c342"
