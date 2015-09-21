@@ -31,4 +31,5 @@ DISTFILES += \
     qml/ui/*.qml \
     qml/utils/*.qml \
     qml/utils/+android/*.qml \
-    qml/utils/+ios/*.qml
+    qml/utils/+ios/*.qml \
+    qml/utils/+windows/*.qml

@@ -2,32 +2,8 @@ pragma Singleton
 import QtQuick 2.5
 import QtWorldSummit 1.5
 
-Item {
+QtObject {
     id: root
-
-    property color fontColor: "#000000"
-    property color activeTabColor: "#81c343"
-    property color unactiveTabColor: "#f3f3f3"
-    property color toolBarColor: "#ffffff"
-    property color toolBarTextColor: "#bdbebf"
-
-    property color colorQtGreen: "#81C343"
-
-    property string fontFamily: "Avenir Next"
-
-    property color colorLightGrey: "#f3f3f3"
-    property color colorLightGreyAccent: "#d1d1d0"
-    property color colorLightGreyAccentSecondary: "#eeeeee"
-    property color colorQtMediumGreen: "#5c9c1c"
-    property color colorPageBackground: "#ffffff"
-
-    property color colorTrackLightGreen: "#80c342"
-    property color colorTrackDarkGreen: "#408500"
-    property color colorTrackYellow: "#face20"
-    property color colorTrackOrange: "#ff8c0a"
-    property color colorTrackRed: "#e41e25"
-    property color colorTrackBlue: "#46a2da"
-    property color colorConcreteGrey: "#a4a5a7"
 
     function randomTrackColor() {
         var keys = Object.keys(root).filter(function(e) { return (e.indexOf("colorTrack") > -1 && e.indexOf("Changed") === -1)});
@@ -35,7 +11,7 @@ Item {
     }
 
     property int heightHeader: dp(128)
-    property int marginTop: dp(40)
+    property int marginTop: 0
 
     property int dateViewHeight: dp(100)
     property int dateViewPixelSize: dp(34)
@@ -63,34 +39,48 @@ Item {
 
     property var activeObject
     property bool showFills: false
-    property bool simulateDp: false
-    property double simulatedDp: ScreenValues.dpi
 
-    property int paginationDotBaseSize: 30
-    property int paginationDotContainerHeight: 56
-    property int dividerHeight: 1
-    property int tabHeight: 98
-    property int toolBarHeight: 56
-    property int spacing: 8
-    property int headerMargin: 16
-    property int tutorialDescriptionFontSize: 26
-    property int tutorialTitleFontSize: 34
-    property int tutorialTitleMargins: 28
-    property int tutorialDescriptionMargins: 28
-    property int tutorialContentMargin: 22
-    property int fontSizeSmall: 14
-    property int fontSizeRegular: 18
-    property int fontSizeLarge: 22
+    property color fontColor: "#000000"
+    property color activeTabColor: "#81c343"
+    property color unactiveTabColor: "#f3f3f3"
+    property color toolBarColor: "#ffffff"
+    property color toolBarTextColor: "#bdbebf"
+
+    property color colorLightGrey: "#f3f3f3"
+    property color colorLightGreyAccent: "#d1d1d0"
+    property color colorLightGreyAccentSecondary: "#eeeeee"
+    property color colorQtMediumGreen: "#5c9c1c"
+    property color colorPageBackground: "#ffffff"
+    property color colorQtGreen: "#81C343"
+
+    property color colorTrackLightGreen: "#80c342"
+    property color colorTrackDarkGreen: "#408500"
+    property color colorTrackYellow: "#face20"
+    property color colorTrackOrange: "#ff8c0a"
+    property color colorTrackRed: "#e41e25"
+    property color colorTrackBlue: "#46a2da"
+    property color colorConcreteGrey: "#a4a5a7"
+
+    property string fontFamily: "Segoe UI"
+
+    property int paginationDotBaseSize: 10 * ScreenValues.dp
+    property int paginationDotContainerHeight: 57 * ScreenValues.dp
+    property int dividerHeight: 1 * ScreenValues.dp
+    property int tabHeight: 38 * ScreenValues.dp
+    property int toolBarHeight: 56 * ScreenValues.dp
+    property int spacing: 8 * ScreenValues.dp
+    property int headerMargin: 16 * ScreenValues.dp
+    property int tutorialDescriptionFontSize: 20 * ScreenValues.dp
+    property int tutorialDescriptionMargins: 22 * ScreenValues.dp
+    property int tutorialTitleFontSize: 24 * ScreenValues.dp
+    property int tutorialTitleMargins: 16 * ScreenValues.dp
+    property int tutorialContentMargin: 16 * ScreenValues.dp
+    property int fontSizeSmall: 14 * ScreenValues.dp
+    property int fontSizeRegular: 18 * ScreenValues.dp
+    property int fontSizeLarge: 22 * ScreenValues.dp
 
     function dp(value) {
-        var _dp = simulateDp ? simulatedDp : ScreenValues.dpi
-        var factor = _dp*0.45;
-        if ((Qt.platform.os === "osx" || Qt.platform.os === "ios"
-             || Qt.platform.os === "windows" || Qt.platform.os === "winrt"
-                ) && !simulateDp) {
-            return value;
-        }
-        return factor*value;
+        return (value / 2)* ScreenValues.dp;
     }
 
     function shadeColor(c, percent) {
@@ -114,15 +104,5 @@ Item {
         return "#"+RR+GG+BB;
     }
 
-    FontLoader {
-        id: _fontLoaderOpenSansRegular
-    }
-
-    FontLoader {
-        id: _fontLoaderOpenSansSemiBold
-    }
-
-    FontLoader {
-        id: _fontLoaderOpenSansBold
-    }
+    Component.onCompleted: console.log("Windows platform completed")
 }
