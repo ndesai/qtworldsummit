@@ -58,6 +58,8 @@
         <file>qml/Information.qml</file>
         <file>qml/Map.qml</file>
         <file>qml/SponsorNotification.qml</file>
+        <file>qml/ui/+windows/qmldir</file>
+        <file>qml/ui/+windows/Theme.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="berlin.svg">resources/images/tutorial/berlin.svg</file>
