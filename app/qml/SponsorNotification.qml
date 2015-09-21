@@ -1,7 +1,7 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
-import ui 1.5
+import ui 1.5 as UI
 import QtWorldSummit 1.5
 
 Rectangle {
@@ -30,7 +30,7 @@ Rectangle {
     ScrollView {
         anchors {
             fill: parent
-            margins: Theme.spacing
+            margins: UI.Theme.spacing
         }
 
         enabled: root.isOpen
@@ -73,20 +73,20 @@ Rectangle {
                     }
                 }
 
-                Item { height: Theme.spacing * 2; width: 1 }
+                Item { height: UI.Theme.spacing * 2; width: 1 }
 
                 Label {
                     id: labelTitle
 
                     width: parent.width
 
-                    font.pixelSize: Theme.fontSizeLarge
+                    font.pixelSize: UI.Theme.fontSizeLarge
                     wrapMode: Text.Wrap
-                    color: Theme.fontColor
+                    color: UI.Theme.fontColor
                     horizontalAlignment: Text.AlignHCenter
                 }
 
-                Item { height: Theme.spacing * 2; width: 1 }
+                Item { height: UI.Theme.spacing * 2; width: 1 }
 
                 Item {
                     height: image.paintedHeight
@@ -108,16 +108,16 @@ Rectangle {
                     }
                 }
 
-                Item { height: Theme.spacing * 2; width: 1 }
+                Item { height: UI.Theme.spacing * 2; width: 1 }
 
                 Label {
                     id: labelMessage
 
                     width: parent.width
 
-                    font.pixelSize: Theme.fontSizeLarge
+                    font.pixelSize: UI.Theme.fontSizeLarge
                     wrapMode: Text.Wrap
-                    color: Theme.fontColor
+                    color: UI.Theme.fontColor
                 }
             }
         }
