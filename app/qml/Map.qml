@@ -30,7 +30,9 @@ Item {
             model: root.model
 
             delegate: Rectangle {
-                color: listView.currentIndex === index ? "#00000000" : "#dedede"
+                property bool active: listView.currentIndex === index
+
+                color: active ? Theme.activeTabColor : Theme.unactiveTabColor
 
                 width: parent.width / 3
                 height: text.height + (Theme.spacing * 2)
@@ -47,7 +49,7 @@ Item {
 
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    color: "#000000"
+                    color: parent.active ? Theme.unactiveTabColor : Theme.activeTabColor
                     text: modelData.title
                 }
 
