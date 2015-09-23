@@ -37,10 +37,10 @@ FocusScope {
                 verticalCenter: parent.verticalCenter
             }
 
-            width: UI.Theme.dp(156)
+            height: parent.height
 
             fillMode: Image.PreserveAspectFit
-            smooth: true
+            mipmap: true
             source: "qrc:/images/logo-qws.png"
         }
     }

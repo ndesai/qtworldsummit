@@ -23,8 +23,8 @@ Rectangle {
             sourceSize.height: parent.height * 0.8
 
             fillMode: Image.PreserveAspectFit
-            smooth: true
             source: "qrc:/images/qt_logo.svg"
+            mipmap: true
         }
 
         Label {
