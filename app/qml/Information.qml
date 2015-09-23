@@ -1,5 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.4
 import ui 1.5
 import QtWorldSummit 1.5
 
@@ -151,6 +152,36 @@ ScrollView {
                     checked: ScreenValues.notificationsEnabled
 
                     onCheckedChanged: ScreenValues.notificationsEnabled = checked
+
+                    style: SwitchStyle {
+                        handle: Rectangle {
+                            width: ScreenValues.dp * 22
+                            height: ScreenValues.dp * 22
+
+                            radius: height/2
+
+                            color: "#BDBDBD"
+                        }
+
+                        groove: Item {
+                            width: ScreenValues.dp * 40
+                            height: ScreenValues.dp * 22
+
+                            Rectangle {
+
+                                anchors.centerIn: parent
+
+                                width: parent.width - ScreenValues.dp * 2
+                                height: ScreenValues.dp * 16
+
+                                radius: height/2
+
+                                color: control.checked ? Theme.activeTabColor : Theme.unactiveTabColor
+
+                                Behavior on color { ColorAnimation { } }
+                            }
+                        }
+                    }
                 }
             }
         }
