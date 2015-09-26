@@ -68,7 +68,7 @@ function __createDay() {
 	}
 }
 
-function __formatMilitaryTime(time) {
+	function __formatMilitaryTime(time) {
 		// http://stackoverflow.com/questions/29206453/best-way-to-convert-military-time-to-standard-time-in-javascript
 		var time = time.split(':');
 
@@ -80,6 +80,13 @@ function __formatMilitaryTime(time) {
 		timeValue += (hours >= 12) ? " pm" : " am";
 
 		return timeValue;
+	}
+
+	function formattedTrack(track_name) {
+		var c = track_name.toLowerCase().replace(/_(.)/g, function(match, group1) {
+			return " " + group1.toUpperCase();
+		});
+		return (c.charAt(0).toUpperCase() + c.slice(1)).trim();
 	}
 
 	var schedule = [];
@@ -146,7 +153,8 @@ function __formatMilitaryTime(time) {
 							"title" : unescapeHTML(ee.title),
 							"abstract" : e.session_abstract,
 							"track" : {
-								// ..?
+								"plain" : e.session_track,
+								"formatted" : formattedTrack(e.session_track)
 							}
 
 						},
