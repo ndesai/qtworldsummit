@@ -124,7 +124,7 @@ Rectangle {
             font.pixelSize: UI.Theme.dp(28)
             wrapMode: Text.WordWrap
             visible: text !== ""
-            text: _Rectangle_Track.dataModel.location
+            text: qsTr("Room ") + _Rectangle_Track.dataModel.location
             color: "#525252"
         }
     }

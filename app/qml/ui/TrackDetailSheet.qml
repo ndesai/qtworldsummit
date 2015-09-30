@@ -199,7 +199,7 @@ Slide {
 
                                 anchors.verticalCenter: _Rectangle_TrackColor.verticalCenter
 
-                                text: "Training"//root.getProperty('presentation').track.title
+                                text: root.getProperty('presentation').track.formatted
                                 color: "#222222"
                                 font.pixelSize: UI.Theme.detailTrackNamePixelSize
                             }
